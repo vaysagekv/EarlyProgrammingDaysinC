@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0058)http://www.mrunix.de/forums/archive/index.php/t-69100.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="de" class="translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	
+	<meta name="keywords" content=" Bewerbung mit Latex (moderncv), linux, unix, programmieren, forum, foren">
+	<meta name="description" content="[Archiv]  Bewerbung mit Latex (moderncv) LaTeX-Forum">
+	
+	<title>Application with latex (moderncv) [Archive] - mrunix.de</title>
+	<link rel="stylesheet" type="text/css" href="./Application with latex (moderncv) [Archive] - mrunix.de_files/archive.css">
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="./Application with latex (moderncv) [Archive] - mrunix.de_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="./Application with latex (moderncv) [Archive] - mrunix.de_files/main.js"></script><script type="text/javascript" charset="UTF-8" src="./Application with latex (moderncv) [Archive] - mrunix.de_files/element_main.js"></script></head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://www.mrunix.de/forums/archive/index.php"><font><font>mrunix.de</font></font></a><font><font> &gt; </font></font><a href="http://www.mrunix.de/forums/archive/index.php/f-9.html"><font><font>Applications</font></font></a><font><font> &gt; </font></font><a href="http://www.mrunix.de/forums/archive/index.php/f-38.html"><font><font>LaTeX Forum</font></font></a><font><font> &gt; Application with latex (moderncv)</font></font></div>
+<hr>
+<div class="pda"><a href="http://www.mrunix.de/forums/archive/index.php/t-69100.html?pda=1" rel="nofollow"><font><font>PDA</font></font></a></div>
+<p class="largefont"><font><font>Archiv page PDA View: </font></font><a href="http://www.mrunix.de/forums/showthread.php?t=69100"><font><font>application with latex (moderncv)</font></font></a></p>
+<hr>
+
+<div class="post"><div class="posttop"><div class="username"><font><font>Crashbandito</font></font></div><div class="date"><font><font>22-08-2010, 00:33</font></font></div></div><div class="posttext"><font><font>Hi folks, </font><font>
+I'm just about to write a timely application with latex and came across the moderncv package. </font><font>The resume I managed quite well. </font><font>The only thing do not just want the footer is in the stands my address, email address and phone number. </font><font>Normally it would have prior corresponding email and phone icons. </font><font>For me, it will display them but only one H or B to. </font><font>
+Can you tell me what I did wrong </font><font>
+second question is whether the package can also make a cover letter that is visually similar to the CV. </font><font>'ve Read everywhere that the package is not intended to be suitable for this, but there must still be possible or?</font></font><br>
+<br><font></font><br><font></font><br>
+<br>
+<br><font></font><br>
+<br><font></font><br><font></font><br>
+<br><font></font><br>
+<br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br>
+<br>
+<br>
+<br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>nixversteh</font></font></div><div class="date"><font><font>22-08-2010, 09:16</font></font></div></div><div class="posttext"><font><font>Hi folks, </font></font><br><font><font>
+I'm just about to write a timely application with latex and came across the moderncv package. </font><font>The resume I managed quite well. </font><font>The only thing do not just want the footer is in the stands my address, email address and phone number. </font><font>Normally it would have prior corresponding email and phone icons. </font><font>For me, it will display them but only one H or B to. </font></font><br><font><font>
+Can you tell me what I did wrong </font><font>
+second question is whether the package can also make a cover letter that is visually similar to the CV. </font><font>'ve Read everywhere that the package is not intended to be suitable for this, but there must still be possible or? </font><font>
+Crashbandito Hello, </font><font>
+if you are here in the forum using the search function, you can find a lot of entries to your topic. </font><font>
+Apart your thereof, running with me Example error-free, that is, the symbols are displayed. </font><font>
+Which operating system are you working on, what LaTex_Distribution you use? </font><font>
+Personally, I make the cover letter with scrlttr2, see </font><font>
+------------------------------------------------- </font><font>
+% From moderncvstylecasual.sty: </font><font>
+% </font><font>
+ul}} </font><font>
+\ {setkomavar fromaddress} {\ textcolor {green} {Small 3a \ \ 29568 viruses}} </font><font>
+\ setkomavar fromemail {} {\ textcolor {green} {susanne.p aul@gmx.de}} </font><font>
+\ setkomavar {from phone} {\ textcolor {green} {05 925 99 50 50}} </font><font>
+\ setkomavar {signature} {Susanne ~ Paul} </font><font>
+\ providecaptionname {ngerman} \ email name {\ color {grue n} {email}}% </font><font>
+\ providecaptionname {ngerman} \ phonename {\ color {grue n} {phone}}% </font><font>
+\ begin {document} </font><font>
+\ begin {letter} {district of Lüneburg \ \ Personal Services \ \ </font><font>
+               On the Michaeliskloster 4 \ \ </font><font>
+               21335 Lüneburg} </font><font>
+% The subject line should be printed green + bold: </font><font>
+\ opening {\ bfseries {\ textcolor {green} {Your Job in EURES}}} </font><font>
+Ladies and gentlemen, </font><font>
+on the Internet site EURES I have learned that you are looking for a graduate-room beautician for 01 ~ 18 ~ 2010 hereby I apply for this position as a graduate area beautician from October 2110, and to send you my CV. </font><font>
+Currently I work in ungekündigter employment with the \ emph {International Federation for Looser GmbH, Branch North}, in everywhere. </font><font>
+not I am very inflexible and ready , which also applies to my work area. </font><font>
+About an invitation from you to an interview I am not me very much. </font><font>
+\ vspace * {1cm} </font><font>
+\ closing {Sincerely} </font><font>
+\ vspace * {2cm} </font><font>
+{testimonies CV \ \} \ encl </font><font>
+\ end {letter} </font><font>
+\ end {document} </font><font>
+Greetings </font><font>
+Martin</font></font><br>
+<br><font></font><br>
+<br><font></font><br><font></font><br>
+<br><font></font><br>
+<br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br>
+<br>
+<br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br>
+<br>
+<br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br>
+<br><font></font><br>
+<br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>bischi</font></font></div><div class="date"><font><font>22-08-2010, 09:37</font></font></div></div><div class="posttext"><font><font>Diploma room beautician </font><font>
+What's that? </font><font>: D </font><font>
+Bischi</font></font><br>
+<br><font></font><br>
+<br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>nixversteh</font></font></div><div class="date"><font><font>22-08-2010, 10:06</font></font></div></div><div class="posttext"><font><font>What's that? </font><font>: D </font><font>
+Bischi </font><font>
+Bischi Hello, </font><font>
+for the sake of anti-discrimination, the Occupation * Housekeeper * was replaced by the Job Title * Graduate * beautician space and upgraded it. </font><font>
+wishes a nice Sunday ;-) </font><font>
+Greetings </font><font>
+Martin</font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>Crashbandito</font></font></div><div class="date"><font><font>22-08-2010, 11:39</font></font></div></div><div class="posttext"><font><font>Sry I've used the search function ... net was already late yesterday ^ ^. </font><font>
+Crashbandito Hello, </font><font>
+What operating system are you working on, what LaTex_Distribution you use? </font><font>
+I'm using Win7 Ultimate 64bit. </font><font>I use latex for Miktex 2.8 and TeXnicCenter as editor. </font><font>The package components of moderncv I have my HP from their loaded and packed in my project folder. </font><font>As I said to all the icons will be created correctly. </font><font>
+way He brings me a few warnings. </font><font>
+example: Font shape 'U / mvs / m / n' undefined ... using U '/ cmr / m / n' instead on input 273rd line </font><font>
+is if I jump in the line as \ settowidth {\ listitemsymbolwidth} {\ {} ~} listitemsymbol </font><font>
+sounds very suspicious but what do I have to do ^ ^ </font><font>
+Furthermore, he brings me the warning: Some font shapes were not available, defaults substituted. </font><font>
+Believe the net but it has something to do with the non-displayed symbols. </font><font>
+Edit: Have now found out that I need for the symbols marvosym. </font><font class="">I then from here: http://ctan.org/tex-archive/fonts/psfonts/marvosym/ downloaded the files and placed in my project folder. </font><font>As it still does not I then went to the related font installed. </font><font>But it will still net -. -</font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br>
+<br>
+<br><font></font><br>
+<br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br><font></font><br><font></font><br>
+<br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>nixversteh</font></font></div><div class="date"><font><font>22-08-2010, 13:14</font></font></div></div><div class="posttext"><font><font>Sry I've used the search function ... net was already late yesterday ^ ^. </font></font><br><font><font>
+I am using Win7 Ultimate 64bit. </font><font>I use latex for Miktex 2.8 and TeXnicCenter as editor. </font><font>The package components of moderncv I have my HP from their loaded and packed in my project folder. </font><font>As I said to all the icons will be created correctly. </font></font><br><font><font>
+way He brings me a few warnings. </font></font><br><font><font>
+example: Font shape 'U / mvs / m / n' undefined ... using U '/ cmr / m / n' instead on input 273rd line </font><font>
+is if I jump in the line as \ settowidth {\ listitemsymbolwidth} {\ {} ~} listitemsymbol </font><font>
+sounds very suspicious but what do I have to do ^ ^ </font><font>
+Furthermore, he brings me the warning: Some font shapes were not available, defaults substituted. </font><font>
+Believe the net but it has something to do with the non-displayed symbols. </font><font>
+Edit: Have now found out that I need for the symbols marvosym. </font><font>I then from here: http://ctan.org/tex-archive/fonts/psfonts/marvosym/ downloaded the files and placed in my project folder. </font><font>As it still does not I then went to the related font installed. </font><font>But it will still net -. - </font><font>
+Crashbandito Hello, </font><font>
+I have (also) the same operating system (which I hardly use) and have compiled the sample moderncv. </font><font>No problems when I comment out the * homepage * line. </font><font>Optional% \ homepage {homepage (optional)}%, remove the line if not wanted </font><font>
+can not understand your problem, something seems to be different on your machine, everything you ever brought to neustesten stand? </font><font>In the MikTex * Refresh FNDB * and * update * format? Conducted </font><font>
+luck </font><font>
+greetings </font><font>
+Martin</font></font><br>
+<br><font></font><br><font></font><br><font></font><br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>Crashbandito</font></font></div><div class="date"><font><font>22-08-2010, 13:25</font></font></div></div><div class="posttext"><font><font>Yeah I've updated several times but does nothing. </font><font>I am now already starting to despair, because he gave me now not even the created pdf. </font><font>After I got smashed on it marvosym he brings me (but only in this project) the error [DocOpen ("% bm.pdf")] ... </font><font>The command could not be executed. </font></font><br><font><font>
+Did the package then uninstalled but the problem does not go away. </font><font>So much frustration at nem Sunday I really contract net -. - </font></font><br><font><font>
+I even created the project and copied the code from the Tex but again the error. </font><font class="">But I have changed nothing in the code. </font><font>Ka why he now brings me to the errors at once.</font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>nixversteh</font></font></div><div class="date"><font><font>22-08-2010, 13:32</font></font></div></div><div class="posttext"><font><font>Yeah I've updated several times but does nothing. </font><font>I am now already starting to despair, because he gave me now not even the created pdf. </font><font>After I got smashed on it marvosym he brings me (but only in this project) the error [DocOpen ("% bm.pdf")] ... </font><font>The command could not be executed. </font></font><br><font><font>
+Did the package then uninstalled but the problem does not go away. </font><font>So much frustration at nem Sunday I really contract net -. - </font></font><br><font><font>
+I even created the project and copied the code from the Tex but again the error. </font><font>But I have changed nothing in the code. </font><font>Ka me why he now brings the errors at once. </font><font>
+Crashbandito Hello, </font><font>
+how urgent is it to the resume? </font><font>I'd like to, if enough time is available, recommend to take a break and then continue to work in full force. </font><font>I know, is an unpopular approach. </font><font>
+Well, at least I have Windows turned his back to my database software, I'm not (yet) to make comfortable, to this in Linux. </font><font>
+If you are using CV quickly need, I could you compile it and then send the PDF. </font><font>
+Greeting </font><font>
+Martin </font><font>
+greenmile021253@aol.com</font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>Crashbandito</font></font></div><div class="date"><font><font>22-08-2010, 13:51</font></font></div></div><div class="posttext"><font><font>Quite so urgent, it is not, I just do not know what to get a break. </font><font>The bug fixes are unfortunately not by yourself ^ ^ </font></font><br><font><font>
+I've now after and commented on individual rows and have the added it is up to the first line, which creates pdf net. </font><font>
+If I </font><font>
+\ documentclass [11pt, a4paper] {moderncv} </font><font>
+comment out , he created pdf (a naturally almost empty).</font></font><br>
+<br><font></font><br><font></font><br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>nixversteh</font></font></div><div class="date"><font><font>22-08-2010, 13:55</font></font></div></div><div class="posttext"><font><font>Quite so urgent, it is not, I just do not know what to get a break. </font><font>The bug fixes are unfortunately not by itself ^ ^ </font><font>
+Hello Crashbandito, </font><font>
+a break you create a * free * head, leaving you with new (brain) forces can go to work. </font><font>
+release is announced ;-) </font><font>
+Greetings </font><font>
+Martin</font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>u_fischer</font></font></div><div class="date"><font><font>22-08-2010, 14:46</font></font></div></div><div class="posttext"><font><font>There are at miktex 2.8. </font><font>moderncv marvosym or no reason to install it manually. </font><font>This is easily and cleanly with the package manager. </font><font>
+I would suggest you to compile your document to times on the command line. </font><font>If you have not correctly installed packages, which is the on-the-fly installation of miktex set in motion. </font><font>
+Apart: You'll have to provide some sensible information, if you want help. </font><font>In this case, "reasonable information", a complete example (without dots) that demonstrates your problem, and the log file of the pdflatex compilation of this example. </font><font>Give the log file of the extension txt, and hang them. </font><font>In the code environment important parts are swallowed.</font></font><br>
+<br><font></font><br>
+<br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>Crashbandito</font></font></div><div class="date"><font><font>22-08-2010, 17:36</font></font></div></div><div class="posttext"><font><font>Since please </font><font>
+\ documentclass [11pt, a4paper] {moderncv} </font><font>
+usepackage% \ {lmodern} </font><font>
+% moderncv themes </font><font>
+\ moderncvtheme [blue] {casual}% optional argument are 'blue' (default), 'orange', 'red' green ' ',' gray 'and' roman '(for roman fonts, instead of sans serif fonts) </font><font>
+% \ moderncvtheme [green] {classic}% idem </font><font>
+% character encoding </font><font>
+\ usepackage [latin1] {inputenc}% replace by the encoding you are using </font><font>
+% adjust the page margins </font><font>
+% \ usepackage [scale = 0.8] {geometry} </font><font>
+% \ setlength {\ hintscolumnwidth} {3cm}% if you want to change the width of the column with the dates </font><font>
+% \ AtBeginDocument {\ setlength {\ maketitle name width} {6cm}}% only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details </font><font>
+% required when changes are made &#8203;&#8203;to page layout </font><font>
+Technical University of Science} {} {} {Freiberg course: Network Computing} {\ begin {tabbing} majors: mathematics, computer science \ hspace {0.8 cm} Minor: Business Administration </font><font>
+Knowledge} {} </font><font>
+\ section {Computer skills} </font><font>
+\ {hardware} {cvcomputer knowledge about the functioning of key components \ newline experience Ein-/Ausbau} {OS} {Years of experience with Win 98/2000/XP/Win7} </font><font>
+\ {cvcomputer Software} {Fast settling into new software} {Office} {Good knowledge of Microsoft Word and PowerPoint} </font><font>
+\ cvcomputer {program} {Basic knowledge of C, C + +, C \ #, SQL, VB} {Miscellaneous} {creative skill in handling with video editing software} </font><font>
+\ section {Miscellaneous} </font><font>
+\ {cvline license}} class B { </font><font>
+\ section {hobbies} </font><font>
+\ {art} {cvline handling PC hardware and software \ newline General interest in new technology \ newline Video-/Bildbearbeitung} </font><font>
+\ cvline {Sport} {football, table tennis} </font><font>
+\ end {document} </font><font>
+I think I know why it's not all at once, no matter what I do. He does not change oO. </font><font>
+Mir is noticed in the example of Nixversteh for the letter . I have the code as it is copied in latex and then modified the personal information, but in the exported PDF will continue its information. </font><font>
+How can I compile the document from the command line Or where can I find the command line: D.</font></font><br>
+<br>
+<br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br>
+<br>
+<br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br>
+                <br><font></font><br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br>
+<br><font></font><br>
+<br><font></font><br><font></font><br>
+<br>
+<br><font></font><br>
+<br><font></font><br><font></font><br><font></font><br>
+<br>
+<br><font></font><br>
+<br><font></font><br><font></font><br>
+<br>
+<br>
+<br><font></font><br>
+<br><font></font><br><font></font><br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br>
+<br><font></font><br>
+<br><font></font><br><font></font><br>
+<br>
+<br><font></font><br>
+<br>
+<br><font></font><br><font></font><br>
+<br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>nixversteh</font></font></div><div class="date"><font><font>22-08-2010, 18:39</font></font></div></div><div class="posttext"><font><font>Since please </font><font>
+\ documentclass [11pt, a4paper] {moderncv} </font><font>
+usepackage% \ {lmodern} </font><font>
+% moderncv themes </font><font>
+\ moderncvtheme [blue] {casual}% optional argument are 'blue' (default), 'orange', 'red' green ' ',' gray 'and' roman '(for roman fonts, instead of sans serif fonts) </font><font>
+% \ moderncvtheme [green] {classic}% idem </font><font>
+% character encoding </font><font>
+\ usepackage [latin1] {inputenc}% replace by the encoding you are using </font><font>
+% adjust the page margins </font><font>
+% \ usepackage [scale = 0.8] {geometry} </font><font>
+% \ setlength {\ hintscolumnwidth} {3cm}% if you want to change the width of the column with the dates </font><font>
+% \ AtBeginDocument {\ setlength {\ maketitle name width} {6cm}}% only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details </font><font>
+% required when changes are made &#8203;&#8203;to page layout </font><font>
+Technical University of Science} {} {} {Freiberg course: Network Computing} {\ begin {tabbing} majors: mathematics, computer science \ hspace {0.8 cm} Minor: Business Administration </font><font>
+Knowledge} {} </font><font>
+\ section {Computer skills} </font><font>
+\ {hardware} {cvcomputer knowledge about the functioning of key components \ newline experience Ein-/Ausbau} {OS} {Years of experience with Win 98/2000/XP/Win7} </font><font>
+\ {cvcomputer Software} {Fast settling into new software} {Office} {Good knowledge of Microsoft Word and PowerPoint} </font><font>
+\ cvcomputer {program} {Basic knowledge of C, C + +, C \ #, SQL, VB} {Miscellaneous} {creative skill in handling with video editing software} </font><font>
+\ section {Miscellaneous} </font><font>
+\ {cvline license}} class B { </font><font>
+\ section {hobbies} </font><font>
+\ {art} {cvline handling PC hardware and software \ newline General interest in new technology \ newline Video-/Bildbearbeitung} </font><font>
+\ cvline {Sport} {football, table tennis} </font><font>
+\ end {document} </font><font>
+I think I know why it's not all at once, no matter what I do. He does not change oO. </font><font>
+Mir is noticed in the example of Nixversteh for the letter . I have the code as it is in latex copied and then altered the personal information, but in the exported pdf remain at his statements. </font><font>
+How can I compile the document from the command line Or where can I find the command line:. D </font><font>
+Hello Crashbandito, </font><font>
+your example runs without error for me. the command line you will get by clicking on * Start * click and then RIGHT down a menu item * Execute find *. Anyway, I've set up my machine so that there * Run * stands. Otherwise goes on * * Search on Start then Programs * / * files and give running a * there *, it should open a menu, then click on * Run *. If you have come this far, to * search * click click on your file and then sets . in the line * before * pdflatex the place </font><font>
+, I hope you understood something, as I said, I do not like Windows and fukel only (still) around with Linux ;-) </font><font>
+Greetings </font><font>
+Martin </font><font>
+PS. Works for me unfortunately not correct, should times the Windosen ran ;-) </font><font>
+PPS. You can change your machine by doing this. </font><font>Right click on Start - Properties - Customize, and then click the individual things ... </font><font>
+All good things come in threes: keep Windows key and press "R".</font></font><br>
+<br>
+<br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br>
+<br>
+<br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br><font></font><br>
+                <br><font></font><br><font></font><br><font></font><br>
+<br><font></font><br><font></font><br>
+<br><font></font><br>
+<br><font></font><br><font></font><br>
+<br>
+<br><font></font><br>
+<br><font></font><br><font></font><br><font></font><br>
+<br>
+<br><font></font><br>
+<br><font></font><br><font></font><br>
+<br>
+<br>
+<br><font></font><br>
+<br><font></font><br><font></font><br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br>
+<br><font></font><br>
+<br><font></font><br><font></font><br>
+<br>
+<br><font></font><br>
+<br>
+<br><font></font><br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>Crashbandito</font></font></div><div class="date"><font><font>22-08-2010, 18:55</font></font></div></div><div class="posttext"><font><font>Hmm funny thing ... I've tried with all LED and when it did not there was ego tried again with the GUI TeXnicCenter and went at once oO. </font><font>
+So, the problem is more or less solved itself. </font><font>Would be just the thing with the letter. </font><font>Did your example simply taken as a template, change the personal data and exported. </font><font>However, there remain your information in it. </font><font>So there is still Susanne Paul even though I had changed that. </font><font>
+So that's all well and good latex is, but ease of use is different ^ ^ </font><font>
+I hope we get more settled with the letter then I am only happy times :)</font></font><br>
+<br><font></font><br><font></font><br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>nixversteh</font></font></div><div class="date"><font><font>22-08-2010, 18:56</font></font></div></div><div class="posttext"><font><font>Crashbandito Hello, </font><font>
+my letter is on my machine under TeXworks, Texmaker and Texnicenter [...] </font><font>
+Greetings </font><font>
+Martin</font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>nixversteh</font></font></div><div class="date"><font><font>22-08-2010, 19:03</font></font></div></div><div class="posttext"><font><font>Hmm funny thing ... I've tried with all LED and when it did not there was ego tried again with the GUI TeXnicCenter and went at once oO. </font><font>
+So, the problem is more or less solved itself. </font><font>Would be just the thing with the letter. </font><font>Did your example simply taken as a template, change the personal data and exported. </font><font>However, there remain your information in it. </font><font>So there is still Susanne Paul even though I had changed that. </font><font>
+So that's all well and good latex is, but ease of use is different ^ ^ </font><font>
+I hope we get more settled with the letter then I am only happy times :) </font><font>
+Hello Crashbandito, </font><font>
+what have you been exported? </font><font>Because need a simple copy-paste [...] </font><font>
+Greetings </font><font>
+Martin</font></font><br>
+<br><font></font><br><font></font><br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font><br>
+<br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>Crashbandito</font></font></div><div class="date"><font><font>22-08-2010, 19:58</font></font></div></div><div class="posttext"><font><font>Did hinbekommen everything now. </font><font>LED ran the letter. </font><font>It had apparently been missing KOMAold what did not TeXnicCenter download. </font><font>But what long struggles will end well. </font><font>:) </font></font><br><font><font>
+Thanks you again for your trouble.</font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>bischi</font></font></div><div class="date"><font><font>22-08-2010, 20:44</font></font></div></div><div class="posttext"><font><font>for the sake of anti-discrimination, the Occupation * Housekeeper * by Job Title * Graduate room beautician was replaced * and upgraded it. </font><font>
+Ah - I thought the hot correctly "cleaners / in": p space beautician sounds so after lipstick in the ISS ;) </font><font>
+Lg Bischi</font></font><br>
+<br>
+<br><font></font><br>
+<br><font></font></div></div><hr>
+
+
+<div class="post"><div class="posttop"><div class="username"><font><font>Hobbes</font></font></div><div class="date"><font><font>22-08-2010, 21:36</font></font></div></div><div class="posttext"><font><font>Tries Hmm funny thing ... I've tried with all LED and as it was not there ichs again with the GUI TeXnicCenter and at once went oO. </font><font>
+according to this known problem Sounds (http://www.miktex.org/2.8/ issues) with the combination Texniccenter1.0 and Miktex2.8</font></font><br>
+<br><font></font></div></div><hr>
+
+
+<div id="copyright"><font><font>vBulletin ® v3.8.6, Copyright © 2000-2012, All Rights Reserved.</font></font></div>
+</div><div id="goog-gt-tt" class="goog-tooltip skiptranslate" dir="ltr" style="visibility: hidden; left: 690px; top: 6607px; display: none; "><div style="padding: 8px;"><div><div class="logo"><img src="./Application with latex (moderncv) [Archive] - mrunix.de_files/translate-32.png" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text">Ich hab aber an dem Code nix verändert.</div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none; opacity: 0; "></div></div>
+
+</body></html>

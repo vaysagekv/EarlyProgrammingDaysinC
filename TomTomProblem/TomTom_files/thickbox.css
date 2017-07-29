@@ -1,0 +1,313 @@
+/* ----------------------------------------------------------------------------------------------------------------*/
+/* ---------->>> global settings needed for thickbox <<<-----------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------------------------------------*/
+*{padding: 0; margin: 0;}
+
+/* ----------------------------------------------------------------------------------------------------------------*/
+/* ---------->>> thickbox specific link and font settings <<<------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------------------------------------*/
+#TB_window {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #333333;
+  overflow:hidden;
+}
+
+#TB_secondLine {
+	font: 10px Arial, Helvetica, sans-serif;
+	color:#666666;
+}
+
+#TB_window a:link {color: #666666;}
+#TB_window a:visited {color: #666666;}
+#TB_window a:hover {color: #000;}
+#TB_window a:active {color: #666666;}
+#TB_window a:focus{color: #666666;}
+
+/* ----------------------------------------------------------------------------------------------------------------*/
+/* ---------->>> thickbox settings <<<-----------------------------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------------------------------------*/
+#TB_overlay {
+	position: fixed;
+	z-index:300;
+	top: 0px;
+	left: 0px;
+	height:100%;
+	width:100%;
+}
+
+.TB_overlayMacFFBGHack {background: url(macFFBgHack.png) repeat;}
+.TB_overlayBG {
+	background-color:#000;
+	filter:alpha(opacity=25);
+	-moz-opacity: 0.25;
+	opacity: 0.25;
+}
+
+* html #TB_overlay { /* ie6 hack */
+     position: absolute;
+     height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+
+#TB_window {
+	position: fixed;
+	background: #ffffff;
+	z-index: 302;
+	color:#000000;
+	display:none;
+	border:5px solid #2a79b4; 
+	text-align:left;
+	top:50%;
+	left:50%;
+}
+
+* html #TB_window { /* ie6 hack */
+position: absolute;
+margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+
+#TB_window img#TB_Image {
+	display:block;
+	margin: 15px 0 0 15px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #666;
+	border-left: 1px solid #666;
+}
+
+#TB_caption{
+	height:25px;
+	padding:7px 30px 10px 25px;
+	float:left;
+}
+
+#TB_closeWindow{
+	height:25px;
+	padding:11px 25px 10px 0;
+	float:right;
+}
+
+#TB_closeAjaxWindow{
+	padding:5px 0px 5px 0;
+	margin-bottom:1px;
+	text-align:right;
+	float:right;
+}
+
+#TB_ajaxWindowTitle{
+	width:auto;
+       float:left;
+	margin-bottom:1px;
+        font-size:14px;
+        font-weight:bold;
+        font-family:arial;
+        color:#00508d;
+}
+
+
+#TB_title{
+  width:95.8%;
+  height:20px;
+  float:left;
+  background:#d4e4f1; 
+  padding:2px 10px 5px;
+}
+*html #TB_title{
+  width:expression((parseInt(document.getElementById('TB_window').offset) - 10) + 'px');
+  padding:2px 10px 0px;
+}
+#TB_title #TB_ajaxWindowTitle{
+  float:left; font-style:normal; font-weight:bold;}
+#TB_closeAjaxWindow{font:normal 12px arial; color:#287ab6;}
+
+#TB_closeAjaxWindow a:link,
+#TB_closeAjaxWindow a:visited,
+#TB_closeAjaxWindow a:active
+{color:#287ab6; text-decoration:none; background: url(./images/close-btn-inactive.gif) 100% 1px  no-repeat; padding-right:15px;}
+
+#TB_closeAjaxWindow a:hover {background: url(./images/close-btn-active.gif) 100% 1px  no-repeat; text-decoration:underline;}
+
+#TB_ajaxContent{
+	clear:both;
+	padding:2px 15px 15px 15px;
+	overflow:auto;
+	text-align:left;
+	line-height:1.4em;
+}
+
+#TB_ajaxContent.TB_modal{
+	padding:15px;
+}
+
+#TB_ajaxContent p{
+	padding:5px 0px 5px 0px;
+}
+
+#TB_load{
+	position: fixed;
+	display:none;
+	height:13px;
+	width:208px;
+	z-index:303;
+	top: 50%;
+	left: 50%;
+	margin: -6px 0 0 -104px; /* -height/2 0 0 -width/2 */
+}
+
+* html #TB_load { /* ie6 hack */
+position: absolute;
+margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+
+#TB_HideSelect{
+	z-index:299;
+	position:fixed;
+	top: 0;
+	left: 0;
+	background-color:#fff;
+	border:none;
+	filter:alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+	height:100%;
+	width:100%;
+}
+
+* html #TB_HideSelect { /* ie6 hack */
+     position: absolute;
+     height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+
+#TB_iframeContent{
+	clear:both;
+	border:none;
+	margin-bottom:-1px;
+	margin-top:1px;
+	_margin-bottom:1px;
+}
+
+/*below css code is added by shilpi garg for putting image in thickbox as on 11 nov 2008*/
+.thickbox_img {
+width:auto;
+float:left;
+padding:2px 5px 0 0;
+}
+.thickbox_heading {
+width:auto;
+float:left;
+padding:5px 0 0;
+}
+
+
+/* Event Related CSS */
+
+/*---------------------21JAN09 & 27th Jan ---------------------------------*/
+.main_div .info .event_mes{font-size:11px; color:#9c9c9c;}
+input.input_file {position: relative;	text-align: right;	-moz-opacity:0 ;	filter:alpha(opacity: 0);	opacity: 0;	z-index: 2;}
+.main_div .upload_btn{margin:10px 0 0 100px; text-align:left}
+.main_div .upload_btn dfn{border:1px solid #f00;}
+.main_div .upload_btn b{background:url('./images/event_btn-left-bg.gif') no-repeat; width:8px; height:32px; float:left;}
+.main_div .upload_btn i{background:url('./images/event_btn-rght-bg.gif') no-repeat; width:8px; height:32px; float:left;}
+
+.main_div .upload_btn input{border:0; padding:0; margin:0;background:url('./images/event_btn-bg.gif') repeat-x; float:left; height:32px; cursor:pointer; font:bold 13px arial; color:#dfad03; }
+
+ul.event_docs {list-style-type:none; margin:0; padding:0; }
+ul.event_docs li{display:inline; line-height:18px;}
+ul.event_docs li .blk_clr{color:#000;}
+
+/* Event Related CSS */ 
+
+
+/*------------------------17JUNE09---------------------------------------*/	
+
+.info .cont_type  .cntrl_block0{border:1px solid #e4e4e4; width:445px; margin:0px 0 5px 0px; font:normal 12px arial; padding-left:5px;  color:#575757; padding:10px;}
+.info .cont_type  .cntrl_block0 input{padding:2px;}	
+.info .cont_type  .cntrl_block0 select{width:180px; margin:0; padding:2px; color:#000;}
+.fl{float:left;}	
+.fr{float:right;}
+.thick_lbl{width:55px; padding-top:3px; text-align:right; margin-right:5px; }
+.thick_radio{width:400px; list-style-type:none;  }
+.thick_radio li{padding:3px 0;}
+.thick_radio li input{border:0 !important;}
+
+
+.sml_txt{font-size:10px; color:#9c9c9c;}
+.or_lbl{border:1px solid #e5e4e4; width:50px; text-align:center;  padding:3px 8px; background:#f1f1f1; font-size:16px; color:#000; border-left:0; border-right:0;}
+
+.fnt11{font-size:11px;}
+
+
+.m115{margin-left:115px !important; float:left}
+*html .m115{margin-left:0px !important; padding-left:115px !important}
+*+html .m115{margin-left:0px !important; padding-left:115px !important}
+
+.m140{margin-left:140px !important; float:left}
+*html .m140{margin-left:0px !important; padding-left:140px !important}
+*+html .m140{margin-left:0px !important; padding-left:140px !important}
+.m160{margin-left:160px !important; float:left}
+*html .m160{margin-left:0px !important; padding-left:160px !important}
+*+html .m160{margin-left:0px !important; padding-left:160px !important}
+.m170{margin-left:170px !important; float:left}
+*html .m170{margin-left:0px !important; padding-left:170px !important}
+*+html .m170{margin-left:0px !important; padding-left:170px !important}
+.m180{margin-left:180px !important; float:left}
+*html .m180{margin-left:0px !important; padding-left:180px !important}
+*+html .m180{margin-left:0px !important; padding-left:180px !important}
+.m190{margin-left:190px !important; float:left}
+*html .m190{margin-left:0px !important; padding-left:190px !important}
+*+html .m190{margin-left:0px !important; padding-left:190px !important}
+.m200{margin-left:200px !important; float:left}
+*html .m200{margin-left:0px !important; padding-left:200px !important}
+*+html .m200{margin-left:0px !important; padding-left:200px !important}
+.m210{margin-left:210px !important; float:left}
+*html .m210{margin-left:0px !important; padding-left:210px !important}
+*+html .m210{margin-left:0px !important; padding-left:210px !important}
+.m220{margin-left:220px !important; float:left}
+*html .m220{margin-left:0px !important; padding-left:220px !important}
+*+html .m220{margin-left:0px !important; padding-left:220px !important}
+
+textarea, select{border:1px solid #7e9db9 !important} 
+
+	
+	
+/*-----------CSS added by Bideshi for techgig----------------*/	
+.Mcont{font:normal 12px arial; }
+.hBg{padding:6px 5px 0; height:35px; background:#fff url(tpop_img/hdBg.gif) repeat-x;  }
+ 
+.hTxt{display:inline-block; width:464px; border-left:2px solid #a7d4e9; padding:2px 5px; margin:0 0 0 5px; font:normal 18px arial; }
+.midTxt{padding:10px 20px;}
+.red{color:#a71818;}
+.green{color:#008000;}
+.rBlock {margin:5px 0}
+.rBlock .top{background:url(/images_cand/tj_images/tech_images/tpop_img/rtMid.gif) repeat-x; height:5px;}
+.rBlock .bot{background:url(/images_cand/tj_images/tech_images/tpop_img/rbMid.gif) repeat-x; height:5px;}
+.rBlock .mid{border:1px solid #e0e0e0; border-top:0; border-bottom:0; background:#fffdf3; padding:0 5px;}
+.selTxt{display:inline-block; margin:-2px 5px 0; _margin:0; width:450px; line-height:18px; color:#737373; }
+.cal{background:url(tpop_img/cal.gif) no-repeat; padding-left:20px; display:inline-block; height:18px; margin:-20px 5px 2px; font-size:11px; color:#777;   }
+.grey{color:#737373;}
+ .orgBtn {width:103px; margin:10px auto 0;  }
+.orgBtn input{border:0; background:url(/images_cand/tj_images/tech_images/tpop_img/orgBtnLarge.gif) no-repeat 100% 0; padding:0px 6px 0 2px; height:32px; font:bold 14px arial; cursor:pointer; overflow:visible; }
+
+.TGform p{margin:10px 0}
+.TGform label{display:inline-block; width:140px; text-align:right; padding:0 5px 0 0; font-weight:bold; color:#555;}
+.TGform .txtCntrl{width:250px; padding:1px;}
+
+.noBrdr{border:none;}
+
+.tjLabel{float:left; width:110px;}
+.tjCntrl{float:left; width:300px;}
+.input_txt{font:normal 12px arial; width:280px; padding:3px; border:1px solid #7F9DB9; #height:22px}
+.clr{clear:both; height:1px; overflow:hidden; display:block;}
+	
+	
+	
+.submit_btn_container { width:auto;  height:23px; padding:5px 0 5px; cursor:pointer;}
+.submit_btn_container i { width:4px;  height:23px;  float:left;  background:url(images/submit_btn_left_new.gif) no-repeat;}
+.submit_btn_container dfn { width:auto;  height:23px;  float:left;  font-style:normal; background:url(images/submit_btn_middle_new.gif) repeat-x;}
+.submit_btn_container dfn a{color:#fff; font-weight:bold; line-height:22px;}
+.submit_btn_container dfn input {  height:23px;  width:auto; background:none;  border:none;  color:#fff;  font-size:14px;  font-style:normal;  font-weight:bold;
+  float:left; font-family:"Trebuchet MS"; cursor:pointer; padding:0 1px 8px 1px; }
+.submit_btn_container em { width:4px;  height:23px; float:left; background:url(images/submit_btn_right_new.gif) no-repeat;}
+.mrgn_l5{margin-left:5px;}
+
+
+

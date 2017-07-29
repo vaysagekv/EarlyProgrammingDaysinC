@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)http://tex.stackexchange.com/questions/4263/difficulty-installing-moderncv-on-os-x -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>mactex - Difficulty installing moderncv on OS X - TeX - LaTeX</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/tex/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/tex/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="TeX - LaTeX - Stack Exchange" href="http://tex.stackexchange.com/opensearch.xml">
+
+    
+    <script type="text/javascript" async="" src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/ga.js"></script><script type="text/javascript" async="" src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/quant.js"></script><script type="text/javascript" src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/all.css">
+    
+    <link rel="canonical" href="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/mactex - Difficulty installing moderncv on OS X - TeX - LaTeX.html">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Difficulty installing moderncv on OS X&#39;" href="http://tex.stackexchange.com/feeds/question/4263">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:3,shownCommentCount:3,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:4263});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('85', '4263');
+            
+                
+        });
+    </script>
+
+
+
+        <script type="text/javascript">
+             StackExchange.ready(function () {
+                 StackExchange.realtime.init('ws://sockets.ny.stackexchange.com');
+                StackExchange.realtime.subscribeToInboxNotifications();
+                                 StackExchange.realtime.subscribeToReputationNotifications('85');            
+                         });
+        </script>
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"https://stackauth.com","serverTime":1347856611,"styleCode":true,"enableUserHovercards":true,"site":{"name":"TeX - LaTeX","description":"Q\u0026A for users of TeX, LaTeX, ConTeXt, and related typesetting systems","isNoticesTabEnabled":true,"enableSocialMediaInSharePopup":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR"},"user":{"isAnonymous":true,"fkey":"41b065598a9d43e3c965b3dfb93d0e10","notificationsUnviewedCount":0,"inboxUnviewedCount":-1}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"d1cd9a23171c","js/moderator.js":"79cf1c340a4d","js/full-anon.js":"526ecec84205","js/full.js":"e0ebef9acda6","js/wmd.js":"203c0f709d69","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"6eb68240242f","js/help.js":"fc9fb0517db2","js/tageditor.js":"c1ba807b32aa","js/tageditornew.js":"bd66fabe1c71","js/inline-tag-editing.js":"be882e188985","js/revisions.js":"8c6bcd93b7fe","js/probes.js":"beb933322ff0","js/review.js":"68a3adc8ac14"});
+        
+    </script>
+<script async="" type="text/javascript" src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/full-anon.js"></script><script async="" type="text/javascript" src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/prettify-full.js"></script></head>
+<body class="question-page">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    
+
+
+
+
+
+
+
+
+
+<span id="hlinks-user">
+
+</span>
+<span id="hlinks-nav">
+                   <a href="http://tex.stackexchange.com/users/login?returnurl=%2fquestions%2f4263%2fdifficulty-installing-moderncv-on-os-x">log in</a>
+
+ <span class="lsep">|</span>
+
+</span>
+<span id="hlinks-custom">
+        <a href="http://chat.stackexchange.com/">chat</a>
+
+ <span class="lsep">|</span>
+                <a href="http://meta.tex.stackexchange.com/">meta</a>
+
+ <span class="lsep">|</span>
+        <a href="http://tex.stackexchange.com/about">about</a>
+
+ <span class="lsep">|</span>
+    <a href="http://tex.stackexchange.com/faq">faq</a>
+
+</span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="http://tex.stackexchange.com/search" method="get" autocomplete="off">
+                    <div>
+                        <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" type="text" maxlength="140" size="28" value="">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://tex.stackexchange.com/">TeX - LaTeX</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://tex.stackexchange.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://tex.stackexchange.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://tex.stackexchange.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://tex.stackexchange.com/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://tex.stackexchange.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://tex.stackexchange.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Article">
+<link itemprop="image" href="http://cdn.sstatic.net/tex/img/apple-touch-icon.png">
+<div id="question-header">
+    <h1 itemprop="name"><a href="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/mactex - Difficulty installing moderncv on OS X - TeX - LaTeX.html" class="question-hyperlink">Difficulty installing moderncv on OS X</a></h1>
+</div>
+<div id="mainbar">
+
+
+
+<div class="question" id="question" data-questionid="4263">
+    
+    <table>
+    <tbody><tr>
+    <td class="votecell">
+        
+
+<div class="vote">
+    <input type="hidden" value="4263">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">3</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+    
+    <a class="star-off" href="http://tex.stackexchange.com/questions/4263/difficulty-installing-moderncv-on-os-x#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>   
+
+ 
+</div>
+
+    </td>
+    
+<td class="postcell">
+<div>          
+    <div class="post-text" itemprop="description">
+        <p>I am trying to install the <a href="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/ZMhRg.png" rel="nofollow">moderncv</a> package on my machine running Mac OS X 10.4.  Here is what I have done: </p>
+
+<ol>
+<li><p>Ran this: 
+<code>% kpsewhich -var-value=TEXMFHOME</code>which returned:
+<code>/Users/jsummers/Library/texmf</code></p></li>
+<li><p>Created the directory: <code>/Users/me/Library/texmf/tex/latex</code></p></li>
+<li><p>Downloaded <code>moderncv-0.12(2).zip</code> and extracted it into the above dir.<br>
+<img src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/ZMhRg.png" alt="alt text"></p></li>
+<li><p>I then ran <code>sudo texhash</code> to let tex know where the files are.<br>
+<img src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/XdBrd.png" alt="alt text"></p></li>
+<li><p>Then I ran this to check if it is installed.  (Neither returned anything). 
+<code>% kpsewhich moderncv</code>
+<code>% kpsewhich moderncv.sty</code></p></li>
+</ol>
+
+<p>What am I missing here?  I have followed the directions on <a href="http://tex.stackexchange.com/questions/1137/where-do-i-place-my-own-sty-files-to-make-them-available-to-all-my-tex-files">Where do I place my own .sty files, to make them available to all my .tex files?</a></p>
+
+    </div>            
+    <div class="post-taglist">
+        <a href="http://tex.stackexchange.com/questions/tagged/installing" class="post-tag" title="show questions tagged &#39;installing&#39;" rel="tag">installing</a> <a href="http://tex.stackexchange.com/questions/tagged/mactex" class="post-tag" title="show questions tagged &#39;mactex&#39;" rel="tag">mactex</a> <a href="http://tex.stackexchange.com/questions/tagged/moderncv" class="post-tag" title="show questions tagged &#39;moderncv&#39;" rel="tag">moderncv</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://tex.stackexchange.com/q/4263" title="short permalink to this question" class="short-link" id="link-post-4263">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/4263/edit" class="suggest-edit-post" title="">improve this question</a></div>
+    </td>
+    <td align="right" class="post-signature">
+
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                            edited
+                             <a href="http://tex.stackexchange.com/posts/4263/revisions" title="show all edits to this post"><span title="2011-11-22 11:55:19Z" class="relativetime">Nov 22 '11 at 11:55</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://tex.stackexchange.com/users/4012/doncherry"><div class=""><img src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/a65ec60b8080583b8f03557d39af0882" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://tex.stackexchange.com/users/4012/doncherry">doncherry</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">9,740</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="32 silver badges"><span class="badge2"></span><span class="badgecount">32</span></span><span title="72 bronze badges"><span class="badge3"></span><span class="badgecount">72</span></span>
+        </div>
+    </div>
+    </td>
+    <td class="post-signature owner">
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    asked
+ <span title="2010-10-18 13:53:01Z" class="relativetime">Oct 18 '10 at 13:53</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://tex.stackexchange.com/users/1333/sixtyfootersdude"><div class=""><img src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/8ca157ced7136108d674acc26e1f8039" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://tex.stackexchange.com/users/1333/sixtyfootersdude">sixtyfootersdude</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">269</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="10 bronze badges"><span class="badge3"></span><span class="badgecount">10</span></span>
+        </div>
+    </div>
+
+        <br class="cbt">
+        <div class="accept-rate accept-answer-link" title="this user has accepted an answer for 6 of 7 eligible questions">86% accept rate</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>    </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4263" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-6312" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">It's a class file, how about <code>kpsewhich moderncv.cls</code>?</span> –&nbsp;<a href="http://tex.stackexchange.com/users/169/juan-a-navarro" title="11343 reputation" class="comment-user">Juan A. Navarro</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(6312, 0)" href="http://tex.stackexchange.com/questions/4263/difficulty-installing-moderncv-on-os-x#comment6312_4263"><span title="2010-10-18 14:13:57Z" class="relativetime-clean">Oct 18 '10 at 14:13</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-6313" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">By the way, <code>moderncv</code> seems to be installed by default (I'm using TeXLive 2010), are you sure it isn't installed already?</span> –&nbsp;<a href="http://tex.stackexchange.com/users/169/juan-a-navarro" title="11343 reputation" class="comment-user">Juan A. Navarro</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(6313, 0)" href="http://tex.stackexchange.com/questions/4263/difficulty-installing-moderncv-on-os-x#comment6313_4263"><span title="2010-10-18 14:16:45Z" class="relativetime-clean">Oct 18 '10 at 14:16</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-6314" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">@Juan.  You are right when I do <code>kpsewhich moderncv.cls</code> it is there.  It appears that I had a different error.  Do you want to put this as an answer and I will accept it?  I am using TeXLive 2009, which does not include moderncv.</span> –&nbsp;<a href="http://tex.stackexchange.com/users/1333/sixtyfootersdude" title="269 reputation" class="comment-user owner">sixtyfootersdude</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(6314, 0)" href="http://tex.stackexchange.com/questions/4263/difficulty-installing-moderncv-on-os-x#comment6314_4263"><span title="2010-10-18 14:31:37Z" class="relativetime-clean">Oct 18 '10 at 14:31</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful" style="color: rgb(136, 136, 136); ">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>    
+</div>
+
+
+    
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>2 Answers</h2>
+            <div id="tabs">
+                <a href="http://tex.stackexchange.com/questions/4263/difficulty-installing-moderncv-on-os-x?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://tex.stackexchange.com/questions/4263/difficulty-installing-moderncv-on-os-x?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://tex.stackexchange.com/questions/4263/difficulty-installing-moderncv-on-os-x?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>    
+    </div>    
+
+
+
+
+
+  
+    <a name="4265"></a>
+    <div id="answer-4265" class="answer" data-answerid="4265">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="4265">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">3</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>The package <code>moderncv</code> comes in a class file, so you should be able to find it as</p>
+
+<pre class="lang-tex prettyprint"><code><span class="pln">&gt; kpsewhich moderncv.cls<br></span></code></pre>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://tex.stackexchange.com/a/4265" title="short permalink to this answer" class="short-link" id="link-post-4265">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/4265/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                    answered
+ <span title="2010-10-18 15:08:45Z" class="relativetime">Oct 18 '10 at 15:08</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://tex.stackexchange.com/users/169/juan-a-navarro"><div class=""><img src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/0fc64917c061575ed136c21f4525d3ee" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://tex.stackexchange.com/users/169/juan-a-navarro">Juan A. Navarro</a><br>
+            <span class="reputation-score" title="reputation score 11343" dir="ltr">11.3k</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="30 silver badges"><span class="badge2"></span><span class="badgecount">30</span></span><span title="80 bronze badges"><span class="badge3"></span><span class="badgecount">80</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4265" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful" style="color: rgb(136, 136, 136); ">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+
+
+  
+    <a name="7511"></a>
+    <div id="answer-7511" class="answer accepted-answer" data-answerid="7511">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="7511">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+            <span class="vote-accepted-on" title="The question owner accepted this as the best answer Dec 21 &#39;10 at 14:19">accepted</span>
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>I upgraded to tex-live 2010 and it worked.  I think that I just had tex live 2009basic installed which I assumed did not have <code>moderncv</code> installed.  I tried what Juan suggested but I think that I was missing to much other stuff.  </p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://tex.stackexchange.com/a/7511" title="short permalink to this answer" class="short-link" id="link-post-7511">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/7511/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature owner">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2010-12-21 14:19:43Z" class="relativetime">Dec 21 '10 at 14:19</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://tex.stackexchange.com/users/1333/sixtyfootersdude"><div class=""><img src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/8ca157ced7136108d674acc26e1f8039" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://tex.stackexchange.com/users/1333/sixtyfootersdude">sixtyfootersdude</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">269</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="10 bronze badges"><span class="badge3"></span><span class="badgecount">10</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-7511" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful" style="color: rgb(136, 136, 136); ">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+    <a name="new-answer"></a>
+    <form id="post-form" action="http://tex.stackexchange.com/questions/4263/answer/submit" method="post" class="post-form">
+        <h2 class="space">Your Answer</h2>
+
+
+
+
+<script type="text/javascript">
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">  
+
+    
+    <div class="wmd-container">
+        <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px; "><span style="background-position: 0px -20px; "></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px; "><span style="background-position: -20px -20px; "></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px; "><span style="background-position: -40px -20px; "></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px; "><span style="background-position: -40px -20px; "></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px; "><span style="background-position: -60px -20px; "></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px; "><span style="background-position: -80px -20px; "></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px; "><span style="background-position: -100px -20px; "></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px; "><span style="background-position: -120px -20px; "></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px; "><span style="background-position: -120px -20px; "></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px; "><span style="background-position: -140px -20px; "></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px; "><span style="background-position: -160px -20px; "></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px; "><span style="background-position: -180px -20px; "></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px; "><span style="background-position: -200px -20px; "></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px; "><span style="background-position: -200px -20px; "></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px; "><span style="background-position: -220px -20px; "></span></li></ul></div>
+        <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="41b065598a9d43e3c965b3dfb93d0e10">
+        <input id="author" name="author" type="text">
+    </div>
+</div>            <div class="form-item">
+        <table>
+        <tbody><tr>
+            <td class="vm open-id-login">
+                <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="http://tex.stackexchange.com/users/login?returnurl=%2fquestions%2f4263%2fdifficulty-installing-moderncv-on-os-x">log in</a>
+                <script type="text/javascript">
+                    StackExchange.ready(function () {
+                        StackExchange.helpers.onClickDraftSave('#login-link');
+                    });
+                </script>
+            </td>
+            <td class="orcell">
+                <div class="orword">or</div>
+                <div class="orline"></div>
+            </td>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="40" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but never shown</span>
+                </div>
+                <div>
+                    <label for="home-page">Home Page</label>
+                    <input id="home-page" name="home-page" type="text" size="40" maxlength="200" value="" tabindex="107">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+           
+            <div class="form-submit cbt">
+            <input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+            <a href="http://tex.stackexchange.com/questions/4263/difficulty-installing-moderncv-on-os-x#" class="discard-answer dno">discard</a>
+    <p class="privacy-policy-agreement">
+        By posting your answer, you agree to the 
+        <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and 
+        <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.
+    </p>
+        </div>
+    </form>
+
+
+
+        <h2 class="bottom-notice">
+                Not the answer you're looking for? 
+            Browse other questions tagged <a href="http://tex.stackexchange.com/questions/tagged/installing" class="post-tag" title="show questions tagged &#39;installing&#39;" rel="tag">installing</a> <a href="http://tex.stackexchange.com/questions/tagged/mactex" class="post-tag" title="show questions tagged &#39;mactex&#39;" rel="tag">mactex</a> <a href="http://tex.stackexchange.com/questions/tagged/moderncv" class="post-tag" title="show questions tagged &#39;moderncv&#39;" rel="tag">moderncv</a> 
+                or <a href="http://tex.stackexchange.com/questions/ask">ask your own question</a>.
+        </h2>
+</div>
+</div>
+<div id="sidebar">
+
+
+
+     <script type="text/javascript">
+        window.showNewUser = true;
+
+            
+                (function(){
+                    var cs = window.sessionStorage && window.sessionStorage['tNewsletter'];
+                    var m = /:\/\/([^\/]*)/.exec(document.referrer);
+                    var h = {'www.reddit.com':1,'news.ycombinator.com':1};
+                    if(window.sessionStorage && (cs || (m && m.length == 2 && h[m[1]]))){
+                        showNewUser = false;
+                        StackExchange.ready(function(){
+                            StackExchange.newsletterAd.loader(m[1], cs);
+                        });
+                    }
+                    if (window.localStorage && showNewUser){
+                        var c = parseInt(localStorage['nuCounter'],10); 
+                        c = isNaN(c) ? 1 : c+1;
+                        window.localStorage['nuCounter'] = c; 
+                        showNewUser = c < 10;
+                    }
+                })()
+            
+     </script>
+    <div class="module newuser newuser-greeting" id="newuser-box" style="">
+        <h4>Welcome!</h4>
+        <div>
+            <p>This is a collaboratively edited question and answer site for <b>users of TeX, LaTeX, ConTeXt, and related typesetting systems</b>. It's 100% free, no registration required.</p><p>Got a question about the site itself? <a href="http://meta.tex.stackexchange.com/">meta</a> is the place to talk about things like what questions are appropriate, what tags we should use, etc.</p>
+            <p class="ar"><a href="http://tex.stackexchange.com/about?mnu=1">about »</a>&nbsp;&nbsp;&nbsp;<a href="http://tex.stackexchange.com/faq?mnu=1">faq »</a>
+&nbsp; <a href="http://meta.tex.stackexchange.com/">meta »</a>            </p>
+        </div>
+    </div>
+     <script type="text/javascript">
+        if (showNewUser) {
+            document.getElementById('newuser-box').style.display = '';
+        }
+     </script>
+        <div class="module question-stats">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://tex.stackexchange.com/questions/tagged/installing" class="post-tag" title="show questions tagged &#39;installing&#39;" rel="tag">installing</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">310</span></span><br>
+<a href="http://tex.stackexchange.com/questions/tagged/mactex" class="post-tag" title="show questions tagged &#39;mactex&#39;" rel="tag">mactex</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">75</span></span><br>
+<a href="http://tex.stackexchange.com/questions/tagged/moderncv" class="post-tag" title="show questions tagged &#39;moderncv&#39;" rel="tag">moderncv</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">70</span></span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left:10px"><p class="label-key" title="2010-10-18 13:53:01Z"><b>1 year ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left:10px">
+                    <p class="label-key">
+                        <b>1285 times</b>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left:10px"><p class="label-key"><b><a href="http://tex.stackexchange.com/questions/4263/difficulty-installing-moderncv-on-os-x?lastactivity" class="lastactivity-link" title="2011-11-22 11:55:19Z">9 months ago</a></b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+    
+<div class="module community-bulletin" data-tracker="cb=1">
+    <h4>Community Bulletin</h4>
+    <div class="related">
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://meta.tex.stackexchange.com/?cb=1" class="event-date" target="_blank">meta</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://meta.tex.stackexchange.com/questions/2750/what-is-the-most-polite-way-to-ask-for-more-help-on-a-basic-or-too-localized-que?cb=1" class="question-hyperlink" target="_blank">What is the most polite way to ask for more help on a basic or too localized …</a>
+            </div>
+            <br class="cbt">
+        </div>
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://meta.tex.stackexchange.com/?cb=1" class="event-date" target="_blank">meta</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://meta.tex.stackexchange.com/questions/2753/is-it-okay-to-ask-the-op-to-accept-the-answer?cb=1" class="question-hyperlink" target="_blank">Is it okay to ask the OP to accept the answer?</a>
+            </div>
+            <br class="cbt">
+        </div>
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://tex.blogoverflow.com/?cb=1" class="event-date" target="_blank">blog</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://tex.blogoverflow.com/2012/09/textalk-an-interview-with-joseph-wright/?cb=1" class="question-hyperlink" target="_blank">TeXtalk: an interview with Joseph Wright</a>
+            </div>
+            <br class="cbt">
+        </div>
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://meta.tex.stackexchange.com/?cb=1" class="event-date" target="_blank">meta</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://meta.tex.stackexchange.com/questions/2740/from-answers-to-packages?cb=1" class="question-hyperlink" target="_blank">From Answers to Packages</a>
+            </div>
+            <br class="cbt">
+        </div>
+    </div>
+</div>    
+    
+
+<div class="module" id="chat-feature">
+    
+
+    
+<h4><a href="http://chat.stackexchange.com/" id="h-chat-link" title="24 users active in 18 rooms the last 60 minutes">24 People Chatting</a></h4>
+
+<div class="related" id="ad502-rooms"><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="TeX, LaTeX and Friends"><a href="http://chat.stackexchange.com/rooms/41">TeX, LaTeX and Friends</a></span></h3><span title="2012-09-17 01:17:37Z" class="ad502-last-message">3 hours ago - <a href="http://chat.stackexchange.com/users/38605">Harish Kumar</a></span><br><div class="ad502-users"><a href="http://chat.stackexchange.com/users/45678"><img title="Gnintendo: 6 hours ago" src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/ec1f8122c36642e77e2137ea2692d1af"></a><a href="http://chat.stackexchange.com/users/20341"><img title="Werner: 14 hours ago" src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/2755fad858b65fead337857525eab28e"></a><a href="http://chat.stackexchange.com/users/35053"><img title="Stephan Lehmke: 17 hours ago" src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/8327d298ef5bef54e33cc856eaa125b1"></a><a href="http://chat.stackexchange.com/users/14050"><img title="Jack Schmidt: Sep 14 at 6:26" src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/1a2dc63ec19c72f81428e9a9f28d069d"></a><a href="http://chat.stackexchange.com/users/32232"><img title="J G: Sep 13 at 4:32" src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/b31428579dbbf27343d0229ba27b9005"></a></div></div><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="From Answers to Packages"><a href="http://chat.stackexchange.com/rooms/409">From Answers to Packages</a></span></h3><span title="2012-09-15 11:23:38Z" class="ad502-last-message">yesterday - <a href="http://chat.stackexchange.com/users/35053">Stephan Lehmke</a></span><br><div class="ad502-users"><a href="http://chat.stackexchange.com/users/35053"><img title="Stephan Lehmke: yesterday" src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/8327d298ef5bef54e33cc856eaa125b1"></a></div></div></div>
+<script type="text/javascript">
+// <!--
+    StackExchange.ready(
+    function () {
+        var options = {
+            chatUrl: 'http://chat.stackexchange.com',
+            reloadUrl: '/api/recent-chat',
+            preloadData: {"activeUsers":24,"activeRooms":18,"rooms":[{"name":"TeX, LaTeX and Friends","id":41,"lastPost":1347844657,"posts":107511,"users":[{"name":"Gnintendo","id":45678,"emailhash":"ec1f8122c36642e77e2137ea2692d1af","lastPost":1347831868},{"name":"Werner","id":20341,"emailhash":"2755fad858b65fead337857525eab28e","lastPost":1347804294},{"name":"Stephan Lehmke","id":35053,"emailhash":"8327d298ef5bef54e33cc856eaa125b1","lastPost":1347792414},{"name":"Jack Schmidt","id":14050,"emailhash":"1a2dc63ec19c72f81428e9a9f28d069d","lastPost":1347584210},{"name":"J G","id":32232,"emailhash":"b31428579dbbf27343d0229ba27b9005","lastPost":1347490973}],"messages":[{"date":1347844657,"user":"Harish Kumar","userid":38605}],"singleImage":false,"tags":[]},{"name":"From Answers to Packages","id":409,"lastPost":1347708218,"posts":983,"users":[{"name":"Stephan Lehmke","id":35053,"emailhash":"8327d298ef5bef54e33cc856eaa125b1","lastPost":1347708218}],"messages":[{"date":1347708218,"user":"Stephan Lehmke","userid":35053}],"singleImage":false,"tags":[]}]} 
+        };
+
+        StackExchange.chatAd.init(options);
+    });
+// -->
+</script>
+
+</div>
+      
+    
+    <div class="module sidebar-linked">
+        <h4 id="h-linked">Linked</h4>
+        <div class="linked" data-tracker="lq=1">
+            <div class="spacer">
+<a href="http://tex.stackexchange.com/questions/1137/where-do-i-place-my-own-sty-files-to-make-them-available-to-all-my-tex-files?lq=1" class="question-hyperlink">Where do I place my own .sty files, to make them available to all my .tex files?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/4264/latex-error-file-marvosym-sty-not-found?lq=1" class="question-hyperlink">LaTeX Error: File `marvosym.sty' not found.</a>
+</div>
+
+        </div>
+    </div>
+    <div class="module sidebar-related">
+        <h4 id="h-related">Related</h4>
+        <div class="related" data-tracker="rq=1">
+            <div class="spacer">
+<a href="http://tex.stackexchange.com/questions/11148/how-do-i-install-tikz-on-a-macbook?rq=1" class="question-hyperlink">How do I install TikZ on a MacBook?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/11859/unbreakable-cventry-in-moderncv?rq=1" class="question-hyperlink">Unbreakable cventry in moderncv</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/12996/changing-margins-in-moderncv?rq=1" class="question-hyperlink">Changing margins in moderncv</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/13000/bulleted-lists-in-moderncv-cventry?rq=1" class="question-hyperlink">Bulleted lists in moderncv cventry</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/13785/modify-moderncv-header?rq=1" class="question-hyperlink">Modify moderncv header</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/14367/trouble-installing-mathtimes-pro-2-mactex?rq=1" class="question-hyperlink">Trouble Installing MathTimes Pro 2 (MacTex)</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/14559/moderncv-themes?rq=1" class="question-hyperlink">moderncv themes</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/15099/installing-tabu-sty-with-mactex-2010?rq=1" class="question-hyperlink">Installing tabu.sty with MacTeX 2010.</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/26165/uninstall-mactex-2010?rq=1" class="question-hyperlink">Uninstall MacTeX 2010</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/31249/moderncv-how-to-adjust-the-description-columns?rq=1" class="question-hyperlink">moderncv - how to adjust the description columns?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/32649/template-for-a-german-cv-with-moderncv?rq=1" class="question-hyperlink">Template for a German CV with moderncv</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/34851/problem-installing-mactex-2011-1-on-osx-10-4-11?rq=1" class="question-hyperlink">Problem Installing MacTeX-2011-1 on OSX 10.4.11</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/35734/installing-packages-on-tex-live-2011-mac?rq=1" class="question-hyperlink">Installing packages on Tex Live 2011 (Mac)</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/42309/latex-for-mac-lion-2011-how-to-add-cls-file?rq=1" class="question-hyperlink">LaTeX for Mac (lion) 2011 - how to add cls file?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/46123/page-breaks-within-moderncv?rq=1" class="question-hyperlink">Page breaks within moderncv</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/48500/footnote-in-moderncv?rq=1" class="question-hyperlink">Footnote in moderncv</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/51526/why-cant-i-install-mactex-or-basictex-on-my-mac?rq=1" class="question-hyperlink">Why can't I install MacTeX or BasicTeX on my Mac?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/58586/how-to-add-new-command-in-moderncv-template?rq=1" class="question-hyperlink">How to add new command in moderncv template?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/59044/moderncv-package-cventry-date-width?rq=1" class="question-hyperlink">Moderncv package - cventry date width</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/59887/moderncv-doesnt-compile-with-email-homepage-or-phone?rq=1" class="question-hyperlink">moderncv doesn't compile with email, homepage or phone</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/61818/moderncv-newline-within-a-cventry?rq=1" class="question-hyperlink">moderncv - newline within a cventry</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/62873/newline-not-working-in-moderncv-doctype?rq=1" class="question-hyperlink">\newline not working in moderncv doctype</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/64066/how-to-use-moderncv-for-creating-resume-in-mac-os-x-10-6?rq=1" class="question-hyperlink">How to use modernCV for creating resume in Mac OS X 10.6?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/66316/moderncv-how-to-adjust-the-personal-info?rq=1" class="question-hyperlink">moderncv - how to adjust the personal info</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/67426/literature-in-moderncv?rq=1" class="question-hyperlink">Literature in ModernCV</a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://tex.stackexchange.com/feeds/question/4263" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+<script type="text/javascript">
+StackExchange.ready(function(){$.get('/posts/4263/ivc/4a75');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/4263/ivc/4a75" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-tex</div></div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="http://tex.stackexchange.com/about">about</a> |
+                <a href="http://tex.stackexchange.com/faq">faq</a> |
+                <a href="http://tex.blogoverflow.com/?blb=1">blog</a> |
+                    <a href="http://chat.stackexchange.com/">chat</a> |
+                <a href="http://data.stackexchange.com/">data</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a> |
+                <a href="http://stackexchange.com/about/hiring">jobs</a> |
+                <a href="http://stackexchange.com/about/contact">advertising info</a> |
+
+                <a onclick="StackExchange.switchMobile(&#39;on&#39;, &#39;/questions/4263/difficulty-installing-moderncv-on-os-x&#39;)">mobile</a> |
+
+                <b><a href="http://tex.stackexchange.com/help">contact us</a></b>
+                  | <b><a href="http://meta.tex.stackexchange.com/">feedback</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackoverflow.com/">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackapps.com/">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://careers.stackoverflow.com/">careers</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">■</span>&nbsp;<a href="http://serverfault.com/">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">■</span>&nbsp;<a href="http://superuser.com/">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">■</span>&nbsp;<a href="http://meta.stackoverflow.com/">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">■</span>&nbsp;<a href="http://area51.stackexchange.com/">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">■</span>&nbsp;<a href="http://webapps.stackexchange.com/">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">■</span>&nbsp;<a href="http://gaming.stackexchange.com/">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">■</span>&nbsp;<a href="http://askubuntu.com/">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">■</span>&nbsp;<a href="http://webmasters.stackexchange.com/">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">■</span>&nbsp;<a href="http://cooking.stackexchange.com/">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">■</span>&nbsp;<a href="http://gamedev.stackexchange.com/">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">■</span>&nbsp;<a href="http://math.stackexchange.com/">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">■</span>&nbsp;<a href="http://photo.stackexchange.com/">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">■</span>&nbsp;<a href="http://stats.stackexchange.com/">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">■</span>&nbsp;<a href="http://tex.stackexchange.com/">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">■</span>&nbsp;<a href="http://english.stackexchange.com/">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">■</span>&nbsp;<a href="http://cstheory.stackexchange.com/">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">■</span>&nbsp;<a href="http://programmers.stackexchange.com/">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">■</span>&nbsp;<a href="http://unix.stackexchange.com/">unix</a>&nbsp;
+                        <span style="color:#bec0cb;font-size:140%">■</span>&nbsp;<a href="http://apple.stackexchange.com/">apple</a>&nbsp;
+                        <span style="color:#939185;font-size:140%">■</span>&nbsp;<a href="http://wordpress.stackexchange.com/">wordpress</a>&nbsp;
+                        <span style="color:#ebf5f5;font-size:140%">■</span>&nbsp;<a href="http://physics.stackexchange.com/">physics</a>&nbsp;
+                        <span style="color:#4176ab;font-size:140%">■</span>&nbsp;<a href="http://diy.stackexchange.com/">home&nbsp;improvement</a>&nbsp;
+                        <span style="color:#d1d8d7;font-size:140%">■</span>&nbsp;<a href="http://gis.stackexchange.com/">gis</a>&nbsp;
+                        <span style="color:#e5e2d3;font-size:140%">■</span>&nbsp;<a href="http://electronics.stackexchange.com/">electrical&nbsp;engineering</a>&nbsp;
+                        <span style="color:#a4c639;font-size:140%">■</span>&nbsp;<a href="http://android.stackexchange.com/">android</a>&nbsp;
+                        <span style="color:#2e4e60;font-size:140%">■</span>&nbsp;<a href="http://security.stackexchange.com/">security</a>&nbsp;
+                        <span style="color:#45bcb5;font-size:140%">■</span>&nbsp;<a href="http://bicycles.stackexchange.com/">bicycles</a>&nbsp;
+                        <span style="color:#00adee;font-size:140%">■</span>&nbsp;<a href="http://dba.stackexchange.com/">dba</a>&nbsp;
+                        <span style="color:#2edaf0;font-size:140%">■</span>&nbsp;<a href="http://drupal.stackexchange.com/">drupal</a>&nbsp;
+                        <span style="color:#213951;font-size:140%">■</span>&nbsp;<a href="http://sharepoint.stackexchange.com/">sharepoint</a>&nbsp;
+                        <span style="color:#73abb3;font-size:140%">■</span>&nbsp;<a href="http://scifi.stackexchange.com/">scifi &amp; fantasy</a>&nbsp;
+                        <span style="color:#23629F;font-size:140%">■</span>&nbsp;<a href="http://ux.stackexchange.com/">user experience</a>&nbsp;
+                        <span style="color:#faff72;font-size:140%">■</span>&nbsp;<a href="http://skeptics.stackexchange.com/">skeptics</a>&nbsp;
+                        <span style="color:#623121;font-size:140%">■</span>&nbsp;<a href="http://rpg.stackexchange.com/">rpg</a>&nbsp;
+                        <span style="color:#e4be88;font-size:140%">■</span>&nbsp;<a href="http://judaism.stackexchange.com/">judaism</a>&nbsp;
+                        <span style="color:#ffecb1;font-size:140%">■</span>&nbsp;<a href="http://mathematica.stackexchange.com/">mathematica</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2012.9.16.4093</div>
+                        </div>
+            <div id="copyright">
+                site design / logo © 2012 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            
+
+        </div>
+    <iframe id="global-auth-frame" style="display:none" src="./mactex - Difficulty installing moderncv on OS X - TeX - LaTeX_files/read.html"></iframe></div>
+    
+    <noscript>
+        &lt;div id="noscript-warning"&gt;TeX - LaTeX - Stack Exchange works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-24']);
+        _gaq.push(['_setDomainName','.stackexchange.com']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|installing|mactex|moderncv|']); 
+_gaq.push(['_trackPageview']);
+    var _qevents = _qevents || [];
+    (function(){
+        var s=document.getElementsByTagName('script')[0];
+        var ga=document.createElement('script');
+        ga.type='text/javascript';
+        ga.async=true;
+        ga.src='http://www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(ga,s);
+        var sc=document.createElement('script');
+        sc.type='text/javascript';
+        sc.async=true;
+        sc.src='http://edge.quantserve.com/quant.js'; 
+        s.parentNode.insertBefore(sc,s);
+    })();
+    </script>
+    <script type="text/javascript">
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>    
+    
+
+</body></html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0055)http://www.toofishes.net/blog/why-i-do-my-resume-latex/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=640">
+  <link rel="stylesheet" type="text/css" href="./toofishes.net - Why I do my résumé in LaTeX_files/style-14.css">
+  <title>toofishes.net - Why I do my résumé in LaTeX</title>
+  
+<link rel="stylesheet" type="text/css" href="./toofishes.net - Why I do my résumé in LaTeX_files/prettify.css">
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="header">
+      
+      <h1>toofishes.net</h1>
+      
+    </div>
+    <div id="navbar">
+      
+      <ul class="navigation">
+        <li><a href="http://www.toofishes.net/">Home</a></li>
+        <li><a href="http://www.toofishes.net/about/">About</a></li>
+        <li><a href="http://www.toofishes.net/blog/">Blog</a></li>
+        <li><a href="http://code.toofishes.net/cgit/">Code</a></li>
+        
+      </ul>
+      
+    </div>
+    <div id="main">
+      
+<div class="postsingle postlast">
+	<h2 class="posttitle">Why I do my résumé in LaTeX</h2>
+	<h4 class="postpubdate">Posted May 4, 2010 at 8:36 a.m.</h4>
+	<div class="postcontent">
+		<p>I'm guessing most of you have seen the comic explaining <a href="http://stevehanov.ca/blog/index.php?id=56">how a programmer reads your résumé</a>. No, I don't do my résumé in LaTeX just to get the +12 bonus. There are a handful of reasons I think it is a good idea.</p>
+<h3>It stands out</h3>
+<p>My résumé isn't written in 12 pt. Arial or Times New Roman, which sets it apart from 75% of résumés. It also has formatting and full justification that looks more like a well-written article or publication than a high school research paper.</p>
+<p>Contrary to the common belief, using a font other than <a href="http://en.wikipedia.org/wiki/Computer_Modern">Computer Modern</a> in LaTeX isn't all that hard. I use <a href="http://www.tug.dk/FontCatalogue/tgpagella/">TeX Gyre Pagella</a> for my résumé and it looks really nice. I'd suggest looking around the examples at the <a href="http://www.tug.dk/FontCatalogue/">LaTeX Font Catalogue</a> and finding one that works for you. Stay away from <em>Times</em>, of course- you want your résumé to look just enough different that it stands out.</p>
+<h3>Format once, change the content a lot</h3>
+<p>Once I got the formatting looking good on my résumé, I was able to stop futzing around with the layout and just work on the content. Gone are the days when I had to manually adjust the line spacing by 0.1 em because I didn't have quite enough to fill the page, or decrease the font size by 0.5 pt because I added just enough stuff to spill onto a second page. LaTeX does a phenomenal job of preventing page spills and takes care of all of this for you.</p>
+<p>I touched on this in the previous section, but LaTeX is obviously meant for typesetting. This means using full justification doesn't look like crap because it takes the entire paragraph into consideration when deciding where to put the line breaks. This will look 10x better than doing full justification in Microsoft Word or OpenOffice (which just wrap a line when the remaining paragraph contents will no longer fit).</p>
+<p>Even when I do change the formatting, I am able to immediately see the results by just running <code>pdflatex</code> over and over until it looks right. I don't have to worry about the word processor showing it one way but print to PDF changing the line wrapping or something.</p>
+<h3>I can put it in version control</h3>
+<p>I didn't originally switch to LaTeX for this reason, but now that I have been doing my résumé this way it makes so much sense. Version control can handle checking in an OpenOffice file, but it doesn't give you any added benefit of being able to easily see the difference between version A and version B. Regardless of what VCS you use, this has been such a good idea in so many ways:</p>
+<ul>
+<li>I don't have a directory on my computer with <em>resume-1.doc</em>, <em>resume-2.doc</em>, <em>resume-3 career fair Mar 25.doc</em>, and <em>resume-3 career fair Mar 25(2).doc</em>. I hope that is self-explanatory.</li>
+<li>If I wonder "why did I put that in there?" 6 months later when revising my résumé, it is easy to track the reasoning down.</li>
+<li>Dumb changes are a <code>git checkout</code> away from being killed, instead of having to try and remember what you started with before your résumé editing session.</li>
+<li>Expunging old positions and bullet points from the résumé is no longer scary. Knowing I will always be able to go back and see what I got rid of is comforting.</li>
+</ul>
+<h3>Other reasons</h3>
+<p>These aren't quite worth a header of their own, but they are still important.</p>
+<ul>
+<li>I can type <code>\LaTeX</code> in my skills section and get a nice symbol (and inside joke) that some people might appreciate: <img src="./toofishes.net - Why I do my résumé in LaTeX_files/LaTeX_logo.png" alt="LaTeX logo" style="margin-bottom: -7px;"></li>
+<li>It makes working on your résumé suck less. No one likes to spend hours figuring out how to phrase some achievement or position at a job; at least I get to do it in a markup language using vim rather than staring at a word processor and some horrible tables layout that is sure to break.</li>
+</ul>
+<h3>Some helpful tips</h3>
+<p>It did take me a non-trivial amount of time to get a good base layout going. I'd recommend something like the following to get started:</p>
+<pre class="prettyprint lang-latex"><code class="lang-latex"><span class="com">% resume.tex</span><span class="pln">
+</span><span class="com">% vim:set ft=tex spell:</span><span class="pln">
+</span><span class="kwd">\documentclass</span><span class="pun">[</span><span class="lit">10pt</span><span class="pln">,letterpaper</span><span class="pun">]{</span><span class="pln">article</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\usepackage</span><span class="pun">[</span><span class="pln">letterpaper,margin</span><span class="pun">=</span><span class="lit">0.8in</span><span class="pun">]{</span><span class="pln">geometry</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">mdwlist</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\usepackage</span><span class="pun">[</span><span class="pln">T1</span><span class="pun">]{</span><span class="pln">fontenc</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">textcomp</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\pagestyle</span><span class="pun">{</span><span class="pln">empty</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\setlength</span><span class="pun">{</span><span class="kwd">\tabcolsep</span><span class="pun">}{</span><span class="lit">0em</span><span class="pun">}</span></code></pre>
+
+<p>Use macros to your advantage. A lot of style/layout repetition happens in a résumé, and it makes it a lot easier to change it if you only have to define it in once place. I have a macro for my so-called "header rows" (job title or company name paired with timeframe) that makes things a lot less complex. I also have helpful macros like the following:</p>
+<pre class="prettyprint lang-latex"><code class="lang-latex"><span class="com">% make "C++" look pretty when used in text by touching up the plus signs</span><span class="pln">
+</span><span class="kwd">\newcommand</span><span class="pun">{</span><span class="kwd">\CPP</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">C</span><span class="kwd">\nolinebreak</span><span class="pun">[</span><span class="pln">4</span><span class="pun">]</span><span class="kwd">\hspace</span><span class="pun">{</span><span class="lit">-.05em</span><span class="pun">}</span><span class="kwd">\raisebox</span><span class="pun">{</span><span class="lit">.22ex</span><span class="pun">}{</span><span class="kwd">\footnotesize\bf</span><span class="pln"> ++</span><span class="pun">}}</span></code></pre>
+
+<p><em>Edit:</em> I posted a <a href="http://www.toofishes.net/blog/latex-resume-follow-up/">follow-up post</a> with an example template and picture for those who inquired in the comments.</p>
+	</div>
+	<div class="postinfo">
+		<div class="categories">
+			<span><a href="http://www.toofishes.net/blog/tags/latex/">latex</a></span>
+			<span><a href="http://www.toofishes.net/blog/tags/personal/">personal</a></span>
+		</div>
+	</div>
+	
+	
+	<div class="similar">
+		<h3 class="similartitle">Similar Posts</h3>
+		<div class="similarposts">
+			<ul>
+				
+				<li><a href="http://www.toofishes.net/blog/disabling-firefox-7-trimmed-urls/">Disabling Firefox 7 trimmed URLs</a> - Sept. 28, 2011</li>
+				
+				<li><a href="http://www.toofishes.net/blog/no-thanks-paypal/">No Thanks, PayPal</a> - Aug. 22, 2011</li>
+				
+				<li><a href="http://www.toofishes.net/blog/july-4th-chicago/">July 4th in Chicago</a> - July 6, 2011</li>
+				
+				<li><a href="http://www.toofishes.net/blog/firefox-context-menu-switcharoo/">Firefox context menu switcharoo</a> - March 23, 2011</li>
+				
+				<li><a href="http://www.toofishes.net/blog/freelancing-chicago-part-2/">Freelancing in Chicago – Part 2</a> - Jan. 20, 2011</li>
+				
+			</ul>
+		</div>
+	</div>
+	
+	
+
+	<div class="comments">
+		<a name="comments" id="comments"></a>
+		<h3 class="commenttitle">Comments (6)</h3>
+		
+		<a name="c516" id="c516"></a>
+		<div class="comment" id="cm_516">
+			
+			<span class="commentheader">Anon on May 4, 2010 at 9:15 a.m.:</span>
+			
+			<blockquote class="commenttext"><p>Can you show us your resume?</p></blockquote>
+		</div>
+		
+		<a name="c517" id="c517"></a>
+		<div class="comment" id="cm_517">
+			
+			<span class="commentheader"><a href="http://www.angvp.com.ar/">angvp</a> on May 4, 2010 at 11:21 a.m.:</span>
+			
+			<blockquote class="commenttext"><p>I do use LaTeX for my CV too, but I used the template moderncv did you use any template or just a plain document with styles?</p>
+
+<p>Show us a demo hehe, we are curious :)</p></blockquote>
+		</div>
+		
+		<a name="c518" id="c518"></a>
+		<div class="comment" id="cm_518">
+			
+			<span class="commentheader"><a href="http://velmont.no/">Velmont</a> on May 4, 2010 at 11:28 a.m.:</span>
+			
+			<blockquote class="commenttext"><p>See resume +1. :-)</p>
+
+<p>And maybe even source ;-) You can maybe Donald Duck-ify it first though. :]</p></blockquote>
+		</div>
+		
+		<a name="c519" id="c519"></a>
+		<div class="comment mine" id="cm_519">
+			
+			<span class="commentheader">Dan McGee on May 4, 2010 at 11:53 a.m.:</span>
+			
+			<blockquote class="commenttext"><p>Well it looks like my résumé is in more popular than I thought. I'll think about putting at least a demo one that uses my "template", but if you have real reason to ask for my actual resume let me know why in an email and I'll see what I can do.</p>
+
+<p>Speaking of template, I did not use any pre-existing template; I simply came up with some styles of my own to work from and went from there. I did not know about moderncv, but I also wanted something that would look good both on screen and printed out in black and white.</p></blockquote>
+		</div>
+		
+		<a name="c520" id="c520"></a>
+		<div class="comment" id="cm_520">
+			
+			<span class="commentheader">Travis on May 4, 2010 at 2:01 p.m.:</span>
+			
+			<blockquote class="commenttext"><p>I'd also love to see a template resume in your style (and the source that generated it)</p></blockquote>
+		</div>
+		
+		<a name="c619" id="c619"></a>
+		<div class="comment" id="cm_619">
+			
+			<span class="commentheader">Dave on July 15, 2010 at 12:08 p.m.:</span>
+			
+			<blockquote class="commenttext"><p>Amen, dude! :)</p></blockquote>
+		</div>
+		
+		
+		
+	</div>
+</div>
+
+    </div>
+    <div id="footer">
+      
+      <div id="copyright">Content Copyright © 2007-2012, Dan McGee</div>
+      <div class="clear"></div>
+      
+    </div>
+  </div>
+  
+  <script type="text/javascript" src="./toofishes.net - Why I do my résumé in LaTeX_files/jquery.min.js"></script>
+  <script type="text/javascript" src="./toofishes.net - Why I do my résumé in LaTeX_files/script-5.js"></script>
+  
+<script type="text/javascript" src="./toofishes.net - Why I do my résumé in LaTeX_files/prettify-combined.js"></script>
+<script type="text/javascript">
+  $(document).ready(makePretty);
+</script>
+
+  
+
+
+
+</body></html>

@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)http://stackoverflow.com/questions/2329571/c-libcurl-get-output-into-a-string -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>C libcurl get output into a string - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+
+    
+    <script type="text/javascript" async="" src="./C libcurl get output into a string - Stack Overflow_files/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44"></script><script type="text/javascript" async="" src="./C libcurl get output into a string - Stack Overflow_files/ga.js"></script><script type="text/javascript" async="" src="./C libcurl get output into a string - Stack Overflow_files/quant.js"></script><script type="text/javascript" src="./C libcurl get output into a string - Stack Overflow_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./C libcurl get output into a string - Stack Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="./C libcurl get output into a string - Stack Overflow_files/all.css">
+    
+    <meta name="relativepagescore" content="166828">
+    <link rel="canonical" href="./C libcurl get output into a string - Stack Overflow_files/C libcurl get output into a string - Stack Overflow.html">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;C libcurl get output into a string&#39;" href="http://stackoverflow.com/feeds/question/2329571">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:2329571});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '2329571');
+            
+                
+        });
+    </script>
+
+
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"https://stackauth.com","serverTime":1347168158,"styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q\u0026A for professional and enthusiast programmers","isNoticesTabEnabled":true,"enableSocialMediaInSharePopup":true},"user":{"isAnonymous":true,"fkey":"6a8e72ba0ea3e27082bf30a8db306aad","notificationsUnviewedCount":0,"inboxUnviewedCount":-1}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"d1cd9a23171c","js/moderator.js":"79cf1c340a4d","js/full-anon.js":"6460f26b3b59","js/full.js":"7fd348271049","js/wmd.js":"93b92575f8bc","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"6eb68240242f","js/help.js":"fc9fb0517db2","js/tageditor.js":"c1ba807b32aa","js/tageditornew.js":"bd66fabe1c71","js/inline-tag-editing.js":"be882e188985","js/revisions.js":"8c6bcd93b7fe","js/probes.js":"beb933322ff0","js/review.js":"def3bab7727b"});
+        
+    </script>
+<script async="" type="text/javascript" src="./C libcurl get output into a string - Stack Overflow_files/full-anon.js"></script><script async="" type="text/javascript" src="./C libcurl get output into a string - Stack Overflow_files/prettify-full.js"></script><link href="./C libcurl get output into a string - Stack Overflow_files/sidebar.min.css" type="text/css" rel="stylesheet"></head>
+<body class="question-page">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    
+
+
+
+
+
+
+
+
+
+<span id="hlinks-user">
+
+</span>
+<span id="hlinks-nav">
+                   <a href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f2329571%2fc-libcurl-get-output-into-a-string">log in</a>
+
+ <span class="lsep">|</span>
+                    <a href="http://careers.stackoverflow.com/">careers</a>
+
+ <span class="lsep">|</span>
+
+</span>
+<span id="hlinks-custom">
+        <a href="http://chat.stackoverflow.com/">chat</a>
+
+ <span class="lsep">|</span>
+            <a href="http://meta.stackoverflow.com/">meta</a>
+
+ <span class="lsep">|</span>
+        <a href="http://stackoverflow.com/about">about</a>
+
+ <span class="lsep">|</span>
+    <a href="http://stackoverflow.com/faq">faq</a>
+
+</span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <div>
+                        <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" type="text" maxlength="140" size="28" value="">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Article">
+<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+<div id="question-header">
+    <h1 itemprop="name"><a href="./C libcurl get output into a string - Stack Overflow_files/C libcurl get output into a string - Stack Overflow.html" class="question-hyperlink">C libcurl get output into a string</a></h1>
+</div>
+<div id="mainbar">
+
+
+
+<div class="question" id="question" data-questionid="2329571">
+    
+    <div class="everyonelovesstackoverflow" id="adzerk1"><a href="http://engine.adzerk.net/redirect/0/10769/2444/8277/28b353bee43e4dcf87950562dce75ef0/43/1178/16886/634827649593454510/?keywords=c%2clibcurl" rel="nofollow" target="_blank" title=""><img src="./C libcurl get output into a string - Stack Overflow_files/d893babe671c41118c1fece177e0a21a.jpg" title="" alt="" border="0" height="90" width="728"></a><img width="0" height="0" src="./C libcurl get output into a string - Stack Overflow_files/v.gif"></div>
+
+    
+    <table>
+    <tbody><tr>
+    <td class="votecell">
+        
+
+<div class="vote">
+    <input type="hidden" value="2329571">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">3</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+    
+    <a class="star-off" href="http://stackoverflow.com/questions/2329571/c-libcurl-get-output-into-a-string#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>1</b></div>   
+
+ 
+</div>
+
+    </td>
+    
+<td class="postcell">
+<div>          
+    <div class="post-text" itemprop="description">
+        <p>hi there i want to get into a var the result of this curl funcion
+how can i do?
+thanks!</p>
+
+<pre class="lang-c prettyprint"><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln"><br></span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;curl/curl.h&gt;</span><span class="pln"><br><br></span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; CURL </span><span class="pun">*</span><span class="pln">curl</span><span class="pun">;</span><span class="pln"><br>&nbsp; </span><span class="typ">CURLcode</span><span class="pln"> res</span><span class="pun">;</span><span class="pln"><br><br>&nbsp; curl </span><span class="pun">=</span><span class="pln"> curl_easy_init</span><span class="pun">();</span><span class="pln"><br>&nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; curl_easy_setopt</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">,</span><span class="pln"> CURLOPT_URL</span><span class="pun">,</span><span class="pln"> </span><span class="str">"curl.haxx.se"</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; res </span><span class="pun">=</span><span class="pln"> curl_easy_perform</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">);</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="com">/* always cleanup */</span><span class="pln"><br>&nbsp; &nbsp; curl_easy_cleanup</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">);</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p>thanks i solve like this:</p>
+
+<pre class="lang-c prettyprint"><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln"><br></span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdlib.h&gt;</span><span class="pln"><br></span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;curl/curl.h&gt;</span><span class="pln"><br><br>function_pt</span><span class="pun">(</span><span class="kwd">void</span><span class="pln"> </span><span class="pun">*</span><span class="pln">ptr</span><span class="pun">,</span><span class="pln"> size_t size</span><span class="pun">,</span><span class="pln"> size_t nmemb</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="pun">*</span><span class="pln">stream</span><span class="pun">){</span><span class="pln"><br>&nbsp; &nbsp; printf</span><span class="pun">(</span><span class="str">"%d"</span><span class="pun">,</span><span class="pln"> atoi</span><span class="pun">(</span><span class="pln">ptr</span><span class="pun">));</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; CURL </span><span class="pun">*</span><span class="pln">curl</span><span class="pun">;</span><span class="pln"><br>&nbsp; </span><span class="typ">CURLcode</span><span class="pln"> res</span><span class="pun">;</span><span class="pln"><br>&nbsp; curl </span><span class="pun">=</span><span class="pln"> curl_easy_init</span><span class="pun">();</span><span class="pln"><br>&nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; curl_easy_setopt</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">,</span><span class="pln"> CURLOPT_URL</span><span class="pun">,</span><span class="pln"> </span><span class="str">"curl.haxx.se"</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; curl_easy_setopt</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">,</span><span class="pln"> CURLOPT_WRITEFUNCTION</span><span class="pun">,</span><span class="pln"> function_pt</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; curl_easy_perform</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; curl_easy_cleanup</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">);</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; system</span><span class="pun">(</span><span class="str">"pause"</span><span class="pun">);</span><span class="pln"><br>&nbsp; </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+    </div>            
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/c" class="post-tag" title="show questions tagged &#39;c&#39;" rel="tag">c</a> <a href="http://stackoverflow.com/questions/tagged/libcurl" class="post-tag" title="show questions tagged &#39;libcurl&#39;" rel="tag">libcurl</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/q/2329571" title="short permalink to this question" class="short-link" id="link-post-2329571">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2329571/edit" title="">improve this question</a></div>
+    </td>
+    <td align="right" class="post-signature">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            edited
+                             <a href="http://stackoverflow.com/posts/2329571/revisions" title="show all edits to this post"><span title="2010-02-24 21:56:49Z" class="relativetime">Feb 24 '10 at 21:56</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+    <td class="post-signature owner">
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    asked
+ <span title="2010-02-24 21:13:09Z" class="relativetime">Feb 24 '10 at 21:13</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/280235/frx08"><div class=""><img src="./C libcurl get output into a string - Stack Overflow_files/f80562f628aaef5e3664066beef242dc" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/280235/frx08">frx08</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">378</span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="19 bronze badges"><span class="badge3"></span><span class="badgecount">19</span></span>
+        </div>
+    </div>
+
+        <br class="cbt">
+        <div class="accept-rate cool" title="this user has accepted an answer for 20 of 29 eligible questions">69% accept rate</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>    </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-2329571" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful" style="color: rgb(136, 136, 136); ">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>    
+</div>
+
+
+    
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>2 Answers</h2>
+            <div id="tabs">
+                <a href="http://stackoverflow.com/questions/2329571/c-libcurl-get-output-into-a-string?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://stackoverflow.com/questions/2329571/c-libcurl-get-output-into-a-string?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://stackoverflow.com/questions/2329571/c-libcurl-get-output-into-a-string?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>    
+    </div>    
+
+
+
+
+
+  
+    <a name="2329792"></a>
+    <div id="answer-2329792" class="answer accepted-answer" data-answerid="2329792">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="2329792">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">9</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+            <span class="vote-accepted-on" title="The question owner accepted this as the best answer Feb 24 &#39;10 at 21:53">accepted</span>
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>You can set a callback function to receive incoming data chunks using <code>curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, myfunc);</code></p>
+
+<p>The callback will take a user defined argument that you can set using <code>curl_easy_setopt(curl, CURLOPT_WRITEDATA, p)</code></p>
+
+<p>Here's a snippet of code that passes a buffer <code>struct string {*ptr; len}</code> to the callback function and grows that buffer on each call using realloc().</p>
+
+<pre class="lang-c prettyprint"><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln"><br></span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdlib.h&gt;</span><span class="pln"><br></span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;string.h&gt;</span><span class="pln"><br></span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;curl/curl.h&gt;</span><span class="pln"><br><br></span><span class="kwd">struct</span><span class="pln"> string </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="kwd">char</span><span class="pln"> </span><span class="pun">*</span><span class="pln">ptr</span><span class="pun">;</span><span class="pln"><br>&nbsp; size_t len</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">};</span><span class="pln"><br><br></span><span class="kwd">void</span><span class="pln"> init_string</span><span class="pun">(</span><span class="kwd">struct</span><span class="pln"> string </span><span class="pun">*</span><span class="pln">s</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; s</span><span class="pun">-&gt;</span><span class="pln">len </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"><br>&nbsp; s</span><span class="pun">-&gt;</span><span class="pln">ptr </span><span class="pun">=</span><span class="pln"> malloc</span><span class="pun">(</span><span class="pln">s</span><span class="pun">-&gt;</span><span class="pln">len</span><span class="pun">+</span><span class="lit">1</span><span class="pun">);</span><span class="pln"><br>&nbsp; </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">s</span><span class="pun">-&gt;</span><span class="pln">ptr </span><span class="pun">==</span><span class="pln"> NULL</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; fprintf</span><span class="pun">(</span><span class="pln">stderr</span><span class="pun">,</span><span class="pln"> </span><span class="str">"malloc() failed\n"</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; exit</span><span class="pun">(</span><span class="pln">EXIT_FAILURE</span><span class="pun">);</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; s</span><span class="pun">-&gt;</span><span class="pln">ptr</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">'\0'</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br><br>size_t writefunc</span><span class="pun">(</span><span class="kwd">void</span><span class="pln"> </span><span class="pun">*</span><span class="pln">ptr</span><span class="pun">,</span><span class="pln"> size_t size</span><span class="pun">,</span><span class="pln"> size_t nmemb</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">struct</span><span class="pln"> string </span><span class="pun">*</span><span class="pln">s</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; size_t new_len </span><span class="pun">=</span><span class="pln"> s</span><span class="pun">-&gt;</span><span class="pln">len </span><span class="pun">+</span><span class="pln"> size</span><span class="pun">*</span><span class="pln">nmemb</span><span class="pun">;</span><span class="pln"><br>&nbsp; s</span><span class="pun">-&gt;</span><span class="pln">ptr </span><span class="pun">=</span><span class="pln"> realloc</span><span class="pun">(</span><span class="pln">s</span><span class="pun">-&gt;</span><span class="pln">ptr</span><span class="pun">,</span><span class="pln"> new_len</span><span class="pun">+</span><span class="lit">1</span><span class="pun">);</span><span class="pln"><br>&nbsp; </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">s</span><span class="pun">-&gt;</span><span class="pln">ptr </span><span class="pun">==</span><span class="pln"> NULL</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; fprintf</span><span class="pun">(</span><span class="pln">stderr</span><span class="pun">,</span><span class="pln"> </span><span class="str">"realloc() failed\n"</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; exit</span><span class="pun">(</span><span class="pln">EXIT_FAILURE</span><span class="pun">);</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; memcpy</span><span class="pun">(</span><span class="pln">s</span><span class="pun">-&gt;</span><span class="pln">ptr</span><span class="pun">+</span><span class="pln">s</span><span class="pun">-&gt;</span><span class="pln">len</span><span class="pun">,</span><span class="pln"> ptr</span><span class="pun">,</span><span class="pln"> size</span><span class="pun">*</span><span class="pln">nmemb</span><span class="pun">);</span><span class="pln"><br>&nbsp; s</span><span class="pun">-&gt;</span><span class="pln">ptr</span><span class="pun">[</span><span class="pln">new_len</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">'\0'</span><span class="pun">;</span><span class="pln"><br>&nbsp; s</span><span class="pun">-&gt;</span><span class="pln">len </span><span class="pun">=</span><span class="pln"> new_len</span><span class="pun">;</span><span class="pln"><br><br>&nbsp; </span><span class="kwd">return</span><span class="pln"> size</span><span class="pun">*</span><span class="pln">nmemb</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; CURL </span><span class="pun">*</span><span class="pln">curl</span><span class="pun">;</span><span class="pln"><br>&nbsp; </span><span class="typ">CURLcode</span><span class="pln"> res</span><span class="pun">;</span><span class="pln"><br><br>&nbsp; curl </span><span class="pun">=</span><span class="pln"> curl_easy_init</span><span class="pun">();</span><span class="pln"><br>&nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">struct</span><span class="pln"> string s</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; init_string</span><span class="pun">(&amp;</span><span class="pln">s</span><span class="pun">);</span><span class="pln"><br><br>&nbsp; &nbsp; curl_easy_setopt</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">,</span><span class="pln"> CURLOPT_URL</span><span class="pun">,</span><span class="pln"> </span><span class="str">"curl.haxx.se"</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; curl_easy_setopt</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">,</span><span class="pln"> CURLOPT_WRITEFUNCTION</span><span class="pun">,</span><span class="pln"> writefunc</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; curl_easy_setopt</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">,</span><span class="pln"> CURLOPT_WRITEDATA</span><span class="pun">,</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">s</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; res </span><span class="pun">=</span><span class="pln"> curl_easy_perform</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">);</span><span class="pln"><br><br>&nbsp; &nbsp; printf</span><span class="pun">(</span><span class="str">"%s\n"</span><span class="pun">,</span><span class="pln"> s</span><span class="pun">.</span><span class="pln">ptr</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; free</span><span class="pun">(</span><span class="pln">s</span><span class="pun">.</span><span class="pln">ptr</span><span class="pun">);</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="com">/* always cleanup */</span><span class="pln"><br>&nbsp; &nbsp; curl_easy_cleanup</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">);</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/2329792" title="short permalink to this answer" class="short-link" id="link-post-2329792">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2329792/edit" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            edited
+                             <a href="http://stackoverflow.com/posts/2329792/revisions" title="show all edits to this post"><span title="2010-02-24 22:04:16Z" class="relativetime">Feb 24 '10 at 22:04</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                    answered
+ <span title="2010-02-24 21:43:25Z" class="relativetime">Feb 24 '10 at 21:43</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/162407/alexandre-jasmin"><div class=""><img src="./C libcurl get output into a string - Stack Overflow_files/ebb42d2495567b4d80d528b06d5f3097" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/162407/alexandre-jasmin">Alexandre Jasmin</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">9,414</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="23 silver badges"><span class="badge2"></span><span class="badgecount">23</span></span><span title="32 bronze badges"><span class="badge3"></span><span class="badgecount">32</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-2329792" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-9926718" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">How would I use/customize this so that I can access Twitter Stream API? For example I would like to have the same output as this terminal command "curl <a href="http://stream.twitter.com/1/statuses/sample.json" rel="nofollow">stream.twitter.com/1/statuses/sample.json</a> -uYOUR_TWITTER_USERNAME:YOUR_PASSWORD" Thanks!</span> –&nbsp;<a href="http://stackoverflow.com/users/320161/neilmarion" title="140 reputation" class="comment-user">neilmarion</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(9926718, 2329792)" href="http://stackoverflow.com/questions/2329571/c-libcurl-get-output-into-a-string#comment9926718_2329792"><span title="2011-11-11 17:02:14Z">Nov 11 '11 at 17:02</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful" style="color: rgb(0, 0, 0); ">Was this post useful to you? &nbsp;&nbsp;<input style="" class="anon-vote" type="button" value="Yes"> &nbsp;<input style="" class="anon-vote" type="button" value="No"></div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+
+    <div class="everyonelovesstackoverflow" id="adzerk3"><a href="http://engine.adzerk.net/redirect/0/5920/7472/8277/a8b80b2034494bb2ace083ed03f9c47e/44/1178/10185/634827649593520280/?keywords=c%2clibcurl" rel="nofollow" target="_blank" title=""><img src="./C libcurl get output into a string - Stack Overflow_files/60abb4b317034aa2af0bc697e6f02963.png" title="" alt="" border="0" height="90" width="728"></a><img width="0" height="0" src="./C libcurl get output into a string - Stack Overflow_files/v(1).gif"></div>
+
+    
+
+  
+    <a name="2329768"></a>
+    <div id="answer-2329768" class="answer" data-answerid="2329768">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="2329768">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>From reading the manual here: <a href="http://curl.haxx.se/libcurl/c/curl_easy_setopt.html" rel="nofollow">http://curl.haxx.se/libcurl/c/curl_easy_setopt.html</a> I think you need several calls to CURL_SETOPT, the first being the URL you want to process, the second being something like:</p>
+
+<pre class="lang-c prettyprint"><code><span class="pln">curl_easy_setopt</span><span class="pun">(</span><span class="pln">curl</span><span class="pun">,</span><span class="pln"> CURLOPT_WRITEFUNCTION</span><span class="pun">,</span><span class="pln"> function_ptr</span><span class="pun">);</span><span class="pln"><br></span></code></pre>
+
+<p>Where function_ptr matches this signature:</p>
+
+<pre class="lang-c prettyprint"><code><span class="pln">size_t function</span><span class="pun">(</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="pun">*</span><span class="pln">ptr</span><span class="pun">,</span><span class="pln"> size_t size</span><span class="pun">,</span><span class="pln"> size_t nmemb</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="pun">*</span><span class="pln">stream</span><span class="pun">)</span><span class="pln"><br></span></code></pre>
+
+<p>What happens here is you denote a callback function which libcurl will call when it has some output to write from whatever transfer you've invoked. You can get it to automatically write to a file, or pass it a pointer to a function which will handle the output itself. Using this function you should be able to assemble the various output strings into one piece and then use them in your program.</p>
+
+<p>I'm not sure what other options you may have to set / what else affects how you want your app to behave, so have a good look through that page.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/2329768" title="short permalink to this answer" class="short-link" id="link-post-2329768">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2329768/edit" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                    answered
+ <span title="2010-02-24 21:40:34Z" class="relativetime">Feb 24 '10 at 21:40</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/257111/ninefingers"><div class=""><img src="./C libcurl get output into a string - Stack Overflow_files/893b695548c4c8a5fcf91edb92785490" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/257111/ninefingers">Ninefingers</a><br>
+            <span class="reputation-score" title="reputation score 14088" dir="ltr">14.1k</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="21 silver badges"><span class="badge2"></span><span class="badgecount">21</span></span><span title="59 bronze badges"><span class="badge3"></span><span class="badgecount">59</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-2329768" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+    <a name="new-answer"></a>
+    <form id="post-form" action="http://stackoverflow.com/questions/2329571/answer/submit" method="post" class="post-form">
+        <h2 class="space">Your Answer</h2>
+
+
+
+
+<script type="text/javascript">
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">  
+
+    
+    <div class="wmd-container">
+        <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px; "><span style="background-position: 0px -20px; "></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px; "><span style="background-position: -20px -20px; "></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px; "><span style="background-position: -40px -20px; "></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px; "><span style="background-position: -40px -20px; "></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px; "><span style="background-position: -60px -20px; "></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px; "><span style="background-position: -80px -20px; "></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px; "><span style="background-position: -100px -20px; "></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px; "><span style="background-position: -120px -20px; "></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px; "><span style="background-position: -120px -20px; "></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px; "><span style="background-position: -140px -20px; "></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px; "><span style="background-position: -160px -20px; "></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px; "><span style="background-position: -180px -20px; "></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px; "><span style="background-position: -200px -20px; "></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px; "><span style="background-position: -200px -20px; "></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px; "><span style="background-position: -220px -20px; "></span></li></ul></div>
+        <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="6a8e72ba0ea3e27082bf30a8db306aad">
+        <input id="author" name="author" type="text">
+    </div>
+</div>            <div class="form-item">
+        <table>
+        <tbody><tr>
+            <td class="vm open-id-login">
+                <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f2329571%2fc-libcurl-get-output-into-a-string">log in</a>
+                <script type="text/javascript">
+                    StackExchange.ready(function () {
+                        StackExchange.helpers.onClickDraftSave('#login-link');
+                    });
+                </script>
+            </td>
+            <td class="orcell">
+                <div class="orword">or</div>
+                <div class="orline"></div>
+            </td>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="40" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but never shown</span>
+                </div>
+                <div>
+                    <label for="home-page">Home Page</label>
+                    <input id="home-page" name="home-page" type="text" size="40" maxlength="200" value="" tabindex="107">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+           
+            <div class="form-submit cbt">
+            <input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+            <a href="http://stackoverflow.com/questions/2329571/c-libcurl-get-output-into-a-string#" class="discard-answer dno">discard</a>
+    <p class="privacy-policy-agreement">
+        By posting your answer, you agree to the 
+        <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and 
+        <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.
+    </p>
+        </div>
+    </form>
+
+
+
+        <h2 class="bottom-notice">
+                Not the answer you're looking for? 
+            Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/c" class="post-tag" title="show questions tagged &#39;c&#39;" rel="tag">c</a> <a href="http://stackoverflow.com/questions/tagged/libcurl" class="post-tag" title="show questions tagged &#39;libcurl&#39;" rel="tag">libcurl</a> 
+                or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.
+        </h2>
+</div>
+</div>
+<div id="sidebar">
+
+
+
+     <script type="text/javascript">
+        window.showNewUser = true;
+
+            
+                (function(){
+                    var cs = window.sessionStorage && window.sessionStorage['tNewsletter'];
+                    var m = /:\/\/([^\/]*)/.exec(document.referrer);
+                    var h = {'www.reddit.com':1,'news.ycombinator.com':1};
+                    if(window.sessionStorage && (cs || (m && m.length == 2 && h[m[1]]))){
+                        showNewUser = false;
+                        StackExchange.ready(function(){
+                            StackExchange.newsletterAd.loader(m[1], cs);
+                        });
+                    }
+                    if (window.localStorage && showNewUser){
+                        var c = parseInt(localStorage['nuCounter'],10); 
+                        c = isNaN(c) ? 1 : c+1;
+                        window.localStorage['nuCounter'] = c; 
+                        showNewUser = c < 10;
+                    }
+                })()
+            
+     </script>
+    <div class="module newuser newuser-greeting" id="newuser-box" style="display:none;">
+        <h4>Hello World!</h4>
+        <div>
+            <p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p>
+            <p class="ar"><a href="http://stackoverflow.com/about?mnu=1">about »</a>&nbsp;&nbsp;&nbsp;<a href="http://stackoverflow.com/faq?mnu=1">faq »</a>
+            </p>
+        </div>
+    </div>
+     <script type="text/javascript">
+        if (showNewUser) {
+            document.getElementById('newuser-box').style.display = '';
+        }
+     </script>
+        <div class="module question-stats">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://stackoverflow.com/questions/tagged/c" class="post-tag" title="show questions tagged &#39;c&#39;" rel="tag">c</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">68830</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/libcurl" class="post-tag" title="show questions tagged &#39;libcurl&#39;" rel="tag">libcurl</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">691</span></span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left:10px"><p class="label-key" title="2010-02-24 21:13:09Z"><b>2 years ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left:10px"><p class="label-key"><b>6,600 times</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left:10px"><p class="label-key"><b><a href="http://stackoverflow.com/questions/2329571/c-libcurl-get-output-into-a-string?lastactivity" class="lastactivity-link" title="2011-10-14 09:23:55Z">11 months ago</a></b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+    
+<div class="module community-bulletin" data-tracker="cb=1">
+    <h4>Community Bulletin</h4>
+    <div class="related">
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://blog.stackoverflow.com/?cb=1" class="event-date" target="_blank">blog</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://blog.stackoverflow.com/2012/09/join-us-for-our-opening-reception-of-stack-exchange-denver/?cb=1" class="question-hyperlink" target="_blank">Join us for our opening reception of Stack Exchange: Denver!</a>
+            </div>
+            <br class="cbt">
+        </div>
+    </div>
+</div>    
+    
+        <script type="text/javascript">
+            var scriptSrc = "http://engine2.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44?keywords=c,libcurl";
+            if (document.referrer) {
+                if (/\?/.test(scriptSrc))
+                    scriptSrc += "&";
+                else
+                    scriptSrc += "?";
+                scriptSrc += "xReferrer=" + document.referrer;
+            }
+            StackExchange.ready(function(){var z = document.createElement("script"); z.type = "text/javascript"; z.async = "true"; z.src = scriptSrc; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);});
+        </script>
+    
+    <div class="everyonelovesstackoverflow" id="adzerk2"><a href="http://engine.adzerk.net/redirect/0/9334/2444/8277/4fa56f34277140508f9290f4a3138901/45/1178/14844/634827649593490080/?keywords=c%2clibcurl" rel="nofollow" target="_blank" title=""><img src="./C libcurl get output into a string - Stack Overflow_files/db5df4870e4e4b6cbf42727fd434701a.jpg" title="" alt="" border="0" height="250" width="220"></a><img width="0" height="0" src="./C libcurl get output into a string - Stack Overflow_files/v(2).gif"></div>
+
+    
+    <div id="hireme"> <a href="http://careers.stackoverflow.com/jobs?a=12" class="top" target="_blank"></a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/19717/application-developer-thoughtworks?a=nin0zUQ" target="_blank" title="Application Developer at ThoughtWorks. Click to learn more."> Application Developer<br> <span class="company">ThoughtWorks</span> <span class="location">Pune, India; Chennai, India;…</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/10463/data-engineering-software-developer-two-sigma-investments?a=cmrdZfy" target="_blank" title="Data Engineering Software Developer at Two Sigma Investments. Click to learn more."> Data Engineering Software Developer<br> <span class="company">Two Sigma Investments</span> <span class="location">Houston, TX</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/23513/senior-mobile-engineer-rockstar-saavn?a=rMoOSYM" target="_blank" title="Senior Mobile Engineer Rockstar at Saavn. Click to learn more."> Senior Mobile Engineer Rockstar<br> <span class="company">Saavn</span> <span class="location">Mountain View, CA; Mumbai, India</span> </a> </li> </ul> <img alt="" class="impression" src="./C libcurl get output into a string - Stack Overflow_files/nin0zUQ-cmrdZfy-rMoOSYM-12" style="display:none"></div>
+
+      
+    
+    <div class="module sidebar-linked">
+        <h4 id="h-linked">Linked</h4>
+        <div class="linked" data-tracker="lq=1">
+            <div class="spacer">
+<a href="http://stackoverflow.com/questions/4738002/accessing-the-twitter-streaming-api-with-c?lq=1" class="question-hyperlink">Accessing the Twitter Streaming API with C</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2353928/need-help-to-get-an-html-and-use-in-c-like-a-text-file-in-fopen?lq=1" class="question-hyperlink">Need help to get an html and use in C like a text file in fopen</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2689513/handling-responses-in-libcurl?lq=1" class="question-hyperlink">Handling responses in libcurl</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8091230/twitter-stream-api-through-c-and-curl?lq=1" class="question-hyperlink">Twitter Stream API through C and curl</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8092870/trying-to-access-twitter-streaming-api-with-c?lq=1" class="question-hyperlink">Trying to Access Twitter Streaming API with C</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5962384/how-to-get-the-httpresponse-with-libcurl?lq=1" class="question-hyperlink">how to get the httpresponse with libcurl</a>
+</div>
+
+        </div>
+    </div>
+    <div class="module sidebar-related">
+        <h4 id="h-related">Related</h4>
+        <div class="related" data-tracker="rq=1">
+            <div class="spacer">
+<a href="http://stackoverflow.com/questions/897027/i-want-to-store-a-result-for-character-string-with-libcurl?rq=1" class="question-hyperlink">I want to store a result for character string with libcurl</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2577654/curl-put-output-into-variable?rq=1" class="question-hyperlink">cURL - put output into variable?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3573146/problem-using-libcurl-it-does-not-appear-to-get-the-entire-page?rq=1" class="question-hyperlink">Problem using libcurl: it does not appear to get the entire page</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4719071/libcurl-when-used-on-mac-with-c?rq=1" class="question-hyperlink">LibCURL when used on Mac with C</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4752719/accessing-the-twitter-streaming-api-with-libcurl-and-c?rq=1" class="question-hyperlink">Accessing the Twitter Streaming API with libcurl and C</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5133968/using-libcurl-to-monitor-state-of-a-network?rq=1" class="question-hyperlink">using libcurl to monitor state of a network</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5793760/including-libcurl-in-c-project?rq=1" class="question-hyperlink">Including libcurl in C project</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6251010/the-downloaded-file-is-not-saving-in-given-location?rq=1" class="question-hyperlink">the downloaded file is not saving in given location</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6404032/libcurl-why-curl-easy-setoptcurl-handle-curlopt-writedata-obj-passes-my-wri?rq=1" class="question-hyperlink">Libcurl: why curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, obj) passes my writefunction pointer, that is not equal to obj?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6877119/mjpeg-streaming-with-libcurl?rq=1" class="question-hyperlink">MJPEG streaming with libcurl</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7351406/json-string-in-libcurl?rq=1" class="question-hyperlink">Json string in libcurl</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7395279/how-to-check-the-soap-response-using-libcurl?rq=1" class="question-hyperlink">How to check the SOAP Response using libcurl</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7441071/regarding-a-handle-for-soap-response-string?rq=1" class="question-hyperlink">Regarding a handle for SOAP response string</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7809693/smtp-mail-using-libcurl?rq=1" class="question-hyperlink">SMTP mail using libcurl</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7850716/libcurl-https-post-data-send?rq=1" class="question-hyperlink">libcurl HTTPS POST data send?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8020640/libcurl-output-to-variable-instead-of-textfile?rq=1" class="question-hyperlink">libcurl output to variable instead of textfile</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8098501/get-file-with-libcurl-over-sftp?rq=1" class="question-hyperlink">Get file with libcurl over SFTP</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8102147/using-http-authentication-with-libcurl-in-c-for-twitter-streaming?rq=1" class="question-hyperlink">Using HTTP authentication with libcurl in C for Twitter Streaming</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8102360/libcurl-callback-function-might-not-be-working-for-twitter-streaming?rq=1" class="question-hyperlink">Libcurl Callback Function Might Not be Working for Twitter Streaming</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8191292/capping-libcurl-return-after-x-characters?rq=1" class="question-hyperlink">Capping libcurl return after X characters</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/9101148/login-to-google-with-libcurl-in-c?rq=1" class="question-hyperlink">login to google with libcurl in C</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10002446/c-libcurl-print-webpage-contents?rq=1" class="question-hyperlink">C libcurl print webpage contents</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10362487/simple-libcurl-app-segfault?rq=1" class="question-hyperlink">simple libcurl app - segfault</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10448035/authenticating-libcurl-ftp-download-in-c?rq=1" class="question-hyperlink">Authenticating libcurl FTP download in C++</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10614062/libcurl-console-progress-bar-for-file-download?rq=1" class="question-hyperlink">libcurl console progress bar for file download</a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/2329571" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+<script type="text/javascript">
+StackExchange.ready(function(){$.get('/posts/2329571/ivc/84c5');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/2329571/ivc/84c5" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-c</div></div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="http://stackoverflow.com/about">about</a> |
+                <a href="http://stackoverflow.com/faq">faq</a> |
+                <a href="http://blog.stackexchange.com/?blb=1">blog</a> |
+                    <a href="http://chat.stackoverflow.com/">chat</a> |
+                <a href="http://data.stackexchange.com/">data</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a> |
+                <a href="http://stackexchange.com/about/hiring">jobs</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+
+                <a onclick="StackExchange.switchMobile(&#39;on&#39;, &#39;/questions/2329571/c-libcurl-get-output-into-a-string&#39;)">mobile</a> |
+
+                <b><a href="http://stackoverflow.com/help">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackoverflow.com/">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackapps.com/">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://careers.stackoverflow.com/">careers</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">■</span>&nbsp;<a href="http://serverfault.com/">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">■</span>&nbsp;<a href="http://superuser.com/">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">■</span>&nbsp;<a href="http://meta.stackoverflow.com/">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">■</span>&nbsp;<a href="http://area51.stackexchange.com/">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">■</span>&nbsp;<a href="http://webapps.stackexchange.com/">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">■</span>&nbsp;<a href="http://gaming.stackexchange.com/">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">■</span>&nbsp;<a href="http://askubuntu.com/">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">■</span>&nbsp;<a href="http://webmasters.stackexchange.com/">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">■</span>&nbsp;<a href="http://cooking.stackexchange.com/">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">■</span>&nbsp;<a href="http://gamedev.stackexchange.com/">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">■</span>&nbsp;<a href="http://math.stackexchange.com/">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">■</span>&nbsp;<a href="http://photo.stackexchange.com/">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">■</span>&nbsp;<a href="http://stats.stackexchange.com/">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">■</span>&nbsp;<a href="http://tex.stackexchange.com/">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">■</span>&nbsp;<a href="http://english.stackexchange.com/">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">■</span>&nbsp;<a href="http://cstheory.stackexchange.com/">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">■</span>&nbsp;<a href="http://programmers.stackexchange.com/">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">■</span>&nbsp;<a href="http://unix.stackexchange.com/">unix</a>&nbsp;
+                        <span style="color:#bec0cb;font-size:140%">■</span>&nbsp;<a href="http://apple.stackexchange.com/">apple</a>&nbsp;
+                        <span style="color:#939185;font-size:140%">■</span>&nbsp;<a href="http://wordpress.stackexchange.com/">wordpress</a>&nbsp;
+                        <span style="color:#ebf5f5;font-size:140%">■</span>&nbsp;<a href="http://physics.stackexchange.com/">physics</a>&nbsp;
+                        <span style="color:#4176ab;font-size:140%">■</span>&nbsp;<a href="http://diy.stackexchange.com/">home&nbsp;improvement</a>&nbsp;
+                        <span style="color:#d1d8d7;font-size:140%">■</span>&nbsp;<a href="http://gis.stackexchange.com/">gis</a>&nbsp;
+                        <span style="color:#e5e2d3;font-size:140%">■</span>&nbsp;<a href="http://electronics.stackexchange.com/">electrical&nbsp;engineering</a>&nbsp;
+                        <span style="color:#a4c639;font-size:140%">■</span>&nbsp;<a href="http://android.stackexchange.com/">android</a>&nbsp;
+                        <span style="color:#2e4e60;font-size:140%">■</span>&nbsp;<a href="http://security.stackexchange.com/">security</a>&nbsp;
+                        <span style="color:#45bcb5;font-size:140%">■</span>&nbsp;<a href="http://bicycles.stackexchange.com/">bicycles</a>&nbsp;
+                        <span style="color:#00adee;font-size:140%">■</span>&nbsp;<a href="http://dba.stackexchange.com/">dba</a>&nbsp;
+                        <span style="color:#2edaf0;font-size:140%">■</span>&nbsp;<a href="http://drupal.stackexchange.com/">drupal</a>&nbsp;
+                        <span style="color:#213951;font-size:140%">■</span>&nbsp;<a href="http://sharepoint.stackexchange.com/">sharepoint</a>&nbsp;
+                        <span style="color:#73abb3;font-size:140%">■</span>&nbsp;<a href="http://scifi.stackexchange.com/">scifi &amp; fantasy</a>&nbsp;
+                        <span style="color:#23629F;font-size:140%">■</span>&nbsp;<a href="http://ux.stackexchange.com/">user experience</a>&nbsp;
+                        <span style="color:#faff72;font-size:140%">■</span>&nbsp;<a href="http://skeptics.stackexchange.com/">skeptics</a>&nbsp;
+                        <span style="color:#623121;font-size:140%">■</span>&nbsp;<a href="http://rpg.stackexchange.com/">rpg</a>&nbsp;
+                        <span style="color:#e4be88;font-size:140%">■</span>&nbsp;<a href="http://judaism.stackexchange.com/">judaism</a>&nbsp;
+                        <span style="color:#ffecb1;font-size:140%">■</span>&nbsp;<a href="http://mathematica.stackexchange.com/">mathematica</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2012.9.8.3994</div>
+                        </div>
+            <div id="copyright">
+                site design / logo © 2012 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            
+
+        </div>
+    </div>
+    
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|c|libcurl|']); 
+_gaq.push(['_trackPageview']);
+    var _qevents = _qevents || [];
+    (function(){
+        var s=document.getElementsByTagName('script')[0];
+        var ga=document.createElement('script');
+        ga.type='text/javascript';
+        ga.async=true;
+        ga.src='http://www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(ga,s);
+        var sc=document.createElement('script');
+        sc.type='text/javascript';
+        sc.async=true;
+        sc.src='http://edge.quantserve.com/quant.js'; 
+        s.parentNode.insertBefore(sc,s);
+    })();
+    </script>
+    <script type="text/javascript">
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>    
+    
+
+</body></html>

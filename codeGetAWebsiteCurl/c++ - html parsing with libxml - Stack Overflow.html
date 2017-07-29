@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://stackoverflow.com/questions/800104/html-parsing-with-libxml -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>c++ - html parsing with libxml - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+
+    
+    <script type="text/javascript" async="" src="./c++ - html parsing with libxml - Stack Overflow_files/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44"></script><script type="text/javascript" async="" src="./c++ - html parsing with libxml - Stack Overflow_files/ga.js"></script><script type="text/javascript" async="" src="./c++ - html parsing with libxml - Stack Overflow_files/quant.js"></script><script type="text/javascript" src="./c++ - html parsing with libxml - Stack Overflow_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./c++ - html parsing with libxml - Stack Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="./c++ - html parsing with libxml - Stack Overflow_files/all.css">
+    
+    <meta name="relativepagescore" content="90011">
+    <link rel="canonical" href="./c++ - html parsing with libxml - Stack Overflow_files/c++ - html parsing with libxml - Stack Overflow.html">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;html parsing with libxml&#39;" href="http://stackoverflow.com/feeds/question/800104">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:800104});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '800104');
+            
+                
+        });
+    </script>
+
+
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"https://stackauth.com","serverTime":1347171816,"styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q\u0026A for professional and enthusiast programmers","isNoticesTabEnabled":true,"enableSocialMediaInSharePopup":true},"user":{"isAnonymous":true,"fkey":"6a8e72ba0ea3e27082bf30a8db306aad","notificationsUnviewedCount":0,"inboxUnviewedCount":-1}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"d1cd9a23171c","js/moderator.js":"79cf1c340a4d","js/full-anon.js":"6460f26b3b59","js/full.js":"7fd348271049","js/wmd.js":"93b92575f8bc","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"6eb68240242f","js/help.js":"fc9fb0517db2","js/tageditor.js":"c1ba807b32aa","js/tageditornew.js":"bd66fabe1c71","js/inline-tag-editing.js":"be882e188985","js/revisions.js":"8c6bcd93b7fe","js/probes.js":"beb933322ff0","js/review.js":"def3bab7727b"});
+        
+    </script>
+<script async="" type="text/javascript" src="./c++ - html parsing with libxml - Stack Overflow_files/full-anon.js"></script><script async="" type="text/javascript" src="./c++ - html parsing with libxml - Stack Overflow_files/prettify-full.js"></script><link href="./c++ - html parsing with libxml - Stack Overflow_files/sidebar.min.css" type="text/css" rel="stylesheet"></head>
+<body class="question-page">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    
+
+
+
+
+
+
+
+
+
+<span id="hlinks-user">
+
+</span>
+<span id="hlinks-nav">
+                   <a href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f800104%2fhtml-parsing-with-libxml">log in</a>
+
+ <span class="lsep">|</span>
+                    <a href="http://careers.stackoverflow.com/">careers</a>
+
+ <span class="lsep">|</span>
+
+</span>
+<span id="hlinks-custom">
+        <a href="http://chat.stackoverflow.com/">chat</a>
+
+ <span class="lsep">|</span>
+            <a href="http://meta.stackoverflow.com/">meta</a>
+
+ <span class="lsep">|</span>
+        <a href="http://stackoverflow.com/about">about</a>
+
+ <span class="lsep">|</span>
+    <a href="http://stackoverflow.com/faq">faq</a>
+
+</span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <div>
+                        <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" type="text" maxlength="140" size="28" value="">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Article">
+<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+<div id="question-header">
+    <h1 itemprop="name"><a href="./c++ - html parsing with libxml - Stack Overflow_files/c++ - html parsing with libxml - Stack Overflow.html" class="question-hyperlink">html parsing with libxml</a></h1>
+</div>
+<div id="mainbar">
+
+
+
+<div class="question" id="question" data-questionid="800104">
+    
+    <div class="everyonelovesstackoverflow" id="adzerk1"><a href="http://engine.adzerk.net/redirect/0/27327/22990/8277/635ed337bf874739910fe7e515fd2135/43/1178/38696/634827686175425840/?keywords=c%2b%2b%2chtml%2cparsing%2clibxml" rel="nofollow" target="_blank" title=""><img src="./c++ - html parsing with libxml - Stack Overflow_files/b3db2a1a0ed041b4b83e96e1c7edc765.png" title="" alt="" border="0" height="90" width="728"></a><img width="0" height="0" src="./c++ - html parsing with libxml - Stack Overflow_files/v.gif"></div>
+
+    
+    <table>
+    <tbody><tr>
+    <td class="votecell">
+        
+
+<div class="vote">
+    <input type="hidden" value="800104">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">9</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+    
+    <a class="star-off" href="http://stackoverflow.com/questions/800104/html-parsing-with-libxml#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>10</b></div>   
+
+ 
+</div>
+
+    </td>
+    
+<td class="postcell">
+<div>          
+    <div class="post-text" itemprop="description">
+        <p>In <a href="http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags">another thread</a> I got convinced into using HTML parsers instead of regexps for HTML parsing. I thought of using libxml (it has some HTML parser built in), but failed to find any useful tutorial. I also found <a href="http://xmlsoft.org/html/libxml-HTMLparser.html" rel="nofollow">this</a> site and it says here it should do fine even with severely broken HTML.</p>
+
+<p>Could you give me some examples of HTML parsing with libxml, or maybe recommend some different free library for Linux? I'm using C++.</p>
+
+<p>I just thought someone would have some example code, so that I don't have to analyze the headers. ;)</p>
+
+    </div>            
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/c%2b%2b" class="post-tag" title="show questions tagged &#39;c++&#39;" rel="tag">c++</a> <a href="http://stackoverflow.com/questions/tagged/html" class="post-tag" title="show questions tagged &#39;html&#39;" rel="tag">html</a> <a href="http://stackoverflow.com/questions/tagged/parsing" class="post-tag" title="show questions tagged &#39;parsing&#39;" rel="tag">parsing</a> <a href="http://stackoverflow.com/questions/tagged/libxml" class="post-tag" title="show questions tagged &#39;libxml&#39;" rel="tag">libxml</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/q/800104" title="short permalink to this question" class="short-link" id="link-post-800104">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/800104/edit" title="">improve this question</a></div>
+    </td>
+    <td align="right" class="post-signature">
+
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                            edited
+                             <a href="http://stackoverflow.com/posts/800104/revisions" title="show all edits to this post"><span title="2010-05-02 17:27:14Z" class="relativetime">May 2 '10 at 17:27</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/59087/dave-jarvis"><div class=""><img src="./c++ - html parsing with libxml - Stack Overflow_files/7300d3eb9b50cf7e8728cb7991d01275" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/59087/dave-jarvis">Dave Jarvis</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">8,436</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="35 silver badges"><span class="badge2"></span><span class="badgecount">35</span></span><span title="85 bronze badges"><span class="badge3"></span><span class="badgecount">85</span></span>
+        </div>
+    </div>
+    </td>
+    <td class="post-signature owner">
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    asked
+ <span title="2009-04-28 22:32:43Z" class="relativetime">Apr 28 '09 at 22:32</span>
+        </div>
+        <div class="user-gravatar32">
+            <span class="anonymous-gravatar"></span>
+        </div>
+        <div class="user-details">
+            zajcev<br>
+            
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>    </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-800104" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful" style="color: rgb(136, 136, 136); ">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>    
+</div>
+
+
+    
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>8 Answers</h2>
+            <div id="tabs">
+                <a href="http://stackoverflow.com/questions/800104/html-parsing-with-libxml?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://stackoverflow.com/questions/800104/html-parsing-with-libxml?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://stackoverflow.com/questions/800104/html-parsing-with-libxml?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>    
+    </div>    
+
+
+
+
+
+  
+    <a name="1482746"></a>
+    <div id="answer-1482746" class="answer" data-answerid="1482746">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="1482746">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">7</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>I actually did this recently and it is fairly straightforward.  This is mostly from memory so it may not be 100% correct:</p>
+
+<pre class="lang-c prettyprint"><code><span class="kwd">void</span><span class="pln"> </span><span class="typ">FindLinks</span><span class="pun">(</span><span class="pln">htmlNodePtr element</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">htmlNodePtr node </span><span class="pun">=</span><span class="pln"> element</span><span class="pun">;</span><span class="pln"> node </span><span class="pun">!=</span><span class="pln"> NULL</span><span class="pun">;</span><span class="pln"> node </span><span class="pun">=</span><span class="pln"> node</span><span class="pun">-&gt;</span><span class="pln">next</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">node</span><span class="pun">-&gt;</span><span class="pln">type </span><span class="pun">==</span><span class="pln"> XML_ELEMENT_NODE</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">xmlStrcasecmp</span><span class="pun">(</span><span class="pln">node</span><span class="pun">-&gt;</span><span class="pln">name</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">const</span><span class="pln"> xmlChar</span><span class="pun">*)</span><span class="str">"A"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">xmlAttrPtr attr </span><span class="pun">=</span><span class="pln"> node</span><span class="pun">-&gt;</span><span class="pln">properties</span><span class="pun">;</span><span class="pln"> attr </span><span class="pun">!=</span><span class="pln"> NULL</span><span class="pun">;</span><span class="pln"> attr </span><span class="pun">=</span><span class="pln"> attr</span><span class="pun">-&gt;</span><span class="pln">next</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">xmlStrcasecmp</span><span class="pun">(</span><span class="pln">attr</span><span class="pun">-&gt;</span><span class="pln">name</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">const</span><span class="pln"> xmlChar</span><span class="pun">*)</span><span class="str">"HREF"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf</span><span class="pun">(</span><span class="str">"Found link &lt;%s&gt;\n"</span><span class="pun">,</span><span class="pln"> node</span><span class="pun">-&gt;</span><span class="pln">children</span><span class="pun">-&gt;</span><span class="pln">content</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">node</span><span class="pun">-&gt;</span><span class="pln">children </span><span class="pun">!=</span><span class="pln"> NULL</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">FindLinks</span><span class="pun">(</span><span class="pln">node</span><span class="pun">-&gt;</span><span class="pln">children</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">void</span><span class="pln"> </span><span class="typ">ParseHTML</span><span class="pun">(</span><span class="pln">xmlChar</span><span class="pun">*</span><span class="pln"> html</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; htmlDocPtr doc </span><span class="pun">=</span><span class="pln"> htmlParseDoc</span><span class="pun">(</span><span class="pln">html</span><span class="pun">,</span><span class="pln"> NULL</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">doc </span><span class="pun">!=</span><span class="pln"> NULL</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; htmlNodePtr root </span><span class="pun">=</span><span class="pln"> xmlDocGetRootElement</span><span class="pun">(</span><span class="pln">doc</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">root </span><span class="pun">!=</span><span class="pln"> NULL</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">FindLinks</span><span class="pun">(</span><span class="pln">root</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; xmlFreeDoc</span><span class="pun">(</span><span class="pln">doc</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; doc </span><span class="pun">=</span><span class="pln"> NULL</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/1482746" title="short permalink to this answer" class="short-link" id="link-post-1482746">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1482746/edit" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2009-09-27 03:47:55Z" class="relativetime">Sep 27 '09 at 3:47</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/179634/luke"><div class=""><img src="./c++ - html parsing with libxml - Stack Overflow_files/42614ec033bd686a83323771622c41af" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/179634/luke">Luke</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">6,446</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="15 bronze badges"><span class="badge3"></span><span class="badgecount">15</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-1482746" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-4621736" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">"Fairly straight forward"... *shudders* This is why I stopped writing C++ when I don't need to.</span> –&nbsp;<a href="http://stackoverflow.com/users/65387/mark" title="23542 reputation" class="comment-user">Mark</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(4621736, 1482746)" href="http://stackoverflow.com/questions/800104/html-parsing-with-libxml#comment4621736_1482746"><span title="2010-11-24 07:04:23Z">Nov 24 '10 at 7:04</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5111001" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">I got a version of your program working!  Well...almost.  It chokes on CDATA.  Is there a way around this?  I was considering writing a regular expression to take out script/CDATA/multi-line comments.  Is there an easier way?</span> –&nbsp;<a href="http://stackoverflow.com/users/425801/akellehe" title="1834 reputation" class="comment-user">akellehe</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5111001, 1482746)" href="http://stackoverflow.com/questions/800104/html-parsing-with-libxml#comment5111001_1482746"><span title="2011-01-10 01:27:10Z">Jan 10 '11 at 1:27</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5117753" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">It's been a while, but I don't think I've ever had issues with CDATA.  What do you mean by "chokes"?</span> –&nbsp;<a href="http://stackoverflow.com/users/179634/luke" title="6446 reputation" class="comment-user">Luke</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5117753, 1482746)" href="http://stackoverflow.com/questions/800104/html-parsing-with-libxml#comment5117753_1482746"><span title="2011-01-10 15:12:21Z">Jan 10 '11 at 15:12</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful" style="color: rgb(136, 136, 136); ">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+
+    <div class="everyonelovesstackoverflow" id="adzerk3"><a href="http://engine.adzerk.net/redirect/0/5920/7472/8277/23a53a86b1c54cb2b37f3ee735738887/44/1178/10185/634827686175504020/?keywords=c%2b%2b%2chtml%2cparsing%2clibxml" rel="nofollow" target="_blank" title=""><img src="./c++ - html parsing with libxml - Stack Overflow_files/60abb4b317034aa2af0bc697e6f02963.png" title="" alt="" border="0" height="90" width="728"></a><img width="0" height="0" src="./c++ - html parsing with libxml - Stack Overflow_files/v(1).gif"></div>
+
+    
+
+  
+    <a name="800141"></a>
+    <div id="answer-800141" class="answer" data-answerid="800141">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="800141">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">3</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>libxml is a pretty complex beast, you should probably read the <a href="http://xmlsoft.org/html/index.html" rel="nofollow">docs/API reference</a> inside out. <a href="http://xmlsoft.org/examples/index.html" rel="nofollow">They have examples there</a>. As with any open source C library, you should probably look at the source code (at least the header files). Parsing HTML is not an easy task, in fact it is incredibly difficult which is why it's so very hard to make a browser.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/800141" title="short permalink to this answer" class="short-link" id="link-post-800141">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/800141/edit" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                    answered
+ <span title="2009-04-28 22:44:48Z" class="relativetime">Apr 28 '09 at 22:44</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/66475/bjorn-tipling"><div class=""><img src="./c++ - html parsing with libxml - Stack Overflow_files/970ba387c35c4320d153e592c58fe5d8" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/66475/bjorn-tipling">Bjorn Tipling</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">8,665</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="41 silver badges"><span class="badge2"></span><span class="badgecount">41</span></span><span title="77 bronze badges"><span class="badge3"></span><span class="badgecount">77</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-800141" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+
+
+  
+    <a name="800542"></a>
+    <div id="answer-800542" class="answer" data-answerid="800542">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="800542">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>Using libxml wont be a problem, assuming all of your documents are <em>valid</em> XHTML, which is a subset of XML. If your documents are HTML (which includes "bad" things like the <code>&lt;br&gt;</code> tag) then libxml will probably fail to validate and die because of the lack of closing tags (the same also goes for people who don't close <code>&lt;p&gt;</code>).</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/800542" title="short permalink to this answer" class="short-link" id="link-post-800542">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/800542/edit" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2009-04-29 01:40:37Z" class="relativetime">Apr 29 '09 at 1:40</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/52806/mighmos"><div class=""><img src="./c++ - html parsing with libxml - Stack Overflow_files/98747324319dad8846f84f773dc30b6e" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/52806/mighmos">MighMoS</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">801</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="12 bronze badges"><span class="badge3"></span><span class="badgecount">12</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-800542" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-1333706" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">The LibXML website says (at <a href="http://xmlsoft.org/html/libxml-HTMLparser.html" rel="nofollow">xmlsoft.org/html/libxml-HTMLparser.html</a>) that it can parse bad HTML.</span> –&nbsp;<a href="http://stackoverflow.com/users/60777/chris-lutz" title="26183 reputation" class="comment-user">Chris Lutz</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(1333706, 800542)" href="http://stackoverflow.com/questions/800104/html-parsing-with-libxml#comment1333706_800542"><span title="2009-09-27 03:59:39Z">Sep 27 '09 at 3:59</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+
+
+  
+    <a name="800586"></a>
+    <div id="answer-800586" class="answer" data-answerid="800586">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="800586">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>What programming language do you intend on using?    You should run it through an HTML parser before you try to grok it with XML.   If you use something like Tidy or TagSoup to clean it up first it will make your life much easier.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/800586" title="short permalink to this answer" class="short-link" id="link-post-800586">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/800586/edit" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            edited
+                             <a href="http://stackoverflow.com/posts/800586/revisions" title="show all edits to this post"><span title="2010-02-05 16:05:23Z" class="relativetime">Feb 5 '10 at 16:05</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                    answered
+ <span title="2009-04-29 02:01:40Z" class="relativetime">Apr 29 '09 at 2:01</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/50603/trey"><div class=""><img src="./c++ - html parsing with libxml - Stack Overflow_files/5cf4a99f6f04d35376cb288edcf411c6" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/50603/trey">Trey</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">2,273</span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="13 bronze badges"><span class="badge3"></span><span class="badgecount">13</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-800586" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+
+
+  
+    <a name="4402127"></a>
+    <div id="answer-4402127" class="answer" data-answerid="4402127">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="4402127">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>You can also use tidy to convert your (bad) HTML to XML before parsing:
+<a href="http://tidy.sourceforge.net/libintro.html" rel="nofollow">http://tidy.sourceforge.net/libintro.html</a></p>
+
+<p>If you're strictly bound to C++ there's a wrapper for it:
+<a href="http://users.rcn.com/creitzel/tidy/tidyx.h" rel="nofollow">http://users.rcn.com/creitzel/tidy/tidyx.h</a></p>
+
+<p>Then you can use either libxml or xerces:
+<a href="http://xerces.apache.org/xerces-c/api-3.html" rel="nofollow">http://xerces.apache.org/xerces-c/api-3.html</a></p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/4402127" title="short permalink to this answer" class="short-link" id="link-post-4402127">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4402127/edit" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                    answered
+ <span title="2010-12-09 19:14:46Z" class="relativetime">Dec 9 '10 at 19:14</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/425801/akellehe"><div class="gravatar-wrapper-32"><img src="./c++ - html parsing with libxml - Stack Overflow_files/picture" alt=""></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/425801/akellehe">akellehe</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">1,834</span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="17 bronze badges"><span class="badge3"></span><span class="badgecount">17</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4402127" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+
+
+  
+    <a name="1254176"></a>
+    <div id="answer-1254176" class="answer" data-answerid="1254176">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="1254176">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>If you aren't bound to C++ and if you are familiar with Python give BeautifulSoup (<a href="http://www.crummy.com/software/BeautifulSoup/" rel="nofollow">http://www.crummy.com/software/BeautifulSoup/</a>) a try. Easy to use and yet very powerful.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/1254176" title="short permalink to this answer" class="short-link" id="link-post-1254176">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1254176/edit" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2009-08-10 10:34:06Z" class="relativetime">Aug 10 '09 at 10:34</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/134146/da8"><div class=""><img src="./c++ - html parsing with libxml - Stack Overflow_files/be22608cf99544227d1e0e8ac6622335" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/134146/da8">da8</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">115</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="10 bronze badges"><span class="badge3"></span><span class="badgecount">10</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-1254176" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+
+
+  
+    <a name="4020012"></a>
+    <div id="answer-4020012" class="answer" data-answerid="4020012">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="4020012">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>LibXML can parse bad HTML. I did this in ruby and I specified the option RECOVER to the initialize method, and it parsed correctly. I guess for C++ you need to somehow pass the RECOVER option in the constructor.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/4020012" title="short permalink to this answer" class="short-link" id="link-post-4020012">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4020012/edit" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2010-10-26 01:13:39Z" class="relativetime">Oct 26 '10 at 1:13</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/197677/goaasim"><div class=""><img src="./c++ - html parsing with libxml - Stack Overflow_files/288dffd779f8a9378da5c2cc8819fef3" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/197677/goaasim">goaasim</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">1</span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4020012" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+
+
+  
+    <a name="4264224"></a>
+    <div id="answer-4264224" class="answer" data-answerid="4264224">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="4264224">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>Try a google project called streamhtmlparser.
+<a href="http://code.google.com/p/streamhtmlparser/" rel="nofollow">http://code.google.com/p/streamhtmlparser/</a></p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/4264224" title="short permalink to this answer" class="short-link" id="link-post-4264224">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4264224/edit" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2010-11-24 07:02:00Z" class="relativetime">Nov 24 '10 at 7:02</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/518413/zboom"><div class=""><img src="./c++ - html parsing with libxml - Stack Overflow_files/b0bc47cc2dddc408ef83ee73d31f256c" alt="" width="32" height="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/518413/zboom">zboom</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">1</span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4264224" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+    <a name="new-answer"></a>
+    <form id="post-form" action="http://stackoverflow.com/questions/800104/answer/submit" method="post" class="post-form">
+        <h2 class="space">Your Answer</h2>
+
+
+
+
+<script type="text/javascript">
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">  
+
+    
+    <div class="wmd-container">
+        <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px; "><span style="background-position: 0px -20px; "></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px; "><span style="background-position: -20px -20px; "></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px; "><span style="background-position: -40px -20px; "></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px; "><span style="background-position: -40px -20px; "></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px; "><span style="background-position: -60px -20px; "></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px; "><span style="background-position: -80px -20px; "></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px; "><span style="background-position: -100px -20px; "></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px; "><span style="background-position: -120px -20px; "></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px; "><span style="background-position: -120px -20px; "></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px; "><span style="background-position: -140px -20px; "></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px; "><span style="background-position: -160px -20px; "></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px; "><span style="background-position: -180px -20px; "></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px; "><span style="background-position: -200px -20px; "></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px; "><span style="background-position: -200px -20px; "></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px; "><span style="background-position: -220px -20px; "></span></li></ul></div>
+        <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="6a8e72ba0ea3e27082bf30a8db306aad">
+        <input id="author" name="author" type="text">
+    </div>
+</div>            <div class="form-item">
+        <table>
+        <tbody><tr>
+            <td class="vm open-id-login">
+                <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f800104%2fhtml-parsing-with-libxml">log in</a>
+                <script type="text/javascript">
+                    StackExchange.ready(function () {
+                        StackExchange.helpers.onClickDraftSave('#login-link');
+                    });
+                </script>
+            </td>
+            <td class="orcell">
+                <div class="orword">or</div>
+                <div class="orline"></div>
+            </td>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="40" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but never shown</span>
+                </div>
+                <div>
+                    <label for="home-page">Home Page</label>
+                    <input id="home-page" name="home-page" type="text" size="40" maxlength="200" value="" tabindex="107">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+           
+            <div class="form-submit cbt">
+            <input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+            <a href="http://stackoverflow.com/questions/800104/html-parsing-with-libxml#" class="discard-answer dno">discard</a>
+    <p class="privacy-policy-agreement">
+        By posting your answer, you agree to the 
+        <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and 
+        <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.
+    </p>
+        </div>
+    </form>
+
+
+
+</div>
+</div>
+<div id="sidebar">
+
+
+
+     <script type="text/javascript">
+        window.showNewUser = true;
+
+            
+                (function(){
+                    var cs = window.sessionStorage && window.sessionStorage['tNewsletter'];
+                    var m = /:\/\/([^\/]*)/.exec(document.referrer);
+                    var h = {'www.reddit.com':1,'news.ycombinator.com':1};
+                    if(window.sessionStorage && (cs || (m && m.length == 2 && h[m[1]]))){
+                        showNewUser = false;
+                        StackExchange.ready(function(){
+                            StackExchange.newsletterAd.loader(m[1], cs);
+                        });
+                    }
+                    if (window.localStorage && showNewUser){
+                        var c = parseInt(localStorage['nuCounter'],10); 
+                        c = isNaN(c) ? 1 : c+1;
+                        window.localStorage['nuCounter'] = c; 
+                        showNewUser = c < 10;
+                    }
+                })()
+            
+     </script>
+    <div class="module newuser newuser-greeting" id="newuser-box" style="display:none;">
+        <h4>Hello World!</h4>
+        <div>
+            <p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p>
+            <p class="ar"><a href="http://stackoverflow.com/about?mnu=1">about »</a>&nbsp;&nbsp;&nbsp;<a href="http://stackoverflow.com/faq?mnu=1">faq »</a>
+            </p>
+        </div>
+    </div>
+     <script type="text/javascript">
+        if (showNewUser) {
+            document.getElementById('newuser-box').style.display = '';
+        }
+     </script>
+        <div class="module question-stats">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://stackoverflow.com/questions/tagged/c%2b%2b" class="post-tag" title="show questions tagged &#39;c++&#39;" rel="tag">c++</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">146169</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/html" class="post-tag" title="show questions tagged &#39;html&#39;" rel="tag">html</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">115782</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/parsing" class="post-tag" title="show questions tagged &#39;parsing&#39;" rel="tag">parsing</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">12838</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/libxml" class="post-tag" title="show questions tagged &#39;libxml&#39;" rel="tag">libxml</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">159</span></span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left:10px"><p class="label-key" title="2009-04-28 22:32:43Z"><b>3 years ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left:10px"><p class="label-key"><b>7,500 times</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left:10px"><p class="label-key"><b><a href="http://stackoverflow.com/questions/800104/html-parsing-with-libxml?lastactivity" class="lastactivity-link" title="2010-12-09 19:14:46Z">1 year ago</a></b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+    
+<div class="module community-bulletin" data-tracker="cb=1">
+    <h4>Community Bulletin</h4>
+    <div class="related">
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://blog.stackoverflow.com/?cb=1" class="event-date" target="_blank">blog</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://blog.stackoverflow.com/2012/09/join-us-for-our-opening-reception-of-stack-exchange-denver/?cb=1" class="question-hyperlink" target="_blank">Join us for our opening reception of Stack Exchange: Denver!</a>
+            </div>
+            <br class="cbt">
+        </div>
+    </div>
+</div>    
+    
+        <script type="text/javascript">
+            var scriptSrc = "http://engine2.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44?keywords=c%2b%2b,html,parsing,libxml";
+            if (document.referrer) {
+                if (/\?/.test(scriptSrc))
+                    scriptSrc += "&";
+                else
+                    scriptSrc += "?";
+                scriptSrc += "xReferrer=" + document.referrer;
+            }
+            StackExchange.ready(function(){var z = document.createElement("script"); z.type = "text/javascript"; z.async = "true"; z.src = scriptSrc; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);});
+        </script>
+    
+    <div class="everyonelovesstackoverflow" id="adzerk2"><a href="http://engine.adzerk.net/redirect/0/9336/2444/8277/6cf659be7c3447e2a02dcf2f6706fd67/45/1178/14846/634827686175467820/?keywords=c%2b%2b%2chtml%2cparsing%2clibxml" rel="nofollow" target="_blank" title=""><img src="./c++ - html parsing with libxml - Stack Overflow_files/d18eea9d28f3490b8dcbfa9e38f8336e.jpg" title="" alt="" border="0" height="250" width="220"></a><img width="0" height="0" src="./c++ - html parsing with libxml - Stack Overflow_files/v(2).gif"></div>
+
+    
+    <div id="hireme"> <a href="http://careers.stackoverflow.com/jobs?a=12" class="top" target="_blank"></a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/19717/application-developer-thoughtworks?a=nin0zUQ" target="_blank" title="Application Developer at ThoughtWorks. Click to learn more."> Application Developer<br> <span class="company">ThoughtWorks</span> <span class="location">Pune, India; Chennai, India;…</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/23145/software-development-engineer-mobile-web-amazon?a=rlqmkAE" target="_blank" title="Software Development Engineer - Mobile Web, Android, and iOS Applications at Amazon. Click to learn more."> Software Development Engineer - Mobile Web, Android, and…<br> <span class="company">Amazon</span> <span class="location">Seattle, WA</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/23513/senior-mobile-engineer-rockstar-saavn?a=rMoOSYM" target="_blank" title="Senior Mobile Engineer Rockstar at Saavn. Click to learn more."> Senior Mobile Engineer Rockstar<br> <span class="company">Saavn</span> <span class="location">Mountain View, CA; Mumbai, India</span> </a> </li> </ul> <img alt="" class="impression" src="./c++ - html parsing with libxml - Stack Overflow_files/rlqmkAE-nin0zUQ-rMoOSYM-12" style="display:none"></div>
+
+      
+    
+    <div class="module sidebar-linked">
+        <h4 id="h-linked">Linked</h4>
+        <div class="linked" data-tracker="lq=1">
+            <div class="spacer">
+<a href="http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags?lq=1" class="question-hyperlink">RegEx match open tags except XHTML self-contained tags</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/11985108/dom-tree-like-in-safari-web-inspector-using-libxml2?lq=1" class="question-hyperlink">DOM Tree like in Safari Web Inspector using libxml2</a>
+</div>
+
+        </div>
+    </div>
+    <div class="module sidebar-related">
+        <h4 id="h-related">Related</h4>
+        <div class="related" data-tracker="rq=1">
+            <div class="spacer">
+<a href="http://stackoverflow.com/questions/405766/is-it-possible-to-use-libxml-with-unicode-xmlchar?rq=1" class="question-hyperlink">Is it possible to use libxml with unicode xmlchar?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1273690/problem-with-libxml-character-enconding-on-win32?rq=1" class="question-hyperlink">Problem with libxml character enconding on win32</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1354031/problem-with-namespace-and-libxml-when-i-use-xpath?rq=1" class="question-hyperlink">Problem with namespace and libxml when i use Xpath</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2175711/iphone-sdk-xml-parsing-attribute-vs-nested-elements?rq=1" class="question-hyperlink">iPhone SDK XML Parsing Attribute VS Nested elements</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2833212/parsing-html-fragments-with-libxml-sax?rq=1" class="question-hyperlink">Parsing HTML fragments with libxml SAX</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3088973/libxml-for-pythons-utf-encoding-issue-or-mine?rq=1" class="question-hyperlink">libxml for python's utf encoding issue or mine?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3289196/ruby-libxml-parsing-and-inserting-to-database?rq=1" class="question-hyperlink">Ruby libxml parsing and inserting to database</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3545076/adding-newline-to-xml-file-while-creating-using-libxml1-2-3?rq=1" class="question-hyperlink">adding newline to xml file while creating using libxml1.2.3</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4031129/lt-and-gt-are-stripped-out-of-the-parse-result-when-using-php-libxml?rq=1" class="question-hyperlink">&amp;lt; and &amp;gt; are stripped out of the parse result when using PHP/libxml</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4092879/libxml-parse-html-unpaired-tags-broke?rq=1" class="question-hyperlink">libxml parse html - Unpaired Tags broke</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5013260/what-is-way-to-download-image-from-libxml?rq=1" class="question-hyperlink">what is way to download image from libxml?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5596854/libxml-accessing-content-of-node-cause-application-exit?rq=1" class="question-hyperlink">libxml accessing content of node cause application exit</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5954335/parsing-html-in-c?rq=1" class="question-hyperlink">Parsing HTML in C++?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6448802/libxml-cleaner-adds-unwanted-p-tag-to-html-fragments?rq=1" class="question-hyperlink">Libxml Cleaner adds unwanted &lt;p&gt; tag to HTML fragments</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7041719/using-perl-xmllibxml-to-parse?rq=1" class="question-hyperlink">using perl XML::LibXML to parse</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7380689/ruby-libxml-format-xmlparser-to-expand-closing-tags?rq=1" class="question-hyperlink">Ruby libxml: format XMLParser to expand closing tags</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7789479/reading-cml-files-using-libxml2?rq=1" class="question-hyperlink">reading CML files using Libxml2</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8934469/adding-xml-comments-using-xmlnewdoccomment-from-libxml?rq=1" class="question-hyperlink">Adding xml comments using xmlNewDocComment() from libxml++</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10062780/preserving-html-entities-with-libxml?rq=1" class="question-hyperlink">Preserving HTML entities with libxml</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10077746/parse-xml-with-same-tag-names-using-libxml-on-ios?rq=1" class="question-hyperlink">Parse XML with same tag names using libxml on iOS</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10237651/cannot-compile-simple-programme-that-uses-libxml-because-glibmmconfig-h-not-fo?rq=1" class="question-hyperlink">Cannot compile simple programme that uses libxml++ because glibmmconfig.h not found</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10766415/libxml-how-to-add-sibling-nodes-to-root-node?rq=1" class="question-hyperlink">libxml: How to add sibling nodes to root node</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10790057/with-perl-libxml-how-to-detect-nodes-with-or-without-child?rq=1" class="question-hyperlink">With Perl Libxml how to detect nodes with or without child?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10828988/how-can-i-get-the-serialized-html-fragment-using-libxml-and-c?rq=1" class="question-hyperlink">How can I get the serialized HTML fragment, using libxml and C</a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/800104" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+<script type="text/javascript">
+StackExchange.ready(function(){$.get('/posts/800104/ivc/81c5');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/800104/ivc/81c5" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-c</div></div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="http://stackoverflow.com/about">about</a> |
+                <a href="http://stackoverflow.com/faq">faq</a> |
+                <a href="http://blog.stackexchange.com/?blb=1">blog</a> |
+                    <a href="http://chat.stackoverflow.com/">chat</a> |
+                <a href="http://data.stackexchange.com/">data</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a> |
+                <a href="http://stackexchange.com/about/hiring">jobs</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+
+                <a onclick="StackExchange.switchMobile(&#39;on&#39;, &#39;/questions/800104/html-parsing-with-libxml&#39;)">mobile</a> |
+
+                <b><a href="http://stackoverflow.com/help">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackoverflow.com/">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackapps.com/">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://careers.stackoverflow.com/">careers</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">■</span>&nbsp;<a href="http://serverfault.com/">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">■</span>&nbsp;<a href="http://superuser.com/">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">■</span>&nbsp;<a href="http://meta.stackoverflow.com/">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">■</span>&nbsp;<a href="http://area51.stackexchange.com/">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">■</span>&nbsp;<a href="http://webapps.stackexchange.com/">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">■</span>&nbsp;<a href="http://gaming.stackexchange.com/">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">■</span>&nbsp;<a href="http://askubuntu.com/">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">■</span>&nbsp;<a href="http://webmasters.stackexchange.com/">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">■</span>&nbsp;<a href="http://cooking.stackexchange.com/">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">■</span>&nbsp;<a href="http://gamedev.stackexchange.com/">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">■</span>&nbsp;<a href="http://math.stackexchange.com/">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">■</span>&nbsp;<a href="http://photo.stackexchange.com/">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">■</span>&nbsp;<a href="http://stats.stackexchange.com/">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">■</span>&nbsp;<a href="http://tex.stackexchange.com/">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">■</span>&nbsp;<a href="http://english.stackexchange.com/">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">■</span>&nbsp;<a href="http://cstheory.stackexchange.com/">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">■</span>&nbsp;<a href="http://programmers.stackexchange.com/">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">■</span>&nbsp;<a href="http://unix.stackexchange.com/">unix</a>&nbsp;
+                        <span style="color:#bec0cb;font-size:140%">■</span>&nbsp;<a href="http://apple.stackexchange.com/">apple</a>&nbsp;
+                        <span style="color:#939185;font-size:140%">■</span>&nbsp;<a href="http://wordpress.stackexchange.com/">wordpress</a>&nbsp;
+                        <span style="color:#ebf5f5;font-size:140%">■</span>&nbsp;<a href="http://physics.stackexchange.com/">physics</a>&nbsp;
+                        <span style="color:#4176ab;font-size:140%">■</span>&nbsp;<a href="http://diy.stackexchange.com/">home&nbsp;improvement</a>&nbsp;
+                        <span style="color:#d1d8d7;font-size:140%">■</span>&nbsp;<a href="http://gis.stackexchange.com/">gis</a>&nbsp;
+                        <span style="color:#e5e2d3;font-size:140%">■</span>&nbsp;<a href="http://electronics.stackexchange.com/">electrical&nbsp;engineering</a>&nbsp;
+                        <span style="color:#a4c639;font-size:140%">■</span>&nbsp;<a href="http://android.stackexchange.com/">android</a>&nbsp;
+                        <span style="color:#2e4e60;font-size:140%">■</span>&nbsp;<a href="http://security.stackexchange.com/">security</a>&nbsp;
+                        <span style="color:#45bcb5;font-size:140%">■</span>&nbsp;<a href="http://bicycles.stackexchange.com/">bicycles</a>&nbsp;
+                        <span style="color:#00adee;font-size:140%">■</span>&nbsp;<a href="http://dba.stackexchange.com/">dba</a>&nbsp;
+                        <span style="color:#2edaf0;font-size:140%">■</span>&nbsp;<a href="http://drupal.stackexchange.com/">drupal</a>&nbsp;
+                        <span style="color:#213951;font-size:140%">■</span>&nbsp;<a href="http://sharepoint.stackexchange.com/">sharepoint</a>&nbsp;
+                        <span style="color:#73abb3;font-size:140%">■</span>&nbsp;<a href="http://scifi.stackexchange.com/">scifi &amp; fantasy</a>&nbsp;
+                        <span style="color:#23629F;font-size:140%">■</span>&nbsp;<a href="http://ux.stackexchange.com/">user experience</a>&nbsp;
+                        <span style="color:#faff72;font-size:140%">■</span>&nbsp;<a href="http://skeptics.stackexchange.com/">skeptics</a>&nbsp;
+                        <span style="color:#623121;font-size:140%">■</span>&nbsp;<a href="http://rpg.stackexchange.com/">rpg</a>&nbsp;
+                        <span style="color:#e4be88;font-size:140%">■</span>&nbsp;<a href="http://judaism.stackexchange.com/">judaism</a>&nbsp;
+                        <span style="color:#ffecb1;font-size:140%">■</span>&nbsp;<a href="http://mathematica.stackexchange.com/">mathematica</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2012.9.8.3994</div>
+                        </div>
+            <div id="copyright">
+                site design / logo © 2012 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            
+
+        </div>
+    </div>
+    
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|c++|html|parsing|libxml|']); 
+_gaq.push(['_trackPageview']);
+    var _qevents = _qevents || [];
+    (function(){
+        var s=document.getElementsByTagName('script')[0];
+        var ga=document.createElement('script');
+        ga.type='text/javascript';
+        ga.async=true;
+        ga.src='http://www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(ga,s);
+        var sc=document.createElement('script');
+        sc.type='text/javascript';
+        sc.async=true;
+        sc.src='http://edge.quantserve.com/quant.js'; 
+        s.parentNode.insertBefore(sc,s);
+    })();
+    </script>
+    <script type="text/javascript">
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>    
+    
+
+</body></html>

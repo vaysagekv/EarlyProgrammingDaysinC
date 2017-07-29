@@ -1,0 +1,1647 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0068)http://www.tug.org/texlive/doc/tlmgr.html#install__option_____pkg___ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>tlmgr - the TeX Live Manager</title>
+
+<link rev="made" href="mailto:karl@tug.org">
+</head>
+
+<body style="background-color: white">
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#synopsis">SYNOPSIS</a></li>
+	<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#description">DESCRIPTION</a></li>
+	<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#examples">EXAMPLES</a></li>
+	<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#options">OPTIONS</a></li>
+	<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#actions">ACTIONS</a></li>
+	<ul>
+
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#help">help</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#version">version</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#gui">gui</a></li>
+		<li><a href="./tlmgr - the TeX Live Manager_files/tlmgr - the TeX Live Manager.html">install [<em>option</em>]... <em>pkg</em>...</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#update__option______pkg____">update [<em>option</em>]... [<em>pkg</em>]...</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#backup____clean__n______backupdir_dir_____all___pkg____">backup [-clean[=<em>N</em>]] [-backupdir <em>dir</em>] [-all | <em>pkg</em>]...</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#restore____backupdir_dir_____all___pkg__rev__">restore [-backupdir <em>dir</em>] [-all | <em>pkg</em> [<em>rev</em>]]</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#remove__option_____pkg___">remove [<em>option</em>]... <em>pkg</em>...</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#repository">repository</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#candidates">candidates</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#option">option</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#conf__texmf_tlmgr__key__value___">conf [texmf|tlmgr [<em>key</em> [<em>value</em>]]]</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#paper">paper</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#platform_list_add_remove_platform___">platform list|add|remove <em>platform</em>...</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#print_platform">print-platform</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#info__option______collections_schemes_pkg____">info [<em>option</em>...] [collections|schemes|<em>pkg</em>...]</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#search__option_____what">search [<em>option</em>...] <em>what</em></a></li>
+		<ul>
+
+			<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#search__option_______file_what">search [<em>option</em>...] -file <em>what</em></a></li>
+			<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#search__option_______taxonomy_what">search [<em>option</em>...] -taxonomy <em>what</em></a></li>
+			<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#search__option_______keyword_what">search [<em>option</em>...] -keyword <em>what</em></a></li>
+			<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#search__option_______functionality_what">search [<em>option</em>...] -functionality <em>what</em></a></li>
+			<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#search__option_______characterization_what">search [<em>option</em>...] -characterization <em>what</em></a></li>
+			<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#search__option_______all_what">search [<em>option</em>...] -all <em>what</em></a></li>
+		</ul>
+
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#dump_tlpdb____local___remote_">dump-tlpdb [-local|-remote]</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#check__option______files_depends_executes_runfiles_all_">check [<em>option</em>]... [files|depends|executes|runfiles|all]</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#path____w32mode_user_admin___add_remove_">path [-w32mode=user|admin] [add|remove]</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#postaction____w32mode_user_admin_____fileassocmode_1_2_____all___install_remove___shortcut_fileassoc_script___pkg____">postaction [-w32mode=user|admin] [-fileassocmode=1|2] [-all] [install|remove] [shortcut|fileassoc|script] [<em>pkg</em>]...</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#uninstall">uninstall</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#generate__option_____what">generate [<em>option</em>]... <em>what</em></a></li>
+	</ul>
+
+	<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#tlmgr_configuration_file">TLMGR CONFIGURATION FILE</a></li>
+	<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#taxonomies">TAXONOMIES</a></li>
+	<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#multiple_repositories">MULTIPLE REPOSITORIES</a></li>
+	<ul>
+
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#pinning">Pinning</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#multiple_repository_example_with_tlcontrib">Multiple repository example with tlcontrib</a></li>
+	</ul>
+
+	<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#gui_for_tlmgr">GUI FOR TLMGR</a></li>
+	<ul>
+
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#main_display">Main display</a></li>
+		<ul>
+
+			<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#display_configuration_area">Display configuration area</a></li>
+			<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#package_list_area">Package list area</a></li>
+			<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#main_display_action_buttons">Main display action buttons</a></li>
+		</ul>
+
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#menu_bar">Menu bar</a></li>
+	</ul>
+
+	<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#machine_readable_output">MACHINE-READABLE OUTPUT</a></li>
+	<ul>
+
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#update_and_install_actions">update and install actions</a></li>
+		<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#option_action">option action</a></li>
+	</ul>
+
+	<li><a href="http://www.tug.org/texlive/doc/tlmgr.html#authors_and_copyright">AUTHORS AND COPYRIGHT</a></li>
+</ul>
+
+<hr name="index">
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<p>tlmgr [<em>option</em>]... <em>action</em> [<em>option</em>]... [<em>operand</em>]...</p>
+<p>
+</p>
+<hr>
+<h1><a name="description">DESCRIPTION</a></h1>
+<p><strong>tlmgr</strong> manages an existing TeX Live installation, both packages and
+configuration options.  For information on initially downloading and
+installing TeX Live, see <a href="http://tug.org/texlive/acquire.html">http://tug.org/texlive/acquire.html</a>.</p>
+<p>The most up-to-date version of this documentation (updated nightly from
+the development sources) is available at
+<a href="http://tug.org/texlive/tlmgr.html">http://tug.org/texlive/tlmgr.html</a>, along with procedures for updating
+<code>tlmgr</code> itself and information about test versions.</p>
+<p>TeX Live is organized into a few top-level <em>schemes</em>, each of which is
+specified as a different set of <em>collections</em> and <em>packages</em>, where a
+collection is a set of packages, and a package is what contains actual
+files.  Schemes typically contain a mix of collections and packages, but
+each package is included in exactly one collection, no more and no less.
+A TeX Live installation can be customized and managed at any level.</p>
+<p>See <a href="http://tug.org/texlive/doc">http://tug.org/texlive/doc</a> for all the TeX Live documentation
+available.</p>
+<p>
+</p>
+<hr>
+<h1><a name="examples">EXAMPLES</a></h1>
+<p>After successfully installing TeX Live, here are a few common operations
+with <code>tlmgr</code>:</p>
+<dl>
+<dt><strong><a name="tlmgr_option_repository_http_mirror_ctan_org_systems_texlive_tlnet" class="item"><code>tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet</code></a></strong></dt>
+
+<dd>
+<p>Tell <code>tlmgr</code> to use a nearby CTAN mirror for future updates; useful if
+you installed TeX Live from the DVD image and want continuing updates.</p>
+</dd>
+<dt><strong><a name="tlmgr_update_list" class="item"><code>tlmgr update --list</code></a></strong></dt>
+
+<dd>
+<p>Report what would be updated without actually updating anything.</p>
+</dd>
+<dt><strong><a name="tlmgr_update_all" class="item"><code>tlmgr update --all</code></a></strong></dt>
+
+<dd>
+<p>Make your local TeX installation correspond to what is in the package
+repository (typically useful when updating from CTAN).</p>
+</dd>
+<dt><strong><a name="tlmgr_info_pkg" class="item"><code>tlmgr info</code> <em>pkg</em></a></strong></dt>
+
+<dd>
+<p>Display detailed information about <em>pkg</em>, such as the installation
+status and description.</p>
+</dd>
+</dl>
+<p>For all the capabilities and details of <code>tlmgr</code>, please read the
+following voluminous information.</p>
+<p>
+</p>
+<hr>
+<h1><a name="options">OPTIONS</a></h1>
+<p>The following options to <code>tlmgr</code> are global options, not specific to
+any action.  All options, whether global or action-specific, can be
+given anywhere on the command line, and in any order.  The first
+non-option argument will be the main action.  In all cases,
+<code>--</code><em>option</em> and <code>-</code><em>option</em> are equivalent, and an <code>=</code> is optional
+between an option name and its value.</p>
+<dl>
+<dt><strong><a name="repository_url_path" class="item"><strong>--repository</strong> <em>url|path</em></a></strong></dt>
+
+<dd>
+<p>Specifies the package repository from which packages should be installed
+or updated, overriding the default package repository found in the
+installation's TeX Live Package Database (a.k.a. the TLPDB, defined
+entirely in the file <code>tlpkg/texlive.tlpdb</code>).  The documentation for
+<code>install-tl</code> has more details about this
+(<a href="http://tug.org/texlive/doc/install-tl.html">http://tug.org/texlive/doc/install-tl.html</a>).</p>
+<p><code>--repository</code> changes the repository location only for the current
+run; to make a permanent change, use <code>option repository</code> (see the
+<a href="http://www.tug.org/texlive/doc/tlmgr.html#option">the option manpage</a> action).</p>
+<p>For backward compatibility and convenience, <code>--location</code> and <code>--repo</code>
+are accepted as aliases for this option.</p>
+</dd>
+<dt><strong><a name="gui_action" class="item"><strong>--gui</strong> [<em>action</em>]</a></strong></dt>
+
+<dd>
+<p><code>tlmgr</code> has a graphical interface as well as the command-line
+interface.  You can give this option, <code>--gui</code>, together with an action
+to be brought directly into the respective screen of the GUI.  For
+example, running</p>
+<pre>  tlmgr --gui update</pre>
+<p>starts you directly at the update screen.  Without any action, the
+GUI will be started at the main screen.</p>
+</dd>
+<dt><strong><a name="gui_lang_llcode" class="item"><strong>--gui-lang</strong> <em>llcode</em></a></strong></dt>
+
+<dd>
+<p>By default, the GUI tries to deduce your language from the environment
+(on Windows via the registry, on Unix via <code>LC_MESSAGES</code>). If that fails
+you can select a different language by giving this option with a
+language code (based on ISO 639-1).  Currently supported (but not
+necessarily completely translated) are: English (en, default), Czech
+(cs), German (de), French (fr), Italian (it), Japanese (ja), Dutch (nl),
+Polish (pl), Brazilian Portuguese (pt_BR), Russian (ru), Slovak (sk),
+Slovenian (sl), Serbian (sr), Vietnamese (vi), simplified Chinese
+(zh_CN), and traditional Chinese (zh_TW).</p>
+</dd>
+<dt><strong><a name="machine_readable" class="item"><strong>--machine-readable</strong></a></strong></dt>
+
+<dd>
+<p>Instead of the normal output intended for human consumption, write (to
+standard output) a fixed format more suitable for machine parsing.  See
+the <a href="http://www.tug.org/texlive/doc/tlmgr.html#machine_readable_output">MACHINE-READABLE OUTPUT</a> section below.</p>
+</dd>
+<dt><strong><a name="package_logfile_file" class="item"><strong>--package-logfile</strong> <em>file</em></a></strong></dt>
+
+<dd>
+<p><code>tlmgr</code> logs all package actions (install, remove, update, failed
+updates, failed restores) to a separate log file, by default
+<code>TEXMFSYSVAR/web2c/tlmgr.log</code>.  This option allows you to specific a
+different file for the log.</p>
+</dd>
+<dt><strong><a name="pause" class="item"><strong>--pause</strong></a></strong></dt>
+
+<dd>
+<p>This option makes <code>tlmgr</code> wait for user input before exiting.  Useful on
+Windows to avoid disappearing command windows.</p>
+</dd>
+<dt><strong><a name="persistent_downloads" class="item"><strong>--persistent-downloads</strong></a></strong></dt>
+
+<dt><strong><a name="no_persistent_downloads" class="item"><strong>--no-persistent-downloads</strong></a></strong></dt>
+
+<dd>
+<p>For network-based installations, this option (on by default) makes
+<code>tlmgr</code> try to set up a persistent connection (using the <a href="http://www.tug.org/Net/LWP.html">the Net::LWP manpage</a>
+Perl module).  The idea is to open and reuse only one connection per
+session between your computer and the server, instead of initiating a
+new download for each package.</p>
+<p>If this is not possible, <code>tlmgr</code> will fall back to using <code>wget</code>.  To
+disable these persistent connections, use <a href="http://www.tug.org/texlive/doc/tlmgr.html#no_persistent_downloads"><code>--no-persistent-downloads</code></a>.</p>
+</dd>
+<dt><strong><a name="no_execute_actions" class="item"><strong>--no-execute-actions</strong></a></strong></dt>
+
+<dd>
+<p>Suppress the execution of the execute actions as defined in the tlpsrc
+files.  Documented only for completeness, as this is only useful in
+debugging.</p>
+</dd>
+<dt><strong><a name="debug_translation" class="item"><strong>--debug-translation</strong></a></strong></dt>
+
+<dd>
+<p>In GUI mode, this switch makes <code>tlmgr</code> report any missing, or more
+likely untranslated, messages to standard error.  This can help
+translators to see what remains to be done.</p>
+</dd>
+</dl>
+<p>The standard options for TeX Live programs are also accepted:
+<code>--help/-h/-?</code>, <code>--version</code>, <code>-q</code> (no informational messages), <code>-v</code>
+(debugging messages, can be repeated).  For the details about these, see
+the <a href="http://www.tug.org/TeXLive/TLUtils.html">the TeXLive::TLUtils manpage</a> documentation.</p>
+<p>The <code>--version</code> option shows version information about the TeX Live
+release and about the <code>tlmgr</code> script itself.  If <code>-v</code> is given as
+well, revision number for the used TeX Live Perl modules are shown, too.</p>
+<p>
+</p>
+<hr>
+<h1><a name="actions">ACTIONS</a></h1>
+<p>
+</p>
+<h2><a name="help">help</a></h2>
+<p>Gives this help information (same as <code>--help</code>).</p>
+<p>
+</p>
+<h2><a name="version">version</a></h2>
+<p>Gives version information (same as <code>--version</code>).</p>
+<p>If <code>-v</code> has been given the revisions of the used modules are reported, too.</p>
+<p>
+</p>
+<h2><a name="gui">gui</a></h2>
+<p>Start the graphical user interface. See <strong>GUI</strong> below.</p>
+<p>
+</p>
+<h2><a name="install__option_____pkg___">install [<em>option</em>]... <em>pkg</em>...</a></h2>
+<p>Install each <em>pkg</em> given on the command line. By default this installs
+all packages on which the given <em>pkg</em>s are dependent, also.  Options:</p>
+<dl>
+<dt><strong><a name="file" class="item"><strong>--file</strong></a></strong></dt>
+
+<dd>
+<p>Instead of fetching a package from the installation repository, use
+the packages files given on the command line. These files need
+to be proper TeX Live package files (with contained tlpobj file).</p>
+</dd>
+<dt><strong><a name="reinstall" class="item"><strong>--reinstall</strong></a></strong></dt>
+
+<dd>
+<p>Reinstall a package (including dependencies for collections) even if it
+seems to be already installed (i.e, is present in the TLPDB).  This is
+useful to recover from accidental removal of files in the hierarchy.</p>
+<p>When re-installing, only dependencies on normal packages are followed
+(not those of category Scheme or Collection).</p>
+</dd>
+<dt><strong><a name="no_depends" class="item"><strong>--no-depends</strong></a></strong></dt>
+
+<dd>
+<p>Do not install dependencies.  (By default, installing a package ensures
+that all dependencies of this package are fulfilled.)</p>
+</dd>
+<dt><strong><a name="no_depends_at_all" class="item"><strong>--no-depends-at-all</strong></a></strong></dt>
+
+<dd>
+<p>When you install a package which ships binary files the respective
+binary package will also be installed.  That is, for a package <code>foo</code>,
+the package <code>foo.i386-linux</code> will also be installed on an <code>i386-linux</code>
+system.  This switch suppresses this behavior, and also implies
+<a href="http://www.tug.org/texlive/doc/tlmgr.html#no_depends"><code>--no-depends</code></a>.  Don't use it unless you are sure of what you are
+doing.</p>
+</dd>
+<dt><strong><a name="dry_run" class="item"><strong>--dry-run</strong></a></strong></dt>
+
+<dd>
+<p>Nothing is actually installed; instead, the actions to be performed are
+written to the terminal.</p>
+</dd>
+<dt><strong><a name="force" class="item"><strong>--force</strong></a></strong></dt>
+
+<dd>
+<p>If updates to <code>tlmgr</code> itself (or other parts of the basic
+infrastructure) are present, <code>tlmgr</code> will bail out and not perform the
+installation unless this option is given.  Not recommended.</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="update__option______pkg____">update [<em>option</em>]... [<em>pkg</em>]...</a></h2>
+<p>Updates the packages given as arguments to the latest version available
+at the installation source.  Either <a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a> or at least one <em>pkg</em> name
+must be specified.  Options:</p>
+<dl>
+<dt><strong><a name="all" class="item"><strong>--all</strong></a></strong></dt>
+
+<dd>
+<p>Update all installed packages except for <code>tlmgr</code> itself.  Thus, if
+updates to <code>tlmgr</code> itself are present, this will simply give an error,
+unless also the option <a href="http://www.tug.org/texlive/doc/tlmgr.html#force"><code>--force</code></a> or <a href="http://www.tug.org/texlive/doc/tlmgr.html#self"><code>--self</code></a> is given.  (See below.)</p>
+<p>In addition to updating the installed packages, during the update of a
+collection the local installation is (by default) synchronized to the
+status of the collection on the server, for both additions and removals.</p>
+<p>This means that if a package has been removed on the server (and thus
+has also been removed from the respective collection), <code>tlmgr</code> will
+remove the package in the local installation.  This is called
+``auto-remove'' and is announced as such when using the option
+<a href="http://www.tug.org/texlive/doc/tlmgr.html#list"><code>--list</code></a>.  This auto-removal can be suppressed using the option
+<code>--no-auto-remove</code>.</p>
+<p>Analogously, if a package has been added to a collection on the server
+that is also installed locally, it will be added to the local
+installation.  This is called ``auto-install'' and is announced as such
+when using the option <a href="http://www.tug.org/texlive/doc/tlmgr.html#list"><code>--list</code></a>.  This auto-installation can be
+suppressed using the option <code>--no-auto-install</code>.</p>
+<p>An exception to the collection dependency checks (including the
+auto-installation of packages just mentioned) are those that have been
+``forcibly removed'' by you, that is, you called <code>tlmgr remove --force</code>
+on them.  (See the <code>remove</code> action documentation.)  To reinstall any
+such forcibly removed packages use <a href="http://www.tug.org/texlive/doc/tlmgr.html#reinstall_forcibly_removed"><code>--reinstall-forcibly-removed</code></a>.</p>
+<p>If you want to exclude some packages from the current update run (e.g.,
+due to a slow link), see the <code>--exclude</code> option below.</p>
+</dd>
+<dt><strong><a name="self" class="item"><strong>--self</strong></a></strong></dt>
+
+<dd>
+<p>Update <code>tlmgr</code> itself (that is, the infrastructure packages) if updates
+to it are present. On Windows this includes updates to the private Perl
+interpreter shipped inside TeX Live.</p>
+<p>If this option is given together with either <a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a> or a list of
+packages, then <code>tlmgr</code> will be updated first and, if this update
+succeeds, the new version will be restarted to complete the rest of the
+updates.</p>
+<p>In short:</p>
+<pre>  tlmgr update --self        # update infrastructure only
+  tlmgr update --self --all  # update infrastructure and all packages
+  tlmgr update --force --all # update all packages but *not* infrastructure
+                             # ... this last at your own risk, not recommended!</pre>
+</dd>
+<dt><strong><a name="dry_run2" class="item"><strong>--dry-run</strong></a></strong></dt>
+
+<dd>
+<p>Nothing is actually installed; instead, the actions to be performed are
+written to the terminal.  This is a more detailed report than <a href="http://www.tug.org/texlive/doc/tlmgr.html#list"><code>--list</code></a>.</p>
+</dd>
+<dt><strong><a name="list_pkg" class="item"><strong>--list</strong> [<em>pkg</em>]</a></strong></dt>
+
+<dd>
+<p>Concisely list the packages which would be updated, newly installed, or
+removed, without actually changing anything. 
+If <a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a> is also given, all available updates are listed.
+If <a href="http://www.tug.org/texlive/doc/tlmgr.html#self"><code>--self</code></a> is given, but not <a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a>, only updates to the
+critical packages (tlmgr, texlive infrastructure, perl on Windows, etc.)
+are listed.
+If neither <a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a> nor <a href="http://www.tug.org/texlive/doc/tlmgr.html#self"><code>--self</code></a> is given, and in addition no <em>pkg</em> is
+given, then <a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a> is assumed (thus, <a href="http://www.tug.org/texlive/doc/tlmgr.html#tlmgr_update_list"><code>tlmgr update --list</code></a> is the
+same as <code>tlmgr update --list --all</code>).
+If neither <a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a> nor <a href="http://www.tug.org/texlive/doc/tlmgr.html#self"><code>--self</code></a> is given, but specific package names are
+given, those packages are checked for updates.</p>
+</dd>
+<dt><strong><a name="exclude_pkg" class="item"><strong>--exclude</strong> <em>pkg</em></a></strong></dt>
+
+<dd>
+<p>Exclude <em>pkg</em> from the update process.  If this option is given more
+than once, its arguments accumulate.</p>
+<p>An argument <em>pkg</em> excludes both the package <em>pkg</em> itself and all
+its related platform-specific packages <em>pkg.ARCH</em>.  For example,</p>
+<pre>  tlmgr update --all --exclude a2ping</pre>
+<p>will not update <code>a2ping</code>, <code>a2ping.i386-linux</code>, or
+any other <code>a2ping.</code><em>ARCH</em> package.</p>
+<p>If this option specifies a package that would otherwise be a candidate
+for auto-installation, auto-removal, or reinstallation of a forcibly
+removed package, <code>tlmgr</code> quits with an error message.  Excludes are not
+supported in these circumstances.</p>
+</dd>
+<dt><strong><a name="no_auto_remove_pkg" class="item"><strong>--no-auto-remove</strong> [<em>pkg</em>]...</a></strong></dt>
+
+<dd>
+<p>Under normal circumstances <code>tlmgr</code> tries to remove packages which have
+disappeared on the server, as described above under <a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a>.  This
+option prevents any such removals, either for all packages (with
+<a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a>), or the given <em>pkg</em> names.</p>
+</dd>
+<dt><strong><a name="no_auto_install_pkg" class="item"><strong>--no-auto-install</strong> [<em>pkg</em>]...</a></strong></dt>
+
+<dd>
+<p>Under normal circumstances <code>tlmgr</code> will install packages which are new
+on the server, as described above under <a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a>.  This option prevents
+any such automatic installation, either for all packages (with
+<a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a>), or the given <em>pkg</em> names.</p>
+<p>Furthermore, after the <code>tlmgr</code> run using this has finished, the
+packages that would have been auto-installed <em>will be considered as
+forcibly removed</em>.  So, if <code>foobar</code> is the only new package on the
+server, then</p>
+<pre>  tlmgr update --all --no-auto-install</pre>
+<p>is equivalent to</p>
+<pre>  tlmgr update --all
+  tlmgr remove --force foobar</pre>
+</dd>
+<dt><strong><a name="reinstall_forcibly_removed" class="item"><strong>--reinstall-forcibly-removed</strong></a></strong></dt>
+
+<dd>
+<p>Under normal circumstances <code>tlmgr</code> will not install packages that have
+been forcibly removed by the user; that is, removed with <code>remove
+--force</code>, or whose installation was prohibited by <code>--no-auto-install</code>
+during an earlier update.</p>
+<p>This option makes <code>tlmgr</code> ignore the forcible removals and re-install
+all such packages. This can be used to completely synchronize an
+installation with the server's idea of what is available:</p>
+<pre>  tlmgr update --reinstall-forcibly-removed --all</pre>
+</dd>
+<dt><strong><a name="backup_and_backupdir_directory" class="item"><strong>--backup</strong> and <strong>--backupdir</strong> <em>directory</em></a></strong></dt>
+
+<dd>
+<p>These two options control the creation of backups of packages <em>before</em>
+updating; that is, backup of packages as currently installed.  If
+neither of these options are given, no backup package will be saved. If
+<code>--backupdir</code> is given and specifies a writable directory then a backup
+will be made in that location. If only <code>--backup</code> is given, then a
+backup will be made to the directory previously set via the <code>option</code>
+action (see below). If both are given then a backup will be made to the
+specified <em>directory</em>.</p>
+<p>You can set options via the <code>option</code> action to automatically create
+backups for all packages, and/or keep only a certain number of
+backups.  Please see the <code>option</code> action for details.</p>
+<p><code>tlmgr</code> always makes a temporary backup when updating packages, in case
+of download or other failure during an update.  In contrast, the purpose
+of this <code>--backup</code> option is to allow you to save a persistent backup
+in case the actual <em>content</em> of the update causes problems, e.g.,
+introduces an incompatibility.</p>
+<p>The <code>restore</code> action explains how to restore from a backup.</p>
+</dd>
+<dt><strong><a name="no_depends2" class="item"><strong>--no-depends</strong></a></strong></dt>
+
+<dd>
+<p>If you call for updating a package normally all depending packages
+will also be checked for updates and updated if necessary. This switch
+suppresses this behavior.</p>
+</dd>
+<dt><strong><a name="no_depends_at_all2" class="item"><strong>--no-depends-at-all</strong></a></strong></dt>
+
+<dd>
+<p>See above under <strong>install</strong> (and beware).</p>
+</dd>
+<dt><strong><a name="force2" class="item"><strong>--force</strong></a></strong></dt>
+
+<dd>
+<p>Force update of normal packages, without updating <code>tlmgr</code> itself 
+(unless the <a href="http://www.tug.org/texlive/doc/tlmgr.html#self"><code>--self</code></a> option is also given).  Not recommended.</p>
+<p>Also, <code>update --list</code> is still performed regardless of this option.</p>
+</dd>
+</dl>
+<p>If the package on the server is older than the package already installed
+(e.g., if the selected mirror is out of date), <code>tlmgr</code> does not
+downgrade.  Also, packages for uninstalled platforms are not installed.</p>
+<p>
+</p>
+<h2><a name="backup____clean__n______backupdir_dir_____all___pkg____">backup [--clean[=<em>N</em>]] [--backupdir <em>dir</em>] [--all | <em>pkg</em>]...</a></h2>
+<p>If the <code>--clean</code> option is not specified, this action makes a backup of
+the given packages, or all packages given <a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a>. These backups are
+saved to the value of the <code>--backupdir</code> option, if that is an existing and
+writable directory. If <code>--backupdir</code> is not given, the <code>backupdir</code>
+option setting in the TLPDB is used, if present.  If both are missing,
+no backups are made.</p>
+<p>If the <code>--clean</code> option is specified, backups are pruned (removed)
+instead of saved. The optional integer value <em>N</em> may be specified to
+set the number of backups that will be retained when cleaning. If <code>N</code>
+is not given, the value of the <code>autobackup</code> option is used. If both are
+missing, an error is issued. For more details of backup pruning, see
+the <code>option</code> action.</p>
+<p>Options:</p>
+<dl>
+<dt><strong><a name="backupdir_directory" class="item"><strong>--backupdir</strong> <em>directory</em></a></strong></dt>
+
+<dd>
+<p>Overrides the <code>backupdir</code> option setting in the TLPDB.
+The <em>directory</em> argument is required and must specify an existing,
+writable directory where backups are to be placed.</p>
+</dd>
+<dt><strong><a name="all2" class="item"><strong>--all</strong></a></strong></dt>
+
+<dd>
+<p>If <code>--clean</code> is not specified, make a backup of all packages in the TeX
+Live installation; this will take quite a lot of space and time.  If
+<code>--clean</code> is specified, all packages are pruned.</p>
+</dd>
+<dt><strong><a name="clean_n" class="item"><strong>--clean</strong>[=<em>N</em>]</a></strong></dt>
+
+<dd>
+<p>Instead of making backups, prune the backup directory of old backups, as
+explained above. The optional integer argument <em>N</em> overrides the
+<code>autobackup</code> option set in the TLPDB.  You must use <a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a> or a list
+of packages together with this option, as desired.</p>
+</dd>
+<dt><strong><a name="dry_run3" class="item"><strong>--dry-run</strong></a></strong></dt>
+
+<dd>
+<p>Nothing is actually backed up or removed; instead, the actions to be
+performed are written to the terminal.</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="restore____backupdir_dir_____all___pkg__rev__">restore [--backupdir <em>dir</em>] [--all | <em>pkg</em> [<em>rev</em>]]</a></h2>
+<p>Restore a package from a previously-made backup.</p>
+<p>If <a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a> is given, try to restore the latest revision of all 
+package backups found in the backup directory.</p>
+<p>Otherwise, if neither <em>pkg</em> nor <em>rev</em> are given, list the available backup
+revisions for all packages.</p>
+<p>With <em>pkg</em> given but no <em>rev</em>, list all available backup revisions of
+<em>pkg</em>.</p>
+<p>When listing available packages tlmgr shows the revision and in 
+parenthesis the creation time if available (in format yyyy-mm-dd hh:mm).</p>
+<p>With both <em>pkg</em> and <em>rev</em>, tries to restore the package from the
+specified backup.</p>
+<p>Options:</p>
+<dl>
+<dt><strong><a name="all3" class="item"><strong>--all</strong></a></strong></dt>
+
+<dd>
+<p>Try to restore the latest revision of all package backups found in the
+backup directory. Additional non-option arguments (like <em>pkg</em>) are not
+allowed.</p>
+</dd>
+<dt><strong><a name="backupdir_directory2" class="item"><strong>--backupdir</strong> <em>directory</em></a></strong></dt>
+
+<dd>
+<p>Specify the directory where the backups are to be found. If not given it
+will be taken from the configuration setting in the TLPDB.</p>
+</dd>
+<dt><strong><a name="dry_run4" class="item"><strong>--dry-run</strong></a></strong></dt>
+
+<dd>
+<p>Nothing is actually restored; instead, the actions to be performed are
+written to the terminal.</p>
+</dd>
+<dt><strong><a name="force3" class="item"><strong>--force</strong></a></strong></dt>
+
+<dd>
+<p>Don't ask questions.</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="remove__option_____pkg___">remove [<em>option</em>]... <em>pkg</em>...</a></h2>
+<p>Remove each <em>pkg</em> specified.  Removing a collection removes all package
+dependencies (unless <a href="http://www.tug.org/texlive/doc/tlmgr.html#no_depends"><code>--no-depends</code></a> is specified), but not any
+collection dependencies of that collection.  However, when removing a
+package, dependencies are never removed.  Options:</p>
+<dl>
+<dt><strong><a name="no_depends3" class="item"><strong>--no-depends</strong></a></strong></dt>
+
+<dd>
+<p>Do not remove dependent packages.</p>
+</dd>
+<dt><strong><a name="no_depends_at_all3" class="item"><strong>--no-depends-at-all</strong></a></strong></dt>
+
+<dd>
+<p>See above under <strong>install</strong> (and beware).</p>
+</dd>
+<dt><strong><a name="force4" class="item"><strong>--force</strong></a></strong></dt>
+
+<dd>
+<p>By default, removal of a package or collection that is a dependency of
+another collection or scheme is not allowed.  With this option, the
+package will be removed unconditionally.  Use with care.</p>
+<p>A package that has been removed using the <a href="http://www.tug.org/texlive/doc/tlmgr.html#force"><code>--force</code></a> option because it
+is still listed in an installed collection or scheme will not be
+updated, and will be mentioned as <strong>forcibly removed</strong> in the output of
+<strong>tlmgr update --list</strong>.</p>
+</dd>
+<dt><strong><a name="dry_run5" class="item"><strong>--dry-run</strong></a></strong></dt>
+
+<dd>
+<p>Nothing is actually removed; instead, the actions to be performed are
+written to the terminal.</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="repository">repository</a></h2>
+<dl>
+<dt><strong><a name="repository_list" class="item"><strong>repository list</strong></a></strong></dt>
+
+<dt><strong><a name="repository_add_path_tag" class="item"><strong>repository add <em>path</em> [<em>tag</em>]</strong></a></strong></dt>
+
+<dt><strong><a name="repository_remove_path_tag" class="item"><strong>repository remove <em>path|tag</em></strong></a></strong></dt>
+
+<dt><strong><a name="repository_set_path_tag_path_tag" class="item"><strong>repository set <em>path</em>[#<em>tag</em>] [<em>path</em>[#<em>tag</em>] ...]</strong></a></strong></dt>
+
+<dd>
+<p>This action manages the list of repositories.  See <a href="http://www.tug.org/texlive/doc/tlmgr.html#multiple_repositories">MULTIPLE REPOSITORIES</a> below for detailed explanations.</p>
+<p>The first form (<a href="http://www.tug.org/texlive/doc/tlmgr.html#list"><code>list</code></a>) lists all configured repositories and the
+respective tags if set.  The second form (<code>add</code>) adds a repository
+(optionally attaching a tag) to the list of repositories.  The third
+form (<code>remove</code>) removes a repository, either by full path/url, or by
+tag.  The last form (<code>set</code>) sets the list of repositories to the items
+given on the command line, not keeping previous settings</p>
+<p>In all cases, one of the repositories must be tagged as <code>main</code>;
+otherwise, all operations will fail!</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="candidates">candidates</a></h2>
+<dl>
+<dt><strong><a name="candidates_pkg" class="item"><strong>candidates <em>pkg</em></strong></a></strong></dt>
+
+<dd>
+<p>Shows the available candidate repositories for package <em>pkg</em>.
+See <a href="http://www.tug.org/texlive/doc/tlmgr.html#multiple_repositories">MULTIPLE REPOSITORIES</a> below.</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="option">option</a></h2>
+<dl>
+<dt><strong><a name="option_show" class="item"><strong>option [show]</strong></a></strong></dt>
+
+<dt><strong><a name="option_showall" class="item"><strong>option showall</strong></a></strong></dt>
+
+<dt><strong><a name="option_key_value" class="item"><strong>option <em>key</em> [<em>value</em>]</strong></a></strong></dt>
+
+</dl>
+<p>The first form shows the global TeX Live settings currently saved in the
+TLPDB with a short description and the <code>key</code> used for changing it in
+parentheses.</p>
+<p>The second form is similar, but also shows options which can be defined
+but are not currently set to any value.</p>
+<p>In the third form, if <em>value</em> is not given, the setting for <em>key</em> is
+displayed.  If <em>value</em> is present, <em>key</em> is set to <em>value</em>.</p>
+<p>Possible values for <em>key</em> are (run <code>tlmgr option showall</code> for
+the definitive list):</p>
+<pre> repository (default package repository),
+ formats    (create formats at installation time),
+ postcode   (run postinst code blobs)
+ docfiles   (install documentation files),
+ srcfiles   (install source files),
+ backupdir  (default directory for backups),
+ autobackup (number of backups to keep).
+ sys_bin    (directory to which executables are linked by the path action)
+ sys_man    (directory to which man pages are linked by the path action)
+ sys_info   (directory to which Info files are linked by the path action)
+ desktop_integration (Windows-only: create Start menu shortcuts)
+ fileassocs (Windows-only: change file associations)
+ multiuser  (Windows-only: install for all users)</pre>
+<p>One common use of <code>option</code> is to permanently change the installation to
+get further updates from the Internet, after originally installing from
+DVD.  To do this, you can run</p>
+<pre> tlmgr option repository <a href="http://mirror.ctan.org/systems/texlive/tlnet">http://mirror.ctan.org/systems/texlive/tlnet</a></pre>
+<p>The <code>install-tl</code> documentation has more information about the possible
+values for <code>repository</code>.  (For backward compatibility, <code>location</code> can
+be used as alternative name for <code>repository</code>.)</p>
+<p>If <code>formats</code> is set (this is the default), then formats are regenerated
+when either the engine or the format files have changed.  Disable this
+only when you know what you are doing.</p>
+<p>The <code>postcode</code> option controls execution of per-package
+postinstallation action code.  It is set by default, and again disabling
+is not likely to be of interest except perhaps to developers.</p>
+<p>The <code>docfiles</code> and <code>srcfiles</code> options control the installation of
+their respective files of a package. By default both are enabled (1).
+This can be disabled (set to 0) if disk space is (very) limited.</p>
+<p>The options <code>autobackup</code> and <code>backupdir</code> determine the defaults for
+the actions <code>update</code>, <code>backup</code> and <code>restore</code>.  These three actions
+need a directory in which to read or write the backups.  If
+<code>--backupdir</code> is not specified on the command line, the <code>backupdir</code>
+option value is used (if set).</p>
+<p>The <code>autobackup</code> option (de)activates automatic generation of backups.
+Its value is an integer.  If the <code>autobackup</code> value is <code>-1</code>, no
+backups are removed.  If <code>autobackup</code> is 0 or more, it specifies the
+number of backups to keep.  Thus, backups are disabled if the value is
+0.  In the <code>--clean</code> mode of the <code>backup</code> action this option also
+specifies the number to be kept.</p>
+<p>To setup <code>autobackup</code> to <code>-1</code> on the command line, use either:</p>
+<pre>  tlmgr option autobackup infty</pre>
+<p>or:</p>
+<pre>  tlmgr option -- autobackup -1</pre>
+<p>The <code>--</code> avoids having the <code>-1</code> treated as an option.  (<code>--</code> stops
+parsing for options at the point where it appears; this is a general
+feature across most Unix programs.)</p>
+<p>The <code>sys_bin</code>, <code>sys_man</code>, and <code>sys_info</code> options are used on
+Unix-like systems to control the generation of links for executables,
+info files and man pages. See the <code>path</code> action for details.</p>
+<p>The last three options control behaviour on Windows installations.  If
+<code>desktop_integration</code> is set, then some packages will install items in
+a sub-folder of the Start menu for <code>tlmgr gui</code>, documentation, etc.  If
+<code>fileassocs</code> is set, Windows file associations are made (see also the
+<code>postaction</code> action).  Finally, if <code>multiuser</code> is set, then adaptions
+to the registry and the menus are done for all users on the system
+instead of only the current user.  All three options are on by default.</p>
+<p>
+</p>
+<h2><a name="conf__texmf_tlmgr__key__value___">conf [texmf|tlmgr [<em>key</em> [<em>value</em>]]]</a></h2>
+<p>With only <code>conf</code>, show general configuration information for TeX Live,
+including active configuration files, path settings, and more.  This is
+like the <code>texconfig conf</code> call, but works on all supported platforms.</p>
+<p>With either <code>conf texmf</code> or <code>conf tlmgr</code> given in addition, shows all
+key/value pairs (i.e., all settings) as saved in <code>ROOT/texmf.cnf</code> or
+the tlmgr configuration file (see below), respectively.</p>
+<p>If <em>key</em> is given in addition, shows the value of only that given
+<em>key</em> in the respective file.</p>
+<p>If <em>value</em> is given in addition, <em>key</em> is set to <em>value</em> in the 
+respective file.  <em>No error checking is done!</em></p>
+<p>Practical application: if the execution of (some or all) system commands
+via <code>\write18</code> was left enabled during installation, you can disable
+it afterwards:</p>
+<pre>
+  tlmgr conf texmf shell_escape 0</pre>
+<p>Warning: The general facility is here, but tinkering with settings in
+this way is very strongly discouraged.  Again, no error checking is
+done, so any sort of breakage is possible.</p>
+<p>
+</p>
+<h2><a name="paper">paper</a></h2>
+<dl>
+<dt><strong><a name="paper_a4_letter" class="item"><strong>paper [a4|letter]</strong></a></strong></dt>
+
+<dt><strong><a name="xdvi_pdftex_dvips_dvipdfmx_dvipdfm_context_paper_papersize_list" class="item"><strong>[xdvi|pdftex|dvips|dvipdfmx|dvipdfm|context]&nbsp;paper&nbsp;[<em>papersize</em>|--list]</strong></a></strong></dt>
+
+</dl>
+<p>With no arguments (<code>tlmgr paper</code>), shows the default paper size setting
+for all known programs.</p>
+<p>With one argument (e.g., <code>tlmgr paper a4</code>), sets the default for all
+known programs to that paper size.</p>
+<p>With a program given as the first argument and no paper size specified
+(e.g., <code>tlmgr dvips paper</code>), shows the default paper size for that
+program.</p>
+<p>With a program given as the first argument and a paper size as the last
+argument (e.g., <code>tlmgr dvips paper a4</code>), set the default for that
+program to that paper size.</p>
+<p>With a program given as the first argument and <a href="http://www.tug.org/texlive/doc/tlmgr.html#list"><code>--list</code></a> given as the
+last argument (e.g., <code>tlmgr dvips paper --list</code>), shows all valid paper
+sizes for that program.  The first size shown is the default.</p>
+<p>Incidentally, this syntax of having a specific program name before the
+<code>paper</code> keyword may seem strange.  It is inherited from the
+longstanding <code>texconfig</code> script, which supports other configuration
+settings for some programs, notably <code>dvips</code>.  <code>tlmgr</code> does not support
+those extra settings at present.</p>
+<p>
+</p>
+<h2><a name="platform_list_add_remove_platform___">platform list|add|remove <em>platform</em>...</a></h2>
+<p><code>platform list</code> lists the TeX Live names of all the platforms
+(a.k.a. architectures), (<code>i386-linux</code>, ...) available at the package
+repository.</p>
+<p><code>platform add</code> <em>platform</em>... adds the executables for each given platform
+<em>platform</em> to the installation from the repository.</p>
+<p><code>platform remove</code> <em>platform</em>... removes the executables for each given 
+platform <em>platform</em> from the installation, but keeps the currently 
+running platform in any case.</p>
+<p><code>arch</code> is a synonym for <code>platform</code>.</p>
+<p>Options:</p>
+<dl>
+<dt><strong><a name="dry_run6" class="item"><strong>--dry-run</strong></a></strong></dt>
+
+<dd>
+<p>Nothing is actually installed; instead, the actions to be performed are
+written to the terminal.</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="print_platform">print-platform</a></h2>
+<p>Print the TeX Live identifier for the detected platform
+(hardware/operating system) combination to standard output, and exit.
+<code>--print-arch</code> is a synonym.</p>
+<p>
+</p>
+<h2><a name="info__option______collections_schemes_pkg____">info [<em>option</em>...] [collections|schemes|<em>pkg</em>...]</a></h2>
+<p>With no argument, lists all packages available at the package
+repository, prefixing those already installed with <a href="http://www.tug.org/texlive/doc/tlmgr.html#i"><code>i</code></a>.</p>
+<p>With the single word <code>collections</code> or <code>schemes</code> as the argument, lists
+the request type instead of all packages.</p>
+<p>With any other arguments, display information about <em>pkg</em>: the name,
+category, short and long description, installation status, and TeX Live
+revision number.  If <em>pkg</em> is not locally installed, searches in the
+remote installation source.</p>
+<p>It also displays information taken from the TeX Catalogue, namely the
+package version, date, and license.  Consider these, especially the
+package version, as approximations only, due to timing skew of the
+updates of the different pieces.  By contrast, the <a href="http://www.tug.org/texlive/doc/tlmgr.html#revision"><code>revision</code></a> value
+comes directly from TL and is reliable.</p>
+<p>The former actions <code>show</code> and <a href="http://www.tug.org/texlive/doc/tlmgr.html#list"><code>list</code></a> are merged into this action,
+but are still supported for backward compatibility.</p>
+<p>Options:</p>
+<dl>
+<dt><strong><a name="list" class="item"><strong>--list</strong></a></strong></dt>
+
+<dd>
+<p>If the option <a href="http://www.tug.org/texlive/doc/tlmgr.html#list"><code>--list</code></a> is given with a package, the list of contained
+files is also shown, including those for platform-specific dependencies.
+When given with schemes and collections, <a href="http://www.tug.org/texlive/doc/tlmgr.html#list"><code>--list</code></a> outputs their
+dependencies in a similar way.</p>
+</dd>
+<dt><strong><a name="only_installed" class="item"><strong>--only-installed</strong></a></strong></dt>
+
+<dd>
+<p>If this options is given,  the installation source will
+not be used; only locally installed packages, collections, or schemes
+are listed.
+(Does not work for listing of packages for now)</p>
+</dd>
+<dt><strong><a name="taxonomy" class="item"><strong>--taxonomy</strong></a></strong></dt>
+
+<dt><strong><a name="keyword" class="item"><strong>--keyword</strong></a></strong></dt>
+
+<dt><strong><a name="functionality" class="item"><strong>--functionality</strong></a></strong></dt>
+
+<dt><strong><a name="characterization" class="item"><strong>--characterization</strong></a></strong></dt>
+
+<dd>
+<p>In addition to the normal data displayed, also display information for
+given packages from the corresponding taxonomy (or all of them).  See
+<a href="http://www.tug.org/texlive/doc/tlmgr.html#taxonomies">TAXONOMIES</a> below for details.</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="search__option_____what">search [<em>option</em>...] <em>what</em></a></h2>
+<p>
+</p>
+<h3><a name="search__option_______file_what">search [<em>option</em>...] --file <em>what</em></a></h3>
+<p>
+</p>
+<h3><a name="search__option_______taxonomy_what">search [<em>option</em>...] --taxonomy <em>what</em></a></h3>
+<p>
+</p>
+<h3><a name="search__option_______keyword_what">search [<em>option</em>...] --keyword <em>what</em></a></h3>
+<p>
+</p>
+<h3><a name="search__option_______functionality_what">search [<em>option</em>...] --functionality <em>what</em></a></h3>
+<p>
+</p>
+<h3><a name="search__option_______characterization_what">search [<em>option</em>...] --characterization <em>what</em></a></h3>
+<p>
+</p>
+<h3><a name="search__option_______all_what">search [<em>option</em>...] --all <em>what</em></a></h3>
+<p>By default, search the names, short descriptions, and long descriptions
+of all locally installed packages for the argument <em>what</em>, interpreted
+as a regular expression.</p>
+<p>Options:</p>
+<dl>
+<dt><strong><a name="global" class="item"><strong>--global</strong></a></strong></dt>
+
+<dd>
+<p>Search the TeX Live Database of the installation medium, instead of the
+local installation.</p>
+</dd>
+<dt><strong><a name="word" class="item"><strong>--word</strong></a></strong></dt>
+
+<dd>
+<p>Restrict the search to match only full words. For example, searching for
+<code>table</code> with this option will not output packages containing the
+word <code>tables</code> (unless they also contain the word <code>table</code> on its own).</p>
+</dd>
+<dt><strong><a name="list2" class="item"><strong>--list</strong></a></strong></dt>
+
+<dd>
+<p>If a search for any (or all) taxonomies is done, by specifying one of
+the taxonomy options below, then instead of searching for packages, list
+the entire corresponding taxonomy (or all of them).  See
+<a href="http://www.tug.org/texlive/doc/tlmgr.html#taxonomies">TAXONOMIES</a> below.</p>
+</dd>
+</dl>
+<p>Other search options are selected by specifying one of the following:</p>
+<dl>
+<dt><strong><a name="file2" class="item"><strong>--file</strong></a></strong></dt>
+
+<dd>
+<p>List all filenames containing <em>what</em>.</p>
+</dd>
+<dt><strong><a name="taxonomy2" class="item"><strong>--taxonomy</strong></a></strong></dt>
+
+<dt><strong><a name="keyword2" class="item"><strong>--keyword</strong></a></strong></dt>
+
+<dt><strong><a name="functionality2" class="item"><strong>--functionality</strong></a></strong></dt>
+
+<dt><strong><a name="characterization2" class="item"><strong>--characterization</strong></a></strong></dt>
+
+<dd>
+<p>Search in the corresponding taxonomy (or all) instead of the package
+descriptions.  See <a href="http://www.tug.org/texlive/doc/tlmgr.html#taxonomies">TAXONOMIES</a> below.</p>
+</dd>
+<dt><strong><a name="all4" class="item"><strong>--all</strong></a></strong></dt>
+
+<dd>
+<p>Search for package names, descriptions, and taxonomies, but not files.</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="dump_tlpdb____local___remote_">dump-tlpdb [--local|--remote]</a></h2>
+<p>Dump complete local or remote TLPDB to standard output, as-is.  The
+output is analogous to the <a href="http://www.tug.org/texlive/doc/tlmgr.html#machine_readable"><code>--machine-readable</code></a> output; see
+<a href="http://www.tug.org/texlive/doc/tlmgr.html#machine_readable_output">MACHINE-READABLE OUTPUT</a> section.</p>
+<p>Options:</p>
+<dl>
+<dt><strong><a name="local" class="item"><strong>--local</strong></a></strong></dt>
+
+<dd>
+<p>Dump the local tlpdb.</p>
+</dd>
+<dt><strong><a name="remote" class="item"><strong>--remote</strong></a></strong></dt>
+
+<dd>
+<p>Dump the remote tlpdb.</p>
+</dd>
+</dl>
+<p>Exactly one of <a href="http://www.tug.org/texlive/doc/tlmgr.html#local"><code>--local</code></a> and <a href="http://www.tug.org/texlive/doc/tlmgr.html#remote"><code>--remote</code></a> must be given.</p>
+<p>In either case, the first line of the output specifies the repository
+location, in this format:</p>
+<pre>  "location-url" "\t" location</pre>
+<p>where <code>location-url</code> is the literal field name, followed by a tab, and
+<em>location</em> is the file or url to the repository.</p>
+<p>Line endings may be either LF or CRLF depending on the current platform.</p>
+<p>
+</p>
+<h2><a name="check__option______files_depends_executes_runfiles_all_">check [<em>option</em>]... [files|depends|executes|runfiles|all]</a></h2>
+<p>Executes one (or all) check(s) on the consistency of the installation.</p>
+<dl>
+<dt><strong><a name="files" class="item"><strong>files</strong></a></strong></dt>
+
+<dd>
+<p>Checks that all files listed in the local TLPDB (<code>texlive.tlpdb</code>) are
+actually present, and lists those missing.</p>
+</dd>
+<dt><strong><a name="depends" class="item"><strong>depends</strong></a></strong></dt>
+
+<dd>
+<p>Lists those packages which occur as dependencies in an installed collections,
+but are themselves not installed, and those packages that are not
+contained in any collection.</p>
+<p>If you call <code>tlmgr check collections</code> this test will be carried out
+instead since former versions for <code>tlmgr</code> called it that way.</p>
+</dd>
+<dt><strong><a name="executes" class="item"><strong>executes</strong></a></strong></dt>
+
+<dd>
+<p>Check that the files referred to by <code>execute</code> directives in the TeX
+Live Database are present.</p>
+</dd>
+<dt><strong><a name="runfiles" class="item"><strong>runfiles</strong></a></strong></dt>
+
+<dd>
+<p>List those filenames that are occurring more than one time in the runfiles.</p>
+</dd>
+</dl>
+<p>Options:</p>
+<dl>
+<dt><strong><a name="use_svn" class="item"><strong>--use-svn</strong></a></strong></dt>
+
+<dd>
+<p>Use the output of <code>svn status</code> instead of listing the files; for
+checking the TL development repository.</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="path____w32mode_user_admin___add_remove_">path [--w32mode=user|admin] [add|remove]</a></h2>
+<p>On Unix, merely adds or removes symlinks for binaries, man pages, and
+info pages in the system directories specified by the respective options
+(see the <a href="http://www.tug.org/texlive/doc/tlmgr.html#option">the option manpage</a> description above).  Does not change any
+initialization files, either system or personal.</p>
+<p>On Windows, the registry part where the binary directory is added or
+removed is determined in the following way:</p>
+<p>If the user has admin rights, and the option <code>--w32mode</code> is not given,
+the setting <em>w32_multi_user</em> determines the location (i.e., if it is
+on then the system path, otherwise the user path is changed).</p>
+<p>If the user has admin rights, and the option <code>--w32mode</code> is given, this
+option determines the path to be adjusted.</p>
+<p>If the user does not have admin rights, and the option <code>--w32mode</code>
+is not given, and the setting <em>w32_multi_user</em> is off, the user path
+is changed, while if the setting <em>w32_multi_user</em> is on, a warning is
+issued that the caller does not have enough privileges.</p>
+<p>If the user does not have admin rights, and the option <code>--w32mode</code>
+is given, it must be <strong>user</strong> and the user path will be adjusted. If a
+user without admin rights uses the option <code>--w32mode admin</code> a warning
+is issued that the caller does not have enough privileges.</p>
+<p>
+</p>
+<h2><a name="postaction____w32mode_user_admin_____fileassocmode_1_2_____all___install_remove___shortcut_fileassoc_script___pkg____">postaction [--w32mode=user|admin] [--fileassocmode=1|2] [--all] [install|remove] [shortcut|fileassoc|script] [<em>pkg</em>]...</a></h2>
+<p>Carry out the postaction <code>shortcut</code>, <code>fileassoc</code>, or <code>script</code> given
+as the second required argument in install or remove mode (which is the
+first required argument), for either the packages given on the command
+line, or for all if <a href="http://www.tug.org/texlive/doc/tlmgr.html#all"><code>--all</code></a> is given.</p>
+<p>If the option <code>--w32mode</code> is given the value <code>user</code>, all actions will
+only be carried out in the user-accessible parts of the
+registry/filesystem, while the value <code>admin</code> selects the system-wide
+parts of the registry for the file associations.  If you do not have
+enough permissions, using <code>--w32mode=admin</code> will not succeed.</p>
+<p><code>--fileassocmode</code> specifies the action for file associations.  If it is
+set to 1 (the default), only new associations are added; if it is set to
+2, all associations are set to the TeX Live programs.  (See also
+<code>option fileassocs</code>.)</p>
+<p>
+</p>
+<h2><a name="uninstall">uninstall</a></h2>
+<p>Uninstalls the entire TeX Live installation.  Options:</p>
+<dl>
+<dt><strong><a name="force5" class="item"><strong>--force</strong></a></strong></dt>
+
+<dd>
+<p>Do not ask for confirmation, remove immediately.</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="generate__option_____what">generate [<em>option</em>]... <em>what</em></a></h2>
+<dl>
+<dt><strong><a name="generate_language" class="item"><strong>generate language</strong></a></strong></dt>
+
+<dt><strong><a name="generate_language_dat" class="item"><strong>generate language.dat</strong></a></strong></dt>
+
+<dt><strong><a name="generate_language_def" class="item"><strong>generate language.def</strong></a></strong></dt>
+
+<dt><strong><a name="generate_language_dat_lua" class="item"><strong>generate language.dat.lua</strong></a></strong></dt>
+
+<dt><strong><a name="generate_fmtutil" class="item"><strong>generate fmtutil</strong></a></strong></dt>
+
+</dl>
+<p>The <code>generate</code> action overwrites any manual changes made in the
+respective files: it recreates them from scratch based on the
+information of the installed packages, plus local adaptions.
+The TeX Live installer and <code>tlmgr</code> routinely call <code>generate</code> for
+all of these files.</p>
+<p>For managing your own fonts, please read the <code>updmap --help</code>
+information and/or <a href="http://tug.org/fonts/fontinstall.html">http://tug.org/fonts/fontinstall.html</a>.</p>
+<p>In more detail: <code>generate</code> remakes any of the configuration files
+<code>language.dat</code>, <code>language.def</code>, <code>language.dat.lua</code>, and
+<code>fmtutil.cnf</code>, from the information present in the local TLPDB, plus
+locally-maintained files.</p>
+<p>The locally-maintained files are <code>language-local.dat</code>,
+<code>language-local.def</code>, <code>language-local.dat.lua</code>, or
+<code>fmtutil-local.cnf</code>, searched for in <code>TEXMFLOCAL</code> in the respective
+directories.  If local additions are present, the final file is made by
+starting with the main file, omitting any entries that the local file
+specifies to be disabled, and finally appending the local file.</p>
+<p>(Historical note: The formerly supported <code>updmap-local.cfg</code> is no longer
+read, since <code>updmap</code> now supports multiple <code>updmap.cfg</code> files.  Thus,
+local additions can and should be put into an <code>updmap.cfg</code> file in
+<code>TEXMFLOCAL</code>.  The <code>generate updmap</code> action no longer exists.)</p>
+<p>Local files specify entries to be disabled with a comment line, namely
+one of these:</p>
+<pre>  #!NAME
+  %!NAME
+  --!NAME</pre>
+<p>where <code>fmtutil.cnf</code> uses <code>#</code>, <code>language.dat</code> and <code>language.def</code> use
+<code>%</code>, and <code>language.dat.lua</code> use <code>--</code>.  In all cases, the <em>name</em> is
+the respective format name or hyphenation pattern identifier.
+Examples:</p>
+<pre>  #!pdflatex
+  %!german
+  --!usenglishmax</pre>
+<p>(Of course, you're not likely to actually want to disable those
+particular items.  They're just examples.)</p>
+<p>After such a disabling line, the local file can include another entry
+for the same item, if a different definition is desired.  In general,
+except for the special disabling lines, the local files follow the same
+syntax as the master files.</p>
+<p>The form <a href="http://www.tug.org/texlive/doc/tlmgr.html#generate_language"><code>generate language</code></a> recreates all three files <code>language.dat</code>,
+<code>language.def</code>, and <code>language.dat.lua</code>, while the forms with an
+extension recreates only that given language file.</p>
+<p>Options:</p>
+<dl>
+<dt><strong><a name="dest_output_file" class="item"><strong>--dest</strong> <em>output_file</em></a></strong></dt>
+
+<dd>
+<p>specifies the output file (defaults to the respective location in
+<code>TEXMFSYSVAR</code>).  If <code>--dest</code> is given to <a href="http://www.tug.org/texlive/doc/tlmgr.html#generate_language"><code>generate language</code></a>, it
+serves as a basename onto which <code>.dat</code> will be appended for the name of
+the <code>language.dat</code> output file, <code>.def</code> will be appended to the value
+for the name of the <code>language.def</code> output file, and <code>.dat.lua</code> to the
+name of the <code>language.dat.lua</code> file.  (This is just to avoid
+overwriting; if you want a specific name for each output file, we
+recommend invoking <code>tlmgr</code> twice.)</p>
+</dd>
+<dt><strong><a name="localcfg_local_conf_file" class="item"><strong>--localcfg</strong> <em>local_conf_file</em></a></strong></dt>
+
+<dd>
+<p>specifies the (optional) local additions (defaults to the respective
+location in <code>TEXMFLOCAL</code>).</p>
+</dd>
+<dt><strong><a name="rebuild_sys" class="item"><strong>--rebuild-sys</strong></a></strong></dt>
+
+<dd>
+<p>tells tlmgr to run necessary programs after config files have been
+regenerated. These are:
+<code>fmtutil-sys --all</code> after <a href="http://www.tug.org/texlive/doc/tlmgr.html#generate_fmtutil"><code>generate fmtutil</code></a>,
+<code>fmtutil-sys --byhyphen .../language.dat</code> after <a href="http://www.tug.org/texlive/doc/tlmgr.html#generate_language_dat"><code>generate language.dat</code></a>,
+and
+<code>fmtutil-sys --byhyphen .../language.def</code> after <a href="http://www.tug.org/texlive/doc/tlmgr.html#generate_language_def"><code>generate language.def</code></a>.</p>
+<p>These subsequent calls cause the newly-generated files to actually take
+effect.  This is not done by default since those calls are lengthy
+processes and one might want to made several related changes in
+succession before invoking these programs.</p>
+</dd>
+</dl>
+<p>The respective locations are as follows:</p>
+<pre>  tex/generic/config/language.dat (and language-local.dat);
+  tex/generic/config/language.def (and language-local.def);
+  tex/generic/config/language.dat.lua (and language-local.dat.lua);
+  web2c/fmtutil.cnf (and fmtutil-local.cnf);</pre>
+<p>
+</p>
+<hr>
+<h1><a name="tlmgr_configuration_file">TLMGR CONFIGURATION FILE</a></h1>
+<p>A small subset of the command line options can be set in a config file
+for <code>tlmgr</code> which resides in <code>TEXMFCONFIG/tlmgr/config</code>.  By default, the
+config file is in <code>~/.texliveYYYY/texmf-config/tlmgr/config</code> (replacing
+<code>YYYY</code> with the year of your TeX Live installation). This is <em>not</em>
+<code>TEXMFSYSVAR</code>, so that the file is specific to a single user.</p>
+<p>In this file, empty lines and lines starting with # are ignored.  All
+other lines must look like</p>
+<pre>  key = value</pre>
+<p>where the allowed keys are 
+<code>gui-expertmode</code> (values 0 or 1), 
+<a href="http://www.tug.org/texlive/doc/tlmgr.html#persistent_downloads"><code>persistent-downloads</code></a> (values 0 or 1), <code>auto-remove</code> (values 0 or 1),
+and <code>gui-lang</code> (values like the command line arguments).  
+<a href="http://www.tug.org/texlive/doc/tlmgr.html#persistent_downloads"><code>persistent-downloads</code></a>, <code>gui-lang</code>, and <code>auto-remove</code> correspond to the 
+respective command line options of the same name.  
+<code>gui-expertmode</code> switches between the full
+GUI and a simplified GUI with only the important and mostly used
+settings.</p>
+<p>
+</p>
+<hr>
+<h1><a name="taxonomies">TAXONOMIES</a></h1>
+<p>tlmgr allows searching and listing of various categorizations, which we
+call <em>taxonomies</em>, as provided by an enhanced TeX Catalogue (available
+for testing at <a href="http://az.ctan.org/">http://az.ctan.org</a>).  This is useful when, for
+example, you don't know a specific package name but have an idea of the
+functionality you need; or when you want to see all packages relating to
+a given area.</p>
+<p>There are three different taxonomies, specified by the following
+options:</p>
+<dl>
+<dt><strong><a name="keyword3" class="item"><strong>--keyword</strong></a></strong></dt>
+
+<dd>
+<p>The keywords, as specified at <a href="http://az.ctan.org/keyword">http://az.ctan.org/keyword</a>.</p>
+</dd>
+<dt><strong><a name="functionality3" class="item"><strong>--functionality</strong></a></strong></dt>
+
+<dd>
+<p>The ``by-topic'' categorization created by J\"urgen Fenn, as specified
+at <a href="http://az.ctan.org/characterization/by-function">http://az.ctan.org/characterization/by-function</a>.</p>
+</dd>
+<dt><strong><a name="characterization3" class="item"><strong>--characterization</strong></a></strong></dt>
+
+<dd>
+<p>Both the primary and secondary functionalities, as specified at
+<a href="http://az.ctan.org/characterization/choose_dimen">http://az.ctan.org/characterization/choose_dimen</a>.</p>
+</dd>
+<dt><strong><a name="taxonomy3" class="item"><strong>--taxonomy</strong></a></strong></dt>
+
+<dd>
+<p>Operate on all the taxonomies.</p>
+</dd>
+</dl>
+<p>The taxonomies are updated nightly and stored within TeX Live, so
+Internet access is not required to search them.</p>
+<p>Examples:</p>
+<pre>
+  tlmgr search --taxonomy exercise      # check all taxonomies for "exercise"
+  tlmgr search --taxonomy --word table  # check for "table" on its own
+  tlmgr search --list --keyword         # dump entire keyword taxonomy
+  tlmgr show --taxonomy pdftex          # show pdftex package information,
+                                        #   including all taxonomy entries</pre>
+<p>
+</p>
+<hr>
+<h1><a name="multiple_repositories">MULTIPLE REPOSITORIES</a></h1>
+<p>The main TeX Live repository includes a vast array of packages.
+Nevertheless, additional local repositories can be useful to provide
+locally-installed resources, such as proprietary fonts and house styles.
+Also, alternative package repositories distribute packages that cannot
+or should not be included in TeX Live, due to being under rapid
+development or for other reasons.</p>
+<p>The simplest and most reliable method is simply to temporarily set the
+installation source to any repository (with the <code>-repository</code> command
+line option or <code>option repository</code>), and perform your operations.  When
+you are using multiple repositories over a sustained time, however, this
+is inconvenient.  Thus, it's possible to tell <code>tlmgr</code> about additional
+repositories you want to use.  The basic command is <code>tlmgr repository
+add</code>.  The rest of this section explains further.</p>
+<p>When using multiple repositories, one of them has to be set as the main
+repository, which distributes most of the installed packages.  If you
+switch from a single repository installation to a multiple repository
+installation, the previously set repository will be set as the main
+repository.</p>
+<p>By default, even if multiple repositories are configured, packages are
+<em>only</em> installed from the main repository.  Thus, simply adding a
+second repository does not actually enable installation of anything from
+there.  You also have to specify which packages should be taken from a
+different repository by specifying so-called ``pinning'' rules,
+described next.</p>
+<p>
+</p>
+<h2><a name="pinning">Pinning</a></h2>
+<p>Pinning a package is done by editing (creating) this file:</p>
+<pre>  TEXMFLOCAL/tlpkg/pinning.txt</pre>
+<p>with lines of the form:</p>
+<pre>  repo:pkg[,pkg]</pre>
+<p>In this line, the <em>repo</em> is either a full url or repository tag that
+was added to the repository list.  Each <em>pkg</em> is a shell-style glob for
+package identifiers.</p>
+<p>When a package <code>foo</code> is pinned to a repository, a package <code>foo</code> in any
+other repository, even if it has a higher revision number, will not be
+considered an installable candidate.</p>
+<p>By default, everything is pinned to the main repository, 
+as if the last line of <code>pinning.txt</code> was</p>
+<pre>  main:*</pre>
+<p>
+</p>
+<h2><a name="multiple_repository_example_with_tlcontrib">Multiple repository example with tlcontrib</a></h2>
+<p>First, check that we have support for multiple repositories, and have
+only one enabled (as is the case by default):</p>
+<pre> $ tlmgr repository list
+ List of repositories (with tags if set):
+   /var/www/norbert/tlnet</pre>
+<p>Let's add the <code>tlcontrib</code> repository (<a href="http://tlcontrib.metatex.org/">http://tlcontrib.metatex.org</a>,
+maintained by Taco Hoekwater et al.), with the tag <code>tlcontrib</code>:</p>
+<pre> $ tlmgr repository add <a href="http://tlcontrib.metatex.org/2012">http://tlcontrib.metatex.org/2012</a> tlcontrib</pre>
+<p>Check the repository list again:</p>
+<pre> $ tlmgr repository list
+ List of repositories (with tags if set):
+    <a href="http://tlcontrib.metatex.org/2011">http://tlcontrib.metatex.org/2011</a> (tlcontrib)
+    /var/www/norbert/tlnet (main)</pre>
+<p>Specify a pinning entry to get the package <code>microtype</code> from <code>tlcontrib</code>:</p>
+<pre> $ tlocal=`kpsewhich -var-value TEXMFLOCAL`
+ $ echo "tlcontrib:microtype" &gt; $tlocal/tlpkg/pinning.txt</pre>
+<p>Check that we can find <code>microtype</code>:</p>
+<pre> $ tlmgr show microtype
+ tlmgr: using pinning file .../tlpkg/pinning.txt
+ tlmgr: package repositories:
+ ...
+ package:     microtype
+ category:    Package
+ ...</pre>
+<p>- install <code>microtype</code>:</p>
+<pre> $ tlmgr install microtype
+ tlmgr: using pinning file .../tlpkg/pinning.txt
+ tlmgr: package repositories:
+ ...
+ [1/1,  ??:??/??:??] install: microtype @tlcontrib [39k]</pre>
+<p>In the output here you can see that the <code>microtype</code> package is
+installed from the <code>tlcontrib</code> repository (<code>@tlcontrib</code>).  (By the
+way, hopefully the new version of microtype that is in tlcontrib as of
+this writing will be released on CTAN soon, but meanwhile, it serves as
+an example.)</p>
+<p>
+</p>
+<hr>
+<h1><a name="gui_for_tlmgr">GUI FOR TLMGR</a></h1>
+<p>The graphical user interface for <code>tlmgr</code> needs Perl/Tk to be installed.
+For Windows the necessary modules are shipped within TeX Live, for all
+other (i.e., Unix-based) systems Perl/Tk (as well as Perl of course) has
+to be installed.  <a href="http://tug.org/texlive/distro.html#perltk">http://tug.org/texlive/distro.html#perltk</a> has a
+list of invocations for some distros.</p>
+<p>When started with <code>tlmgr gui</code> the graphical user interface will be
+shown.  The main window contains a menu bar, the main display, and a
+status area where messages normally shown on the console are displayed.</p>
+<p>Within the main display there are three main parts: the <code>Display
+configuration</code> area, the list of packages, and the action buttons.</p>
+<p>Also, at the top right the currently loaded repository is shown; this
+also acts as a button and when clicked will try to load the default
+repository.  To load a different repository, see the <code>tlmgr</code> menu item.</p>
+<p>Finally, the status area at the bottom of the window gives additional
+information about what is going on.</p>
+<p>
+</p>
+<h2><a name="main_display">Main display</a></h2>
+<p>
+</p>
+<h3><a name="display_configuration_area">Display configuration area</a></h3>
+<p>The first part of the main display allows you to specify (filter) which
+packages are shown.  By default, all are shown.  Changes here are
+reflected right away.</p>
+<dl>
+<dt><strong><a name="status" class="item">Status</a></strong></dt>
+
+<dd>
+<p>Select whether to show all packages (the default), only those installed,
+only those <em>not</em> installed, or only those with update available.</p>
+</dd>
+<dt><strong><a name="category" class="item">Category</a></strong></dt>
+
+<dd>
+<p>Select which categories are shown: packages, collections, and/or
+schemes.  These are briefly explained in the <a href="http://www.tug.org/texlive/doc/tlmgr.html#description">DESCRIPTION</a> section
+above.</p>
+</dd>
+<dt><strong><a name="match" class="item">Match</a></strong></dt>
+
+<dd>
+<p>Select packages matching for a specific pattern.  By default, this uses
+the same algorithm as <code>tlmgr search</code>, i.e., searches everything:
+descriptions, taxonomies, and/or filenames.  You can also select any
+subset for searching.</p>
+</dd>
+<dt><strong><a name="selection" class="item">Selection</a></strong></dt>
+
+<dd>
+<p>Select packages to those selected, those not selected, or all.  Here,
+``selected'' means that the checkbox in the beginning of the line of a
+package is ticked.</p>
+</dd>
+<dt><strong><a name="display_configuration_buttons" class="item">Display configuration buttons</a></strong></dt>
+
+<dd>
+<p>To the right there are three buttons: select all packages, select none
+(a.k.a. deselect all), and reset all these filters to the defaults,
+i.e., show all available.</p>
+</dd>
+</dl>
+<p>
+</p>
+<h3><a name="package_list_area">Package list area</a></h3>
+<p>The second are of the main display lists all installed packages.  If a
+repository is loaded, those that are available but not installed are
+also listed.</p>
+<p>Double clicking on a package line pops up an informational window with
+further details: the long description, included files, etc.</p>
+<p>Each line of the package list consists of the following items:</p>
+<dl>
+<dt><strong><a name="a_checkbox" class="item">a checkbox</a></strong></dt>
+
+<dd>
+<p>Used to select particular packages; some of the action buttons (see
+below) work only on the selected packages.</p>
+</dd>
+<dt><strong><a name="package_name" class="item">package name</a></strong></dt>
+
+<dd>
+<p>The name (identifier) of the package as given in the database.</p>
+</dd>
+<dt><strong><a name="revision" class="item">local revision (and version)</a></strong></dt>
+
+<dd>
+<p>If the package is installed the TeX Live revision number for the
+installed package will be shown.  If there is a catalogue version given
+in the database for this package, it will be shown in parentheses.
+However, the catalogue version, unlike the TL revision, is not
+guaranteed to reflect what is actually installed.</p>
+</dd>
+<dt><strong>remote revision (and version)</strong></dt>
+
+<dd>
+<p>If a repository has been loaded the revision of the package in the
+repository (if present) is shown.  As with the local column, if a
+catalogue version is provided it will be displayed.  And also as with
+the local column, the catalogue version may be stale.</p>
+</dd>
+<dt><strong><a name="short_description" class="item">short description</a></strong></dt>
+
+<dd>
+<p>The short description of the package.</p>
+</dd>
+</dl>
+<p>
+</p>
+<h3><a name="main_display_action_buttons">Main display action buttons</a></h3>
+<p>Below the list of packages are several buttons:</p>
+<dl>
+<dt><strong><a name="update_all_installed" class="item">Update all installed</a></strong></dt>
+
+<dd>
+<p>This calls <a href="http://www.tug.org/texlive/doc/tlmgr.html#tlmgr_update_all"><code>tlmgr update --all</code></a>, i.e., tries to update all available
+packages.  Below this button is a toggle to allow reinstallation of
+previously removed packages as part of this action.</p>
+<p>The other four buttons only work on the selected packages, i.e., those
+where the checkbox at the beginning of the package line is ticked.</p>
+</dd>
+<dt><strong><a name="update" class="item">Update</a></strong></dt>
+
+<dd>
+<p>Update only the selected packages.</p>
+</dd>
+<dt><strong><a name="install" class="item">Install</a></strong></dt>
+
+<dd>
+<p>Install the selected packages; acts like <code>tlmgr install</code>, i.e., also
+installs dependencies.  Thus, installing a collection installs all its
+constituent packages.</p>
+</dd>
+<dt><strong><a name="remove" class="item">Remove</a></strong></dt>
+
+<dd>
+<p>Removes the selected packages; acts like <code>tlmgr remove</code>, i.e., it will
+also remove dependencies of collections (but not dependencies of normal
+packages).</p>
+</dd>
+<dt><strong><a name="backup" class="item">Backup</a></strong></dt>
+
+<dd>
+<p>Makes a backup of the selected packages; acts like <code>tlmgr backup</code>. This
+action needs the option <code>backupdir</code> set (see <code>Options -</code> General&gt;).</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="menu_bar">Menu bar</a></h2>
+<p>The following entries can be found in the menu bar:</p>
+<dl>
+<dt><strong><a name="tlmgr_menu" class="item"><strong>tlmgr</strong> menu</a></strong></dt>
+
+<dd>
+<p>The items here load various repositories: the default as specified in
+the TeX Live database, the default network repository, the repository
+specified on the command line (if any), and an arbitrarily
+manually-entered one.  Also has the so-necessary <code>quit</code> operation.</p>
+</dd>
+<dt><strong><a name="options_menu" class="item"><strong>Options menu</strong></a></strong></dt>
+
+<dd>
+<p>Provides access to several groups of options: <code>Paper</code> (configuration of
+default paper sizes), <code>Platforms</code> (only on Unix, configuration of the
+supported/installed platforms), <code>GUI Language</code> (select language used in
+the GUI interface), and <code>General</code> (everything else).</p>
+<p>Several toggles are also here.  The first is <code>Expert options</code>, which is
+set by default.  If you turn this off, the next time you start the GUI a
+simplified screen will be shown that display only the most important
+functionality.  This setting is saved in the configuration file of
+<code>tlmgr</code>; see <a href="http://www.tug.org/texlive/doc/tlmgr.html#configuration_file">CONFIGURATION FILE</a> for details.</p>
+<p>The other toggles are all off by default: for debugging output, to
+disable the automatic installation of new packages, and to disable the
+automatic removal of packages deleted from the server.  Playing with the
+choices of what is or isn't installed may lead to an inconsistent TeX Live
+installation; e.g., when a package is renamed.</p>
+</dd>
+<dt><strong><a name="actions_menu" class="item"><strong>Actions menu</strong></a></strong></dt>
+
+<dd>
+<p>Provides access to several actions: update the filename database (aka
+<code>ls-R</code>, <code>mktexlsr</code>, <code>texhash</code>), rebuild all formats (<code>fmtutil-sys
+--all</code>), update the font map database (<code>updmap-sys</code>), restore from a backup
+of a package, and use of symbolic links in system directories (not on
+Windows).</p>
+<p>The final action is to remove the entire TeX Live installation (also not
+on Windows).</p>
+</dd>
+<dt><strong><a name="help_menu" class="item"><strong>Help menu</strong></a></strong></dt>
+
+<dd>
+<p>Provides access to the TeX Live manual (also on the web at
+<a href="http://tug.org/texlive/doc.html">http://tug.org/texlive/doc.html</a>) and the usual ``About'' box.</p>
+</dd>
+</dl>
+<p>
+</p>
+<hr>
+<h1><a name="machine_readable_output">MACHINE-READABLE OUTPUT</a></h1>
+<p>With the <a href="http://www.tug.org/texlive/doc/tlmgr.html#machine_readable"><code>--machine-readable</code></a> option, <code>tlmgr</code> writes to stdout in the
+fixed line-oriented format described here, and the usual informational
+messages for human consumption are written to stderr (normally they are
+written to stdout).  The idea is that a program can get all the
+information it needs by reading stdout.</p>
+<p>Currently this option only applies to the 
+<a href="http://www.tug.org/texlive/doc/tlmgr.html#update__i_option_______i_pkg_____">update</a>, the
+<a href="http://www.tug.org/texlive/doc/tlmgr.html#install__i_option______i_pkg____">install</a>, and the
+<a href="http://www.tug.org/texlive/doc/tlmgr.html#option">option</a> actions.</p>
+<p>
+</p>
+<h2><a name="update_and_install_actions">update and install actions</a></h2>
+<p>The output format is as follows:</p>
+<pre>  fieldname "\t" value
+  ...
+  "end-of-header"
+  pkgname status localrev serverrev size runtime esttot
+  ...
+  "end-of-updates"
+  other output from post actions, not in machine readable form</pre>
+<p>The header section currently has two fields: <code>location-url</code> (the
+repository source from which updates are being drawn), and
+<code>total-bytes</code> (the total number of bytes to be downloaded).</p>
+<p>The <em>localrev</em> and <em>serverrev</em> fields for each package are the
+revision numbers in the local installation and server repository,
+respectively.  The <em>size</em> field is the number of bytes to be
+downloaded, i.e., the size of the compressed tar file for a network
+installation, not the unpacked size. The runtime and esttot fields 
+are only present for updated and auto-install packages, and contain
+the currently passed time since start of installation/updates
+and the estimated total time.</p>
+<p>Line endings may be either LF or CRLF depending on the current platform.</p>
+<dl>
+<dt><strong><a name="location_url_location" class="item"><code>location-url</code> <em>location</em></a></strong></dt>
+
+<dd>
+<p>The <em>location</em> may be a url (including <code>file:///foo/bar/...</code>), or a
+directory name (<code>/foo/bar</code>).  It is the package repository from which
+the new package information was drawn.</p>
+</dd>
+<dt><strong><a name="total_bytes_count" class="item"><code>total-bytes</code> <em>count</em></a></strong></dt>
+
+<dd>
+<p>The <em>count</em> is simply a decimal number, the sum of the sizes of all the
+packages that need updating or installing (which are listed subsequently).</p>
+</dd>
+</dl>
+<p>Then comes a line with only the literal string <code>end-of-header</code>.</p>
+<p>Each following line until a line with literal string <code>end-of-updates</code>
+reports on one package.  The fields on
+each line are separated by a tab.  Here are the fields.</p>
+<dl>
+<dt><strong><a name="pkgname" class="item"><em>pkgname</em></a></strong></dt>
+
+<dd>
+<p>The TeX Live package identifier, with a possible platform suffix for
+executables.  For instance, <code>pdftex</code> and <code>pdftex.i386-linux</code> are given
+as two separate packages, one on each line.</p>
+</dd>
+<dt><strong><a name="status" class="item"><em>status</em></a></strong></dt>
+
+<dd>
+<p>The status of the package update.  One character, as follows:</p>
+<dl>
+<dt><strong><a name="d" class="item"><code>d</code></a></strong></dt>
+
+<dd>
+<p>The package was removed on the server.</p>
+</dd>
+<dt><strong><a name="f" class="item"><code>f</code></a></strong></dt>
+
+<dd>
+<p>The package was removed in the local installation, even though a
+collection depended on it.  (E.g., the user ran <code>tlmgr remove
+--force</code>.)</p>
+</dd>
+<dt><strong><a name="u" class="item"><code>u</code></a></strong></dt>
+
+<dd>
+<p>Normal update is needed.</p>
+</dd>
+<dt><strong><a name="r" class="item"><code>r</code></a></strong></dt>
+
+<dd>
+<p>Reversed non-update: the locally-installed version is newer than the
+version on the server.</p>
+</dd>
+<dt><strong><a name="a" class="item"><code>a</code></a></strong></dt>
+
+<dd>
+<p>Automatically-determined need for installation, the package is new on
+the server and is (most probably) part of an installed collection.</p>
+</dd>
+<dt><strong><a name="i" class="item"><code>i</code></a></strong></dt>
+
+<dd>
+<p>Package will be installed and isn't present in the local installation
+(action install).</p>
+</dd>
+<dt><strong><a name="i" class="item"><code>I</code></a></strong></dt>
+
+<dd>
+<p>Package is already present but will be reinstalled (action install).</p>
+</dd>
+</dl>
+</dd>
+<dt><strong><a name="localrev" class="item"><em>localrev</em></a></strong></dt>
+
+<dd>
+<p>The revision number of the installed package, or <code>-</code> if it is not
+present locally.</p>
+</dd>
+<dt><strong><a name="serverrev" class="item"><em>serverrev</em></a></strong></dt>
+
+<dd>
+<p>The revision number of the package on the server, or <code>-</code> if it is not
+present on the server.</p>
+</dd>
+<dt><strong><a name="size" class="item"><em>size</em></a></strong></dt>
+
+<dd>
+<p>The size in bytes of the package on the server.  The sum of all the
+package sizes is given in the <code>total-bytes</code> header field mentioned above.</p>
+</dd>
+<dt><strong><a name="runtime" class="item"><em>runtime</em></a></strong></dt>
+
+<dd>
+<p>The run time since start of installations or updates.</p>
+</dd>
+<dt><strong><a name="esttot" class="item"><em>esttot</em></a></strong></dt>
+
+<dd>
+<p>The estimated total time.</p>
+</dd>
+</dl>
+<p>
+</p>
+<h2><a name="option_action">option action</a></h2>
+<p>The output format is as follows:</p>
+<pre>  key "\t" value
+
+</pre>
+<p>If a value is not saved in the database the string <code>(not set)</code> is shown.</p>
+<p>If you are developing a program that uses this output, and find that
+changes would be helpful, do not hesitate to write the mailing list.</p>
+<p>
+</p>
+<hr>
+<h1><a name="authors_and_copyright">AUTHORS AND COPYRIGHT</a></h1>
+<p>This script and its documentation were written for the TeX Live
+distribution (<a href="http://tug.org/texlive">http://tug.org/texlive</a>) and both are licensed under the
+GNU General Public License Version 2 or later.</p>
+
+
+
+
+</body></html>

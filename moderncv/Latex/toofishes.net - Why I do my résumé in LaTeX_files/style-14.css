@@ -1,0 +1,240 @@
+/* general style setup */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	background: #f1f1f1;
+	/*color: #7c7c7c;*/
+}
+
+div#header, div#navbar, div#main, div#footer {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+img { border: 0; }
+a { color: #5b0909; }
+a:hover { color: #7c7c7c; }
+a:visited { color: #7c7c7c; }
+
+/* start styling the divs, mix in a few header/navbar/footer styles */
+#container {
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	margin: 0;
+	padding: 1.5em;
+	background: #5b0909;
+	border-top: 3px solid #250606;
+	border-bottom: 3px solid #250606;
+}
+
+#header h1 {
+	margin: 0;
+	font-size: 2em;
+	font-weight: bold;
+	color: white;
+}
+
+#navbar {
+	margin: 0;
+	padding: 0.7em;
+	background: #7c7c7c;
+	border-bottom: 3px solid #555555;
+}
+
+#navbar ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-weight: bold;
+	color: white;
+}
+
+#navbar ul li {
+	margin: 0;
+	padding: 0;
+	padding-right: 1em;
+	display: inline;
+}
+
+#navbar ul li a {
+	color: white;
+	text-decoration: none;
+}
+
+#navbar ul li a:hover {
+	color: #555555;
+}
+
+#main {
+	max-width: 800px;
+}
+
+#footer {
+	margin: 0;
+	padding: 0.7em;
+	padding-top: 10px;
+	color: white;
+	background: #7c7c7c;
+	border-top: 3px solid #555555;
+	border-bottom: 3px solid #555555;
+	clear: both;
+}
+
+#pageinfo {
+	float: left;
+}
+
+#copyright {
+	float: right;
+	text-align: right;
+}
+
+.tagcloud {
+	max-width: 500px;
+	text-align: justify;
+	line-height: 200%;
+	padding-left: 0;
+	list-style-type: none;
+	list-style-image: none;
+	list-style-position: outside;
+}
+
+.clear {
+	clear: both;
+}
+
+/* styles specific for blog application */
+.posttitle {
+	margin-bottom: 0.3em;
+}
+
+.postpubdate {
+	font-size: 0.7em;
+	margin-top: 0;
+}
+
+.postsingle {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #555555;
+}
+
+.postlast {
+	border-bottom: none;
+}
+
+.postcontent {
+	font-size: 0.9em;
+}
+
+.postinfo {
+	clear: both;
+}
+
+/* headers are just a bit too big by default */
+.postcontent h1 { font-size: 1.5em; }
+.postcontent h2 { font-size: 1.3em; }
+.postcontent h3 { font-size: 1.1em; }
+
+/* styles used directly in posts, etc. */
+/* make the code look pretty */
+.postcontent pre {
+	padding: 5px 10px;
+	border: 1px solid #7c7c7c;
+	background-color: #e0e0e0;
+	overflow: auto;
+}
+
+.postcontent pre.prettyprint {
+	padding: 5px 10px;
+	border: 1px solid #7c7c7c;
+}
+
+.postcontent pre.wrap {
+	white-space: pre-wrap;
+}
+
+.postcontent .floatleft {
+	float: left;
+	clear: left;
+	margin: 0.5em 1em 0.5em 0;
+}
+
+.postcontent .floatright {
+	float: right;
+	clear: right;
+	margin: 0.5em 0 0.5em 1em;
+}
+
+.postcontent table {
+	border-collapse: collapse;
+	border: 1px solid #7c7c7c;
+}
+.postcontent th {
+	border: 1px solid #7c7c7c;
+	padding: 0.2em 0.7em;
+	background-color: #e0e0e0;
+}
+.postcontent td {
+	border: 1px solid #7c7c7c;
+	padding: 0.2em 0.7em;
+}
+/* end blog post styles */
+
+.categories {
+	font-size: 0.8em;
+	font-weight: bold;
+	margin: 0.5em 0 0 0;
+}
+.similar {
+	font-size:0.9em;
+}
+.commentcount {
+	font-size: 0.8em;
+	font-weight: bold;
+	margin: 0.5em 0 0 0;
+}
+
+/* used on pages with comment entry/validation */
+.comments {
+	font-size: 0.9em;
+}
+
+.comments .mine {
+	padding: 5px 10px 0 10px;
+	margin: -5px -10px 5px -10px;
+	border: 1px solid #7c7c7c;
+	background-color: #e0e0e0;
+}
+
+.comments .commenttext {
+	font-size: 0.9em;
+}
+
+.comments .commenttext p {
+	margin: 0.5em 0;
+}
+
+form#commentform label {
+	display: block;
+	clear: both;
+}
+
+label[for=id_name],label[for=id_email],label[for=id_comment] {
+	font-weight: bold;
+}
+
+form#commentform textarea {
+	width: 100%;
+	max-width: 640px;
+}
+
+form#commentform .commenterror {
+	margin-left: 0.3em;
+	font-size: 0.9em;
+	font-style: italic;
+	color: red;
+}

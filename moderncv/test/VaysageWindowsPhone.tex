@@ -1,0 +1,140 @@
+%%%%%%
+% Vaysage.kv Resume
+% Uses LaTeX and moderncv
+%%%%%%
+
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{classic}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}
+
+\usepackage[utf8]{inputenc} % character encoding
+\usepackage[scale=0.8]{geometry} % adjust the page margins
+
+\AtBeginDocument{\setlength{\maketitlenamewidth}{10cm}}
+\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+% personal data
+\firstname{Vaysage}
+\familyname{K V}
+%\title{Resume}
+%\address{Kaithakkal(Ho),Kandanassery(Po),Chowalloor}{Thrissur, Kerala - 680102}
+\address{Kaithakkal(Ho),Kandanassery(Po)}{Thrissur, Kerala}
+\mobile{+91-8547525912}
+\phone{04885-237931}
+\email{kvvaysage@gmail.com}
+%\homepage{stultus.in}
+\extrainfo{\textbf{IRC} Nick: vaysu}
+%\quote {C provides a programmer with more than enough rope to hang himself.C++ provides a firing squad, blindfold and last cigarette}
+%\photo[54pt]{img.jpeg}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file;
+
+% --------------------------------------
+% CONTENT
+% --------------------------------------
+
+\begin{document}
+\maketitle
+
+\sectionblue{Education}
+\cvitem{2005--2009}{\textbf{Bachelors degree} in \textit{Electronics and Communications} from Visvesvaraya Technological University with \textbf{62\%} .}
+\cvitem{2003--2005}{\textbf{XII}$^{th}$ from Sri Krishna Higher Secondary School  with \textbf{85\%}.}
+\cvitem{2003}{ \textbf{X}$^{th}$ from Bethany E.H.S, Kunnamkulam  with \textbf{89\%}.}
+
+\sectionblue{Technical skills}
+\cvcomputer
+{\textbf{Programming Languages}}{Excellent C, C++, Java(OCJP-93\%), C\#,  JavaScript\\Shell Scripting, Oracsle}
+{\textbf{Operating Systems}}{GNU/Linux, Windows, Mac OSX}
+\cvcomputer
+{\textbf{Development Tools}}{Microsoft Visual Studio, \\Expression Blend}
+{\textbf{Software Packages}}{SQLite, \LaTeX, Gimp, \\Adobe Photoshop}
+\cvcomputer
+{\textbf{Frameworks \& Libraries}}{SilverLight,.NET,Struts \\ Hibernate,JSF}
+{}{}
+
+% --------------------------------------
+% WORK EX
+% --------------------------------------
+
+\sectionblue{Work Experience and Positions}
+\cventry{Presently}{Software Engineer}{Lxi Technologies}{Pathirippala}{}{\begin{itemize} \item Learned Oracle and Java and JSP.\end{itemize}}
+
+\cventry{July 2010 -- June 2011}{Software Engineer}{Robosoft Technologies}{Udupi}{}{\begin{itemize} \item Designed and developed a Windows phone seven application.
+\item Used MVVM Design Pattern.
+\item GUI was designed and developed  in XAML using Microsoft Expression Blend.
+\item Model  and Controller part of program is developed using C\#. \end{itemize}}
+
+\cventry{August 2009 -- February 2010}{Quality Assurance}{Onmobile Global}{Bangalore}{}{\begin{itemize} \item User Acceptance testing of Programs. 
+\item Written shell scripts for Automating backups.
+\item Written Batch programs for automating testing.\end{itemize}}
+
+% --------------------------------------
+% PROJECTS
+% --------------------------------------
+
+%\pagebreak
+\sectionblue{Projects}
+
+\cvline
+{\textbf{Academic Project}}{ (Won the prize for Third Best Project)}
+\cvline{Team Size:}{ 4 members.}\cvline{Languages:}{Matlab, C.}\cvline{Description:}{ Designed a maximally flat Linear phase FIR notch filter.}\cvline{}{Reduced its rejection bandwidth using Filter Sharpening Technique.}\cvline{}{Used Amplitude Change Function for Filter Sharpening.}
+\cvline{}{Written a program in Matlab  and C to verify its frequency response.}
+
+
+\pagebreak	
+% --------------------------------------
+% INTERESTS HOBBIES
+% --------------------------------------
+
+\sectionblue{Interests and Hobbies}
+\cvlistitem{Reading books (Related to computers and network security) and browsing Internet.}
+\cvlistitem{Downloading and reading opensource codes.}
+\cvlistitem{Watching movies,Playing Cricket, Swimming etc.}
+
+% --------------------------------------
+% STRENGTHS
+% --------------------------------------
+
+\sectionblue{Strengths}
+\cvlistitem{Hardworking and quick learner.}
+\cvlistitem{Possess good relationship building and interpersonal skills.}
+\cvlistitem{Commitment towards work.}
+\cvlistitem{Quick adaptability to challenging situations.}
+
+
+
+
+%-----------------------------------------------
+% PERSONAL DETALILS
+%-----------------------------------------------
+
+\sectionblue{Personal Details}
+
+\cvline{}{\textbf{Date Of Birth}}
+\cvline{}{26$^{th}$ Nov, 1987}
+\cvline{}{\textbf{Languages Known}}
+\cvline{English}{Fluent}
+\cvline{Malayalam}{Mother Tongue}
+\cvline{Hindi}{Intermediate}
+\cvline{Tamil}{Intermediate}
+\cvline{Kannada}{Novice}
+%\cvlanguage{English}{Skill level}{Comment}
+
+
+
+
+
+%---------------- Declaration-------------------
+\sectionblue{Declaration}
+\cvlistitem{I hereby declare that the information furnished above is true to the best of my knowledge and belief.\\ \\ \\}
+
+\begin{minipage}{0.5\textwidth}
+\begin{flushleft}
+  \large
+\bfseries (Vaysage.k.v)
+\end{flushleft}
+\end{minipage}
+
+
+%------------------------------------------
+
+
+\end{document}

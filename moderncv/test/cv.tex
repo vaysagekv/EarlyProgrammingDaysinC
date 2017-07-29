@@ -1,0 +1,108 @@
+\documentclass[11pt,a4paper]{moderncv}
+
+% moderncv themes
+\moderncvtheme[green]{classic}                  % optional argument are 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+%\moderncvtheme[green]{classic}                % idem
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+%\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+% Hyperlinks
+\usepackage{hyperref}								% to use hyperlinks
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}			% hyperlinks setup
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+% personal data
+\firstname{Stefania}
+\familyname{Dakourou}
+%\title{Resumé title (optional)}               % optional, remove the line if not wanted
+\address{Navarinou 31}{15124 Marousi,Athens}    % optional, remove the line if not wanted
+%\mobile{+30 698 4385057}                    % optional, remove the line if not wanted
+\phone{+30 698 4385057}                      % optional, remove the line if not wanted
+%\fax{fax (optional)}                          % optional, remove the line if not wanted
+\email{s.dakourou@gmail.com}                      % optional, remove the line if not wanted
+%\email{\href{mailto:s.dakourou@gmail.com}{s.dakourou@gmail.com}}                      % optional, remove the line if not wanted
+%\homepage{http://gr.linkedin.com/pub/stefania-dakourou/41/21a/396}%{LinkedIn Profile}}                % optional, remove the line if not wanted
+%\extrainfo{additional information (optional)} % optional, remove the line if not wanted
+%\photo[64pt][0.4pt]{picture}                         % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{Some quote (optional)}                 % optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography; only useful if you make citations in your resume
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+\section{Education}
+%\cventry{year--year}{Degree}{Institution}{City}{\textit{Grade}}{Description}
+\cventry{July 2011}{Master of Science in Integrated Hardware and Software Systems}{University of Patras}{}{\textit{9.5/10}}{}
+\cventry{July 2009}{Diploma in Electrical Engineering and Computer Science}{University of Patras}{}{\textit{6.92/10}}{3 years BSc(Eng) + 2 years MSc(Eng)}  
+\cventry{June 2002}{High School Diploma}{}{}{\textit{19.2/20}}{First class honours and scholarship}
+
+\section{Experience}
+\cventry{Sep 2010 - Feb 2011}{IC Design Engineer}{IMEC Netherlands}{Eindhoven}{}{Intern, working under minimum supervision, understanding and learning of EDA tools\newline{} DSP group meetings, conference calls and technical reports}
+\cventry{Oct 2009 - Jun 2010}{Technical Assistant}{University of Patras}{Patras}{}{Set up of laboratory equipment and experiments\newline{}Guidance and supervision of undergraduate students}
+\cventry{Jul 2008 - Aug 2008}{Intern Student}{Greek Public Power Corporation}{Patras}{}{Assistance work within the department of physical network expansion}
+
+\section{Master Thesis}
+\cvline{Title}{\emph{Optimized SIMD scheduling and architecture exploration and implementation for ultra-low energy processor architectures}}
+\cvline{Supervisors}{Francky Catthoor, Constantinos Goutis}
+\cvline{Description}{\small Project follows the complete flow of the implementation of an ASIP from high-level processor architecture design and Test Vector generation process to power dissipation measurements}
+
+\section{Bachelor Thesis}
+\cvline{Title}{\emph{Processor hardware implementation for Galois Counter Mode (GCM-AES) security encryption standard}}
+\cvline{Supervisors}{Constantinos Goutis}
+\cvline{Description}{\small Project based on VHDL design language; Hardware architecture design of an encryption algorithm; Validation using C programming and implementation on a Xilinx FPGA} 
+
+\section{Other Projects}
+\subsection{Master projects}
+\cvline{VHDL}{Design and implementation of a multiply - add unit, Modeling using Octave, Testing in a Xilinx FPGA using a logic analyzer}
+\cvline{VHDL}{Architectural exploration of a LMS filter, Optimization for power, area and performance}
+\cvline{C}{Optimization of an edge - detection algorithm using compiler transformations}
+\cvline{C}{Implementation of a compression algorithm to reduce testing data}
+\cvline{UPPAAL}{Modeling and simulation of a Philips bus collision protocol}
+
+
+\subsection{Bachelor Projects}
+\cvline{VHDL}{Implementation of Booth multiplier and MESI protocol}
+\cvline{Assembly}{Implementation of Virtual Mode for x86 processors}
+\cvline{PSpice}{Implementation of parallel multiplier based on Wallace tree adders}
+\cvline{C}{Development of a client management program implementing a hashing algorithm}
+
+\section{Languages}
+\cvlanguage{Greek}{Native}{}
+\cvlanguage{English}{Fluent}{ECPE  Proficiency in English, University of Michigan, 2005}
+\cvlanguage{French}{Basic}{DELF A1, Ministere Francais de L'Education Nationale, 2000}
+
+\section{Computer skills}
+\cvline{Basic}{\small UML, HTML, C++, Tcl, System C}
+\cvline{Intermediate}{\small Matlab, Assembly(Intel x86)}
+\cvline{Expert}{\small C, VHDL, nML}
+\cvline{Tools}{\small Cadence, Xilinx, Target, UPPAAL, Simplescalar}
+\cvline{Miscellaneous}{\small Windows, Office, Linux}
+%\cvcomputer{Basic}{UML, HTML, C++, Tcl, System C} {}{}
+%\cvcomputer{Intermediate}{C, Matlab, Assembly(Intel x86)}{}{}
+%\cvcomputer{Expert}{VHDL, nML}{}{}
+
+\section{Qualities}
+\cvline{Personal skills:}{Good software engineering skills, strong analytical, problem-solving and communication skills, eager to learn and develop new skills}
+\cvline{Experience with:}{High level programming languages, RTL level development, digital design flow, validation and testing techniques, scripting languages, EDA tools, IS processors, SIMD and ultra-low power architectures}
+\cvline{International Experience:}{Lived in Eindhoven, The Netherlands for 6 months}
+
+\end{document}
